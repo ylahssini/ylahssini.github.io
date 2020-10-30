@@ -1,0 +1,53 @@
+side:
+  name: Youssef Lahssini
+  job: Developer Front-end
+  location: Casablanca, Morocco
+  image: /images/youssef-lahssini.jpg
+
+company: Flyer.ma
+
+learning: Dart & Flutter
+
+about: >
+  My name is Youssef Lahssini. I am a passionate Front-end developer.<br />
+  My passion is to discover technologies by creating demos to learn.<br />
+  I'm currently working at Flyer.ma. My role is to lead my team and also architect and build client side projects.
+
+skills:
+  description: >
+    Despite the years I have spent as a developer, I consider myself to be a beginner learning new technologies.
+    But with experience, I acquired certain skills that I appreciated during my career:
+
+  categories:
+    - name: 'Languages'
+      list:
+        - HTML 5
+        - CSS 3 (SCSS, Stylus)
+        - Javascript (ES6) / Typescript
+        - Dart
+
+    - name: 'Frameworks & libraries'
+      list:
+        - React
+        - React Native
+        - Redux (Redux Saga & Redux Thunk)
+        - Jquery
+        - Node.js (Express)
+        - Ionic (Angular)
+        - Bootstrap & Antd design
+        - Next.js
+        - Tailwind CSS
+    
+    - name: 'Tools & Editors'
+      list:
+        - Npm & Yarn
+        - VsCode
+        - Eslint
+
+    - name: 'Other technologies'
+      list:
+        - MongoDB
+        - Github
+        - Docker
+        - Photoshop & Illustrator & Figma
+
