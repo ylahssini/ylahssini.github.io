@@ -11,7 +11,7 @@ const Side = () => {
                 </figcaption>
 
                 <div className="relative my-8">
-                    <Image
+                    <img
                         src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${data.side.image}`}
                         alt=""
                         width={150}
