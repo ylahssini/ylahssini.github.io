@@ -14,6 +14,7 @@ const Home = () => {
                     href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap"
                     rel="preload"
                     as="style"
+                    // @ts-ignore
                     onload="this.onload=null;this.rel='stylesheet'"
                 />
                 <link
@@ -24,6 +25,7 @@ const Home = () => {
                     href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
                     rel="preload"
                     as="style"
+                    // @ts-ignore
                     onload="this.onload=null;this.rel='stylesheet'"
                 />
                 <link
