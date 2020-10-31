@@ -12,7 +12,7 @@ const Side = () => {
 
                 <div className="relative my-8">
                     <Image
-                        src={`${data.side.image}`}
+                        src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${data.side.image}`}
                         alt=""
                         width={150}
                         height={150}

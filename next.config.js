@@ -3,12 +3,12 @@ const debug = process.env.NODE_ENV !== "production";
 
 module.exports = withYaml({
     basePath: '',
-    assetPrefix: '/',
+    assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || '',
     images: {
         deviceSizes: [150],
         iconSizes: [],
         domains: [],
-        path: '/images',
+        path: process.env.NEXT_PUBLIC_BASE_PATH || '',
         loader: 'default',
     },
 });
