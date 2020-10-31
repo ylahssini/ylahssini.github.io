@@ -6,6 +6,8 @@ interface Category {
 };
 
 const Skills = () => {
+    const countCategories = Math.ceil(data.skills.categories.length / 2);
+
     return (
         <article className="pt-12">
             <h4 className="text-sm text-blue-400 font-hairline uppercase">Skills</h4>
@@ -14,9 +16,9 @@ const Skills = () => {
                 dangerouslySetInnerHTML={{ __html: data.skills.description }}
             />
 
-            <ul className="flex list-none">
+            <ul className="flex flex-wrap list-none">
                 {data.skills.categories.map((category: Category) => (
-                    <div key={category.name} className={`w-1/${data.skills.categories.length} pr-3`}>
+                    <div key={category.name} className={`w-1/${countCategories} pr-3 pb-3`}>
                         <h5 className="text-xs text-blue-900 font-hairline uppercase">{category.name}</h5>
 
                         <ol className="list-disc list-inside">

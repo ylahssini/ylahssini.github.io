@@ -24,14 +24,22 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm ci
-    - run: npm run build
+
+    - name: Installing the packages 📦
+      run: npm ci
+
+    - name: Build my app 🔨
+      run: npm run build
       env:
         NEXT_PUBLIC_BASE_PATH: /
-    - run: npm run export
-      env:
-        NEXT_PUBLIC_BASE_PATH: /
-    - run: touch ./out/.nojekyll
+
+    - name: Export my app 🚢
+      run: npm run export
+        env:
+          NEXT_PUBLIC_BASE_PATH: /
+
+    - name: No jeckyll file 😈
+      run: touch ./out/.nojekyll
     
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@3.7.1

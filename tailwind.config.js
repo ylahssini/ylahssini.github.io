@@ -14,7 +14,7 @@ module.exports = {
             },
             inset: {
                 50: '50px'
-            }
+            },
         },
         fontFamily: {
             sans: ['Noto Sans KR', 'sans-serif']
