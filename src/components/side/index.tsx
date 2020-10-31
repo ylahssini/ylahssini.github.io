@@ -12,7 +12,7 @@ const Side = () => {
 
                 <div className="relative my-8">
                     <Image
-                        src={`/ylahssini.github.io${data.side.image}`}
+                        src={`${data.side.image}`}
                         alt=""
                         width={150}
                         height={150}
