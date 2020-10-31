@@ -35,8 +35,8 @@ jobs:
 
     - name: Export my app 🚢
       run: npm run export
-        env:
-          NEXT_PUBLIC_BASE_PATH: /
+      env:
+        NEXT_PUBLIC_BASE_PATH: /
 
     - name: No jeckyll file 😈
       run: touch ./out/.nojekyll
