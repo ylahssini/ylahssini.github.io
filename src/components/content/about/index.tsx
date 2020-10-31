@@ -4,10 +4,11 @@ const About = () => {
     return (
         <article className="pt-12">
             <h4 className="text-sm text-blue-400 font-hairline uppercase">About</h4>
-            <p
-                className="text-base text-justify p-0"
-                dangerouslySetInnerHTML={{ __html: data.about }}
-            />
+            {
+                data.about.map((p: string) => (
+                    <p key={p} className="text-base text-justify pb-3">{p}</p>
+                ))
+            }
         </article>
     );
 }

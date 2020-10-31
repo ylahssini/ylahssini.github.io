@@ -18,7 +18,7 @@ const Header = ({ children }: Props) => {
                 </a>
             </header>
 
-            <section className="px-16 py-0">
+            <section className="px-10 md:px-16 md:py-0">
                 {children}
             </section>
 

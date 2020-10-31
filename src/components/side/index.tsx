@@ -3,7 +3,7 @@ import data from '@src/data/index.yml';
 
 const Side = () => {
     return (
-        <aside className="w-1/4 border-gray-400 border-l pl-10 h-screen pt-10">
+        <aside className="md:w-1/4 md:h-screen md:border-l md:pl-10 md:pb-0 pt-10 border-gray-400 pb-10 w-full h-full border-0">
             <figure>
                 <figcaption>
                     <h1 className="text-4xl font-bold leading-7">{data.side.name}</h1>

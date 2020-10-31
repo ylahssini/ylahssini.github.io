@@ -35,7 +35,7 @@ const Home = () => {
             </Head>
 
             <Layout>
-                <div className="flex flex-row-reverse">
+                <div className="md:flex flex-row-reverse block">
                     <Side />
                     <Content />
                 </div>

@@ -11,14 +11,15 @@ const Skills = () => {
     return (
         <article className="pt-12">
             <h4 className="text-sm text-blue-400 font-hairline uppercase">Skills</h4>
-            <p
-                className="text-base text-justify pb-4"
-                dangerouslySetInnerHTML={{ __html: data.skills.description }}
-            />
+            {
+                data.skills.description.map((p: string) => (
+                    <p key={p} className="text-base text-justify pb-3">{p}</p>
+                ))
+            }
 
             <ul className="flex flex-wrap list-none">
                 {data.skills.categories.map((category: Category) => (
-                    <div key={category.name} className={`w-1/${countCategories} pr-3 pb-3`}>
+                    <div key={category.name} className={`w-full md:w-1/${countCategories} pr-3 pb-3`}>
                         <h5 className="text-xs text-blue-900 font-hairline uppercase">{category.name}</h5>
 
                         <ol className="list-disc list-inside">

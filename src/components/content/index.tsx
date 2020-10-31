@@ -4,7 +4,7 @@ import Skills from './skills';
 
 const Content = () => {
     return (
-        <div className="w-9/12 p-10 pl-0">
+        <div className="md:w-9/12 md:border-0 p-10 pl-0 w-full h-full border-t">
             <Header />
             <About />
             <Skills />
