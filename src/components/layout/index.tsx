@@ -1,7 +1,7 @@
 import data from '@src/data/index.yml';
-import Github from '@src/assets/svg/github-alt.svg';
-import LinkedIn from '@src/assets/svg/linkedin.svg';
-import Twitter from '@src/assets/svg/twitter.svg';
+import Github from '../../assets/svg/github-alt.svg';
+import LinkedIn from '../../assets/svg/linkedin.svg';
+import Twitter from '../../assets/svg/twitter.svg';
 
 interface Props {
     children: React.ReactElement;
