@@ -15,7 +15,6 @@
     },
     "plugins": [
         "react",
-        "react-native",
         "@typescript-eslint"
     ],
     "settings": {
@@ -47,6 +46,7 @@
             "error",
             4
         ],
+        "react/react-in-jsx-scope": 0,
         "max-len": 0,
         "react/no-danger": 0,
         "object-curly-newline": 0,

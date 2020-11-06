@@ -3,9 +3,9 @@ import data from '@src/data/index.yml';
 interface Category {
     name: string;
     list: string[];
-};
+}
 
-const Skills = () => {
+const Skills = (): React.ReactElement => {
     const countCategories = Math.ceil(data.skills.categories.length / 2);
 
     return (
@@ -31,7 +31,7 @@ const Skills = () => {
                 ))}
             </ul>
         </article>
-    )
-}
+    );
+};
 
 export default Skills;

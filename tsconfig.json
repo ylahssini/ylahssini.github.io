@@ -29,6 +29,7 @@
         "next-env.d.ts",
         "**/*.ts",
         "**/*.tsx",
+        "**/*.svg",
         "src/pages/_app.js",
     ],
     "exclude": [
