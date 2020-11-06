@@ -1,3 +1,7 @@
+meta:
+  title: Youssef Lahssini - Developer Front-end
+  description: My name is Youssef Lahssini. I am a passionate Front-end developer. Now, I'm working at Flyer.ma.
+
 side:
   logo: YL
   name: Youssef Lahssini
@@ -54,3 +58,21 @@ skills:
         - Illustrator
         - Figma
 
+experiences:
+  - company: Flyer.ma
+    job: Front-end developer
+    period:
+      - Nov 2017
+      - Present
+
+  - company: Kenzamall
+    job: UI developer
+    period:
+      - May 2014
+      - Nov 2017
+
+  - company: Bnet Technologies
+    job: Web designer & integrator
+    period:
+      - Aug 2007
+      - Apr 2014

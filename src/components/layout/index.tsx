@@ -2,6 +2,7 @@ import data from '@src/data/index.yml';
 import Github from '../../assets/svg/github-alt.svg';
 import LinkedIn from '../../assets/svg/linkedin.svg';
 import Twitter from '../../assets/svg/twitter.svg';
+import EnvelopeText from '../../assets/svg/envelope-open-text-solid.svg';
 
 interface Props {
     children: React.ReactElement;
@@ -14,11 +15,9 @@ const Header = ({ children }: Props): React.ReactElement => (
                 <span className="text-xl">{data.side.logo}</span>
             </div>
 
-            <a
-                href="#a"
-                className="border-blue-400 border-4 rounded-3xl px-4 h-9 leading-9"
-            >
-                Contact me
+            <a href="#contact" className="text-blue-400">
+                <EnvelopeText width={24} height={24} className="inline-block fill-current text-blue-400" />
+                <span>Contact me</span>
             </a>
         </header>
 

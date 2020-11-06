@@ -1,4 +1,5 @@
 import data from '@src/data/index.yml';
+import Marker from '../../assets/svg/map-marker-alt-solid.svg';
 
 const Side = (): React.ReactElement => (
     <aside className="md:w-1/4 md:h-screen md:border-l md:pl-10 md:pb-0 pt-10 border-gray-400 pb-10 w-full h-full border-0">
@@ -21,7 +22,7 @@ const Side = (): React.ReactElement => (
             </div>
 
             <address className="not-italic">
-                <i className="las la-map-marker la-lg py-2 px-1 text-blue-400" />
+                <Marker width={24} height={24} className="inline-block fill-current text-blue-400" />
                 <span className="font-hairline">{data.side.location}</span>
             </address>
         </figure>
