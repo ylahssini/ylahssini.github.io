@@ -11,6 +11,7 @@
     "gh": "gh-pages -d out"
   },
   "dependencies": {
+    "@zeit/next-css": "^1.0.1",
     "next": "10.0.0",
     "next-plugin-yaml": "^1.0.1",
     "react": "17.0.1",
