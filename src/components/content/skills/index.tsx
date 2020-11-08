@@ -9,7 +9,7 @@ const Skills = (): React.ReactElement => {
     const countCategories = Math.ceil(data.skills.categories.length / 2);
 
     return (
-        <article className="pt-12">
+        <article className="pt-12 mb-6">
             <h4 className="text-sm text-blue-400 font-hairline uppercase">Skills</h4>
             {
                 data.skills.description.map((p: string) => (

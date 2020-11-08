@@ -9,7 +9,7 @@ interface Experience {
 const Experiences = (): React.ReactElement | null => {
     if (data.experiences) {
         return (
-            <>
+            <div className="mb-6">
                 <h4 className="text-sm text-blue-400 font-hairline uppercase">Experiences</h4>
 
                 <ul className="list-none relative">
@@ -38,7 +38,7 @@ const Experiences = (): React.ReactElement | null => {
                         );
                     })}
                 </ul>
-            </>
+            </div>
         );
     }
 
