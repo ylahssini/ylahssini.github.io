@@ -63,7 +63,7 @@ const Contact = (): React.ReactElement | null => {
                 <h4 className="text-sm text-blue-400 font-hairline uppercase">Contact me</h4>
 
                 <fieldset className="flex justify-center">
-                    <div className="w-full md:w-1/2 relative z-20">
+                    <label htmlFor="email" className="w-full md:w-1/2 relative z-20 block">
                         <input
                             ref={register({ required: true, pattern })}
                             type="text"
@@ -79,9 +79,9 @@ const Contact = (): React.ReactElement | null => {
                         {errors.email?.type === 'pattern' && (
                             <span className={errorClassName}>Email is incorrect</span>
                         )}
-                    </div>
+                    </label>
 
-                    <div className="w-full md:w-1/2 relative z-20">
+                    <label htmlFor="name" className="w-full md:w-1/2 relative z-20 block">
                         <input
                             ref={register({ required: true })}
                             type="text"
@@ -94,10 +94,10 @@ const Contact = (): React.ReactElement | null => {
                         {errors.name?.type === 'required' && (
                             <span className={errorClassName}>Please insert your name or company</span>
                         )}
-                    </div>
+                    </label>
                 </fieldset>
 
-                <div className="relative">
+                <label htmlFor="message" className="relative block">
                     <textarea
                         ref={register({ required: true })}
                         name="message"
@@ -108,7 +108,7 @@ const Contact = (): React.ReactElement | null => {
                     {errors.message?.type === 'required' && (
                         <span className={errorClassName}>Please insert your message</span>
                     )}
-                </div>
+                </label>
 
                 <button
                     type="button"
