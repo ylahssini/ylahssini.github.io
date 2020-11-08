@@ -18,11 +18,11 @@ const Side = (): React.ReactElement => (
                     className="block rounded-full relative z-20"
                 />
 
-                <div className="bg-blue-400 rounded-full absolute z-10 w-150px h-150px top-0 left-50 " />
+                <div className="bg-orange-400 rounded-full absolute z-10 w-150px h-150px top-0 left-50 " />
             </div>
 
             <address className="not-italic">
-                <Marker width={24} height={24} className="inline-block fill-current text-blue-400" />
+                <Marker width={24} height={24} className="inline-block fill-current text-orangege-400" />
                 <span className="font-hairline">{data.side.location}</span>
             </address>
         </figure>

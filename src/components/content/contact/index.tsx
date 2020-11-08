@@ -60,7 +60,7 @@ const Contact = (): React.ReactElement | null => {
                     <p className="text-xs text-gray-700 p-0">{notif.message}</p>
                 </div>
 
-                <h4 className="text-sm text-blue-400 font-hairline uppercase">Contact me</h4>
+                <h4 className="text-sm text-orange-400 font-hairline uppercase">Contact me</h4>
 
                 <fieldset className="flex justify-center">
                     <label htmlFor="email" className="w-full md:w-1/2 relative z-20 block">
@@ -112,7 +112,7 @@ const Contact = (): React.ReactElement | null => {
 
                 <button
                     type="button"
-                    className="font-bold bg-blue-400 text-white w-full p-4"
+                    className="font-bold bg-orange-400 text-white w-full p-4"
                     onClick={handleSubmit(handleSend)}
                     disabled={loading}
                 >

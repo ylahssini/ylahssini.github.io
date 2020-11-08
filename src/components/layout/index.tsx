@@ -11,12 +11,12 @@ interface Props {
 const Header = ({ children }: Props): React.ReactElement => (
     <main>
         <header className="flex justify-between items-center p-6 border-gray-300 border-b">
-            <div className="w-16 h-16 bg-blue-400 rounded-full flex items-center justify-center relative">
+            <div className="w-16 h-16 bg-orange-400 rounded-full flex items-center justify-center relative">
                 <span className="text-xl">{data.side.logo}</span>
             </div>
 
-            <a href="#contact" className="text-blue-400">
-                <EnvelopeText width={24} height={24} className="inline-block fill-current text-blue-400" />
+            <a href="#contact" className="text-orange-400">
+                <EnvelopeText width={24} height={24} className="inline-block fill-current text-orange-400" />
                 <span>Contact me</span>
             </a>
         </header>

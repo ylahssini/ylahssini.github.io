@@ -10,7 +10,7 @@ const Experiences = (): React.ReactElement | null => {
     if (data.experiences) {
         return (
             <div className="mb-6">
-                <h4 className="text-sm text-blue-400 font-hairline uppercase">Experiences</h4>
+                <h4 className="text-sm text-orange-400 font-hairline uppercase">Experiences</h4>
 
                 <ul className="list-none relative">
                     <div className="absolute top-0 left-half -ml-1 w-2 bg-gray-500 h-full" />
