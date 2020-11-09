@@ -56,7 +56,7 @@ const Contact = (): React.ReactElement | null => {
         return (
             <form id="contact">
                 <div className={`${notif.type !== null ? 'opacity-100' : 'opacity-0'} fixed transition-all ease-in bg-white top-0 right-50 rounded-md shadow-lg p-6`}>
-                    <h5 className={`text-sm text-${notif.type === 'success' ? 'green' : 'red'}-700 capitalize`}>{notif.type}</h5>
+                    <h5 className={`text-sm ${notif.type === 'success' ? 'text-green-700' : 'text-red-700'} capitalize`}>{notif.type}</h5>
                     <p className="text-xs text-gray-700 p-0">{notif.message}</p>
                 </div>
 
