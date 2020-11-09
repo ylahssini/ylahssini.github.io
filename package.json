@@ -11,7 +11,8 @@
     "gh": "gh-pages -d out"
   },
   "dependencies": {
-    "@zeit/next-css": "^1.0.1",
+    "@fullhuman/postcss-purgecss": "^3.0.0",
+    "autoprefixer": "^10.0.1",
     "next": "10.0.0",
     "next-plugin-yaml": "^1.0.1",
     "react": "17.0.1",
@@ -19,12 +20,10 @@
     "react-hook-form": "^6.11.0"
   },
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^3.0.0",
     "@types/node": "^14.14.6",
     "@types/react": "^16.9.55",
     "@typescript-eslint/eslint-plugin": "^4.6.0",
     "@typescript-eslint/parser": "^4.6.0",
-    "autoprefixer": "^10.0.1",
     "babel-plugin-inline-react-svg": "^1.1.2",
     "babel-plugin-transform-define": "^2.0.0",
     "eslint": "^7.12.1",

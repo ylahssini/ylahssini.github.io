@@ -3,9 +3,7 @@ module.exports = {
         // removeDeprecatedGapUtilities: true,
         // purgeLayersByDefault: true,
     },
-    purge: [
-        './src/**/*.jsx',
-    ],
+    purge: [],
     theme: {
         extend: {
             width: {
