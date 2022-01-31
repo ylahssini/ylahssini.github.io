@@ -1,7 +1,5 @@
-/* purgecss start ignore */
 @tailwind base;
 @tailwind components;
-/* purgecss end ignore */
 @tailwind utilities;
 
 * {
@@ -16,6 +14,32 @@ html {
     scroll-behavior: smooth;
 }
 
-html, body {
-    font-family: 'Noto Sans KR', 'Sans-serif';
+html, body, #__next {
+    font-family: 'Cairo', Sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+.svg-icon {
+    @apply inline-block align-middle transition-all fill-black hover:-translate-y-1;
+}
+
+.menu.swiper-pagination-vertical.swiper-pagination-bullets {
+    @apply flex justify-between items-center gap-5 transform-none top-0 left-0;
+}
+
+.menu-item {
+    @apply text-lg cursor-pointer transition-colors text-gray-800 hover:text-blue-500;
+}
+
+.menu-item.__current {
+    @apply text-blue-500;
+}
+
+.swiper {
+    @apply w-full h-full;
+}
+
+.swiper-slide {
+    @apply text-center text-lg flex items-center justify-center;
 }

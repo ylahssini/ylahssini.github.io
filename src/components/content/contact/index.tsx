@@ -19,7 +19,7 @@ const pattern = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))
 const Contact = (): React.ReactElement | null => {
     const [notif, setNotif] = useState<Notif>({ type: null, message: '' });
     const [loading, setLoading] = useState(false);
-    const { register, handleSubmit, errors, reset } = useForm<Inputs>();
+    const { register, handleSubmit, formState: { errors }, reset } = useForm<Inputs>();
 
     async function handleSend(values: Inputs): Promise<void> {
         try {
@@ -65,7 +65,7 @@ const Contact = (): React.ReactElement | null => {
                 <fieldset className="flex justify-center">
                     <label htmlFor="email" className="w-full md:w-1/2 relative z-20 block">
                         <input
-                            ref={register({ required: true, pattern })}
+                            {...register('email', { required: true, pattern })}
                             type="text"
                             id="email"
                             name="email"
@@ -83,7 +83,7 @@ const Contact = (): React.ReactElement | null => {
 
                     <label htmlFor="name" className="w-full md:w-1/2 relative z-20 block">
                         <input
-                            ref={register({ required: true })}
+                            {...register('name', { required: true })}
                             type="text"
                             id="name"
                             name="name"
@@ -99,7 +99,7 @@ const Contact = (): React.ReactElement | null => {
 
                 <label htmlFor="message" className="relative block">
                     <textarea
-                        ref={register({ required: true })}
+                        {...register('message', { required: true })}
                         name="message"
                         placeholder="Your message *"
                         className="bg-white p-4 w-full resize-y h-48 border border-t-0 border-gray-400 outline-none"
