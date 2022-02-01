@@ -9,8 +9,9 @@ import { useStore } from '@src/store';
 import "swiper/css";
 import "swiper/css/pagination";
 import About from '@src/components/about';
+import Experiences from '@src/components/experiences';
 
-const menu = ['Intro', 'About', 'Experience', 'Contact'];
+const menu = ['Intro', 'About', 'Experiences', 'Contact'];
 
 const pagination = {
     clickable: true,
@@ -26,7 +27,7 @@ const Home = (): React.ReactElement => {
     const { setDetail } = useStore(state => ({ setDetail: state.setDetail }), shallow);
 
     function handleSwiperChange(swiper: any): void {
-        setDetail(6 - swiper.activeIndex);
+        setDetail(3 - swiper.activeIndex);
     }
 
     return (
@@ -46,16 +47,11 @@ const Home = (): React.ReactElement => {
                     mousewheel={true}
                     pagination={pagination}
                     modules={[Mousewheel, Pagination]}
-                    hashNavigation={{ watchState: true }}
                     onSlideChange={handleSwiperChange}
                 >
-                    <SwiperSlide className="z-10">
-                        <Intro />
-                    </SwiperSlide>
-    
-                    <SwiperSlide className="z-10">
-                        <About />
-                    </SwiperSlide>
+                    <SwiperSlide className="z-10"><Intro /></SwiperSlide>
+                    <SwiperSlide className="z-10"><About /></SwiperSlide>
+                    <SwiperSlide className="z-10"><Experiences /></SwiperSlide>
                 </Swiper>
             </Layout>
         </>

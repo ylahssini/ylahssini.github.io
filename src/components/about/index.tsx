@@ -2,7 +2,13 @@ import { useEffect, useRef } from 'react';
 import { useSpring, animated, to } from '@react-spring/web'
 import { useGesture } from 'react-use-gesture'
 import data from '@src/data/index.yml';
+import Marker from '../../assets/svg/map-marker-alt-solid.svg';
 import * as styles from './styles';
+
+interface Category {
+    name: string;
+    list: string[];
+}
 
 const calcX = (x: number, lx: number) => (x - lx - window.innerWidth / 2) / 20
 const calcY = (y: number, ly: number) => -(y - ly - window.innerHeight / 2) / 20
@@ -58,6 +64,20 @@ const About = (): React.ReactElement => {
                         <p key={p} className="text-base text-justify pb-4">{p}</p>
                     ))
                 }
+
+                <ul className="list-none text-left">
+                    {data.skills.map((category: Category) => (
+                        <div key={category.name} className="pb-2">
+                            <h5 className="text-blue-900 font-hairline text-sm">{category.name}</h5>
+
+                            <ol className="list-disc list-inside">
+                                {category.list.map((item: string) => (
+                                    <li key={item} className={styles.skill}>{item}</li>
+                                ))}
+                            </ol>
+                        </div>
+                    ))}
+                </ul>
             </article>
     
             <aside className="mx-w-[270px] w-4/12">
@@ -81,6 +101,11 @@ const About = (): React.ReactElement => {
                         alt="Youssef Lahssini"
                     />
                 </animated.figure>
+
+                <address className="not-italic pt-8">
+                    <Marker width={24} height={24} className="inline-block fill-current text-blue-500" />
+                    <span className="font-hairline">{data.side.location}</span>
+                </address>
             </aside>
         </section>
     );

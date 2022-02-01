@@ -14,9 +14,8 @@ company: Flyer.ma
 learning: Dart & Flutter
 
 about:
-  - Hi! my name is Youssef Lahssini. I am a passionate Front-end developer who loves to discover new technologies by creating demos to learn. My career starts back in 2007 when i was a web designer to become today a front-end developer.
-  - Despite the years i have spent as a developer, i consider myself to be a beginner learning new technologies. But with experience, i acquired certain skills that i appreciated during my career.
-  - I'm currently working at Flyer.ma. My role is to lead my team and also architect and build client side projects.
+  - "Hi! my name is Youssef Lahssini. I am a passionate Front-end developer who loves to discover new technologies by creating demos to learn. My career starts back in 2007 when i was a web designer to become today a front-end developer."
+  - "Despite the years i have spent as a developer, i consider myself to be a beginner learning new technologies. But with experience, i acquired certain skills that i appreciated during my career. Here are a few technologies I’ve been working:"
 
 skills:
   - name: 'Languages'
@@ -24,6 +23,7 @@ skills:
       - HTML 5
       - CSS 3 (SCSS, Stylus)
       - Javascript (ES6) / Typescript
+      - Python
 
   - name: 'Frameworks & libraries'
     list:
@@ -33,9 +33,11 @@ skills:
       - Jquery
       - Node.js (Express)
       - Ionic (Angular)
-      - Bootstrap & Antd design
+      - Bootstrap
+      - Ant Design
       - Next.js
       - Tailwind CSS
+      - Styled Components
   
   - name: 'Tools & Editors'
     list:
@@ -50,7 +52,6 @@ skills:
       - Docker
       - Photoshop
       - Illustrator
-      - Figma
 
 experiences:
   - company: Flyer.ma
