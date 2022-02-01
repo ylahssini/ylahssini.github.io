@@ -15,7 +15,7 @@ const Header = ({ children }: Props): React.ReactElement => (
             </div>
 
             <div className="flex justify-between items-center gap-5 animate-menu">
-                <div className="bg-black w-12 h-[2px]" />
+                <div className="bg-black w-12 h-0.5" />
                 <div id="menu" className="menu" />
             </div>
         </header>

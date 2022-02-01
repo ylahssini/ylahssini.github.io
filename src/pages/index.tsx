@@ -8,8 +8,9 @@ import Intro from '@src/components/intro';
 import { useStore } from '@src/store';
 import "swiper/css";
 import "swiper/css/pagination";
+import About from '@src/components/about';
 
-const menu = ['Intro', 'About', 'Experience', 'Skills', 'Contact'];
+const menu = ['Intro', 'About', 'Experience', 'Contact'];
 
 const pagination = {
     clickable: true,
@@ -53,7 +54,7 @@ const Home = (): React.ReactElement => {
                     </SwiperSlide>
     
                     <SwiperSlide className="z-10">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, quaerat.</p>
+                        <About />
                     </SwiperSlide>
                 </Swiper>
             </Layout>

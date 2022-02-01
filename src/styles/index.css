@@ -43,3 +43,7 @@ html, body, #__next {
 .swiper-slide {
     @apply text-center text-lg flex items-center justify-center;
 }
+
+.section-title {
+    @apply text-4xl text-blue-500 font-bold uppercase flex items-center justify-start gap-5 mb-5 after:h-0.5 after:bg-black after:w-44 after:block;
+}

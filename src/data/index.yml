@@ -14,49 +14,43 @@ company: Flyer.ma
 learning: Dart & Flutter
 
 about:
-  - My name is Youssef Lahssini. I am a passionate Front-end developer.
-  - My passion is to discover technologies by creating demos to learn.
+  - Hi! my name is Youssef Lahssini. I am a passionate Front-end developer who loves to discover new technologies by creating demos to learn. My career starts back in 2007 when i was a web designer to become today a front-end developer.
+  - Despite the years i have spent as a developer, i consider myself to be a beginner learning new technologies. But with experience, i acquired certain skills that i appreciated during my career.
   - I'm currently working at Flyer.ma. My role is to lead my team and also architect and build client side projects.
 
 skills:
-  description:
-    - Despite the years I have spent as a developer, I consider myself to be a beginner learning new technologies.
-    - But with experience, I acquired certain skills that I appreciated during my career
+  - name: 'Languages'
+    list:
+      - HTML 5
+      - CSS 3 (SCSS, Stylus)
+      - Javascript (ES6) / Typescript
 
-  categories:
-    - name: 'Languages'
-      list:
-        - HTML 5
-        - CSS 3 (SCSS, Stylus)
-        - Javascript (ES6) / Typescript
-        - Dart
+  - name: 'Frameworks & libraries'
+    list:
+      - React
+      - React Native
+      - Redux (Redux Saga & Redux Thunk)
+      - Jquery
+      - Node.js (Express)
+      - Ionic (Angular)
+      - Bootstrap & Antd design
+      - Next.js
+      - Tailwind CSS
+  
+  - name: 'Tools & Editors'
+    list:
+      - Npm & Yarn
+      - VsCode
+      - Eslint
 
-    - name: 'Frameworks & libraries'
-      list:
-        - React
-        - React Native
-        - Redux (Redux Saga & Redux Thunk)
-        - Jquery
-        - Node.js (Express)
-        - Ionic (Angular)
-        - Bootstrap & Antd design
-        - Next.js
-        - Tailwind CSS
-    
-    - name: 'Tools & Editors'
-      list:
-        - Npm & Yarn
-        - VsCode
-        - Eslint
-
-    - name: 'Other technologies'
-      list:
-        - MongoDB
-        - Github
-        - Docker
-        - Photoshop
-        - Illustrator
-        - Figma
+  - name: 'Other technologies'
+    list:
+      - MongoDB
+      - Github
+      - Docker
+      - Photoshop
+      - Illustrator
+      - Figma
 
 experiences:
   - company: Flyer.ma

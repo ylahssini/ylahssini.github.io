@@ -60,7 +60,7 @@ const External = () => {
                 <Twitter width={32} height={32} className="svg-icon hover:fill-cyan-500" />
             </a>
 
-            <div className="bg-black w-[2px] h-20 mb-3" />
+            <div className="bg-black w-0.5 h-20 mb-3" />
         </Trail>
     )
 }
