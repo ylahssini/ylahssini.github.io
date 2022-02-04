@@ -7,8 +7,7 @@ export const footer = cntl`
     relative
 `;
 
-export const tab = ({ width, isActive }: { width: string; isActive: boolean }) => cntl`
-    ${width}
+export const tab = ({ isActive }: { isActive: boolean }) => cntl`
     p-3
     bg-transparent
     duration-500
@@ -20,13 +19,28 @@ export const tab = ({ width, isActive }: { width: string; isActive: boolean }) =
     ${isActive ? cntl`text-blue-500` : 'text-black'}
 `;
 
-export const highlight = ({ width, tab }: { width: string; tab: string }) => cntl`
+export const highlight = cntl`
     h-1
     bg-blue-500
-    ${width}
     absolute
     -top-1
     left-0
     transition-transform
-    translate-x-[calc(100%*${tab})]
+`;
+
+export const skill = cntl`
+    text-xs
+    inline-block
+    mr-1
+    rounded
+    p-1
+    leading-none
+    border
+    border-solid
+    border-slate-300
+    bg-slate-100
+    bg-opacity-80
+    transition-colors
+    hover:border-blue-500
+    hover:bg-blue-100
 `;

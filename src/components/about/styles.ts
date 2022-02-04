@@ -25,20 +25,3 @@ export const figure = cntl`
     shadow-lg
     hover:shadow-4xl
 `;
-
-export const skill = cntl`
-    text-xs
-    inline-block
-    mr-1
-    rounded
-    p-1
-    leading-none
-    border
-    border-solid
-    border-slate-300
-    bg-slate-100
-    bg-opacity-80
-    transition-colors
-    hover:border-blue-500
-    hover:bg-blue-100
-`;

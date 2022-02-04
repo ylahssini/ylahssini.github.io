@@ -5,28 +5,21 @@ import data from '@src/data/index.yml';
 import Marker from '../../assets/svg/map-marker-alt-solid.svg';
 import * as styles from './styles';
 
-interface Category {
-    name: string;
-    list: string[];
-}
-
 const calcX = (x: number, lx: number) => (x - lx - window.innerWidth / 2) / 20
 const calcY = (y: number, ly: number) => -(y - ly - window.innerHeight / 2) / 20
 
 const About = (): React.ReactElement => {
     const figure = useRef(null);
-    const [{ x, y, rotateX, rotateY, rotateZ, zoom, scale }, api] = useSpring(
-        () => ({
-            rotateX: 0,
-            rotateY: 0,
-            rotateZ: 0,
-            scale: 1,
-            zoom: 0,
-            x: 0,
-            y: 0,
-            config: { mass: 5, tension: 350, friction: 40 },
-        }),
-    );
+    const [{ x, y, rotateX, rotateY, rotateZ, zoom, scale }, api] = useSpring(() => ({
+        rotateX: 0,
+        rotateY: 0,
+        rotateZ: 0,
+        scale: 1,
+        zoom: 0,
+        x: 0,
+        y: 0,
+        config: { mass: 5, tension: 350, friction: 40 },
+    }));
 
     useEffect(() => {
         const preventDefault = (e: Event) => e.preventDefault()
@@ -55,29 +48,11 @@ const About = (): React.ReactElement => {
     return (
         <section className={styles.section}>
             <article className="w-8/12">
-                <h3 className="section-title">
-                    <span>01. About</span>
-                </h3>
-    
-                {
-                    data.about.map((p: string) => (
-                        <p key={p} className="text-base text-justify pb-4">{p}</p>
-                    ))
-                }
+                <h3 className="section-title"><span>01. About</span></h3>
 
-                <ul className="list-none text-left">
-                    {data.skills.map((category: Category) => (
-                        <div key={category.name} className="pb-2">
-                            <h5 className="text-blue-900 font-hairline text-sm">{category.name}</h5>
-
-                            <ol className="list-disc list-inside">
-                                {category.list.map((item: string) => (
-                                    <li key={item} className={styles.skill}>{item}</li>
-                                ))}
-                            </ol>
-                        </div>
-                    ))}
-                </ul>
+                {data.about.map((p: string) => (
+                    <p key={p} className="text-base text-justify pb-4">{p}</p>
+                ))}
             </article>
     
             <aside className="mx-w-[270px] w-4/12">
