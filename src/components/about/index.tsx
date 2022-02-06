@@ -70,7 +70,7 @@ const About = (): React.ReactElement => {
                     }}
                 >
                     <img
-                        src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${data.side.image}`}
+                        src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${data.author.image}`}
                         width={270}
                         height={270}
                         alt="Youssef Lahssini"
@@ -79,7 +79,7 @@ const About = (): React.ReactElement => {
 
                 <address className="not-italic pt-8">
                     <Marker width={24} height={24} className="inline-block fill-current text-blue-500" />
-                    <span className="font-hairline">{data.side.location}</span>
+                    <span className="font-hairline">{data.author.location}</span>
                 </address>
             </aside>
         </section>

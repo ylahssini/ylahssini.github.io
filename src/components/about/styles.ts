@@ -5,8 +5,7 @@ export const section = cntl`
     items-center
     justify-between
     gap-5
-    w-10/12
-    max-w-5xl
+    wrapper
 `;
 
 export const figure = cntl`

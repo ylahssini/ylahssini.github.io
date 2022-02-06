@@ -20,6 +20,10 @@ html, body, #__next {
     height: 100%;
 }
 
+.wrapper {
+    @apply w-10/12 max-w-5xl;
+}
+
 .svg-icon {
     @apply inline-block align-middle transition-all fill-black hover:-translate-y-1;
 }

@@ -20,17 +20,20 @@ const Experiences = () => {
     }
 
     return (
-        <section className="w-10/12 max-w-5xl">
+        <section className="wrapper">
             <h3 className="section-title"><span>02. Experiences</span></h3>
 
             <div className="mt-8">
                 {data.experiences.map((experience: Experience, index: number) => (
-                    <article key={experience.company} className={`${index !== tab ? 'hidden' : ''} text-left h-60`}>
+                    <article key={experience.company} className={`${index !== tab ? 'hidden' : ''} text-left h-72`}>
                         <h4 className="text-2xl">{experience.job} ~ <span className="text-blue-300">{experience.company}</span></h4>
                         <small>{experience.period.join(' - ')}</small>
 
-                        {experience.description.map((description) => (<p key={description}>&gt; {description}</p>))}
+                        <div className="py-3">
+                            {experience.description.map((description) => (<p key={description} className="text-base">- {description}</p>))}
+                        </div>
 
+                        <h5>Skills</h5>
                         <ul>
                             {experience.skills.map((skill) => (
                                 <li key={skill} className={styles.skill}>{skill}</li>

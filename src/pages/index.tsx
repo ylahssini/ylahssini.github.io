@@ -10,6 +10,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import About from '@src/components/about';
 import Experiences from '@src/components/experiences';
+import Contact from '@src/components/contact';
 
 const menu = ['Intro', 'About', 'Experiences', 'Contact'];
 
@@ -35,7 +36,7 @@ const Home = (): React.ReactElement => {
             <Head>
                 <title>{data.meta.title}</title>
                 <meta name="description" content={data.meta.description} />
-                <meta name="author" content={data.side.name} />
+                <meta name="author" content={data.author.name} />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
     
@@ -52,6 +53,7 @@ const Home = (): React.ReactElement => {
                     <SwiperSlide className="z-10"><Intro /></SwiperSlide>
                     <SwiperSlide className="z-10"><About /></SwiperSlide>
                     <SwiperSlide className="z-10"><Experiences /></SwiperSlide>
+                    <SwiperSlide className="Z-10"><Contact /></SwiperSlide>
                 </Swiper>
             </Layout>
         </>

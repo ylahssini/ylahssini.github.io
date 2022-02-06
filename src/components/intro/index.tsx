@@ -24,7 +24,7 @@ const Trail = ({ children }: { children: React.ReactChild[] }) => {
 
 const Intro = () => {
     return (
-        <div className="flex items-center justify-center h-[100vh]">
+        <div className="flex items-center justify-center h-[100vh] wrapper">
             <Trail>
                 <span className="font-display text-5xl leading-none">Hi, my name is</span>
                 <h1 className="font-bold text-blue-600 text-7xl leading-none">Youssef Lahssini</h1>

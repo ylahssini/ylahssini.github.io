@@ -2,16 +2,12 @@ meta:
   title: Youssef Lahssini - Developer Front-end
   description: My name is Youssef Lahssini. I am a passionate Front-end developer. Now, I'm working at Flyer.ma.
 
-side:
+author:
   logo: YL
   name: Youssef Lahssini
   job: Developer Front-end
   location: Casablanca, Morocco
   image: images/youssef-lahssini.jpg
-
-company: Flyer.ma
-
-learning: Dart & Flutter
 
 about:
   - "Hi! my name is Youssef Lahssini. I am a passionate Front-end developer who loves to discover new technologies by creating demos to learn. My career starts back in 2007 when i was a web designer to become today a front-end developer."
@@ -25,8 +21,9 @@ experiences:
       - Nov 2017
       - Present
     description:
-      - Creation a multiple websites for a diverse clients and internal projects
-      - Establishment of the Front-end technical structure of the projects & ensure cross-browser compatibility and responsiveness
+      - Creation a multiple websites for a diverse clients and internal projects.
+      - Establishment of the front-end technical structure of the projects & ensure cross-browser compatibility and responsiveness.
+      - Communicate with back-end developers and clients on a daily basis.
     skills:
       - HTML 5 / CSS 3 (Styled-components, Less)
       - Next.js
