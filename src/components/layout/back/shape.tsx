@@ -1,13 +1,20 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { useRef } from 'react';
 import * as THREE from 'three';
 import { useFrame } from '@react-three/fiber';
+import { useSpring, a } from '@react-spring/three';
 import { useStore } from '@src/store';
 
-const selector = (state: Record<string, any>) => ({ detail: state.detail });
+const selector = ({ detail, mode }: Record<string, any>) => ({ detail, mode });
+const colorsMode: Record<string, string> = { light: '#EEEEEE', dark: '#333335' };
 
 const Shape = (): React.ReactElement => {
     const icosahedron = useRef<THREE.Mesh>();
-    const { detail } = useStore(selector);
+    const { detail, mode } = useStore(selector);
+    const springs = useSpring({
+        color: colorsMode[mode],
+        config: { duration: 300, mass: 1, tension: 1000, friction: 100 },
+    });
 
     useFrame(({ clock }) => {
         const { elapsedTime } = clock;
@@ -22,7 +29,8 @@ const Shape = (): React.ReactElement => {
     return (
         <mesh ref={icosahedron} position={[0, 0, 0]}>
             <icosahedronGeometry args={[5, detail]} />
-            <meshBasicMaterial wireframe color="#EEE" wireframeLinecap="square" wireframeLinejoin="miter" />
+            { /* @ts-ignore */}
+            <a.meshBasicMaterial wireframe color={springs.color} wireframeLinecap="square" wireframeLinejoin="miter" />
         </mesh>
     )
 }

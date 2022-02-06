@@ -40,9 +40,10 @@ export const notif = ({ type }: { type: string | null }) => cntl`
 `;
 
 export const progress = cntl`
+    bg-gradient-to-r
     bg-slate-50
     from-slate-50
-    via-white
+    to-white
     h-1
     absolute
     bottom-0

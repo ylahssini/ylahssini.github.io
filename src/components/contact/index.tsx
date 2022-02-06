@@ -66,7 +66,7 @@ const Contact = (): React.ReactElement | null => {
             <form id="contact" className="wrapper">
                 <h2 className="section-title"><span>03. Contact me</span></h2>
 
-                <p className="text-base text-left py-3">Although I’m not currently looking for any new opportunities, my inbox is always open.</p>
+                <p className="text-base text-left py-3 text-transition-dark">Although I’m not currently looking for any new opportunities, my inbox is always open.</p>
 
                 <div className={styles.notif({ type: notif.type })}>
                     <h5 className="text-xl text-white capitalize">{notif.type}</h5>
@@ -87,7 +87,7 @@ const Contact = (): React.ReactElement | null => {
                             id="email"
                             name="email"
                             placeholder="Email address *"
-                            className="border border-gray-400 border-r-0 bg-transparent p-4 outline-none w-full transition-shadow focus:shadow-inner"
+                            className="border border-gray-400 border-r-0 bg-transparent p-4 outline-none w-full text-transition-dark transition-shadow focus:shadow-inner"
                         />
 
                         {errors.email?.type === 'required' && (
@@ -105,7 +105,7 @@ const Contact = (): React.ReactElement | null => {
                             id="name"
                             name="name"
                             placeholder="Full name or Company *"
-                            className="border border-gray-400 bg-transparent p-4 outline-none w-full transition-shadow focus:shadow-inner"
+                            className="border border-gray-400 bg-transparent p-4 outline-none w-full text-transition-dark transition-shadow focus:shadow-inner"
                         />
 
                         {errors.name?.type === 'required' && (
@@ -119,7 +119,7 @@ const Contact = (): React.ReactElement | null => {
                         {...register('message', { required: true })}
                         name="message"
                         placeholder="Your message *"
-                        className="bg-transparent p-4 w-full resize-y h-48 border border-t-0 border-gray-400 outline-none transition-shadow focus:shadow-inner"
+                        className="bg-transparent p-4 w-full resize-y h-48 max-h-56 border border-t-0 border-gray-400 outline-none text-transition-dark transition-shadow focus:shadow-inner"
                     />
 
                     {errors.message?.type === 'required' && (

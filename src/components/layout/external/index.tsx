@@ -1,12 +1,12 @@
-import React from 'react';
+import { Children, ReactChild } from 'react';
 import { a, useTrail } from '@react-spring/web';
 import Github from '../../../assets/svg/github-alt.svg';
 import LinkedIn from '../../../assets/svg/linkedin.svg';
 import Twitter from '../../../assets/svg/twitter.svg';
 
 
-const Trail = ({ children }: { children: React.ReactChild[] }) => {
-    const items = React.Children.toArray(children);
+const Trail = ({ children }: { children: ReactChild[] }) => {
+    const items = Children.toArray(children);
     const trail = useTrail(items.length, {
         config: { mass: 1, tension: 1000, friction: 100 },
         delay: 800,
@@ -37,7 +37,7 @@ const External = () => {
                 className="block mb-3"
                 title="Github"
             >
-                <Github width={32} height={32} className="svg-icon hover:fill-slate-800" />
+                <Github width={32} height={32} className="svg-icon hover:fill-purple-700" />
             </a>
 
             <a
@@ -60,7 +60,7 @@ const External = () => {
                 <Twitter width={32} height={32} className="svg-icon hover:fill-cyan-500" />
             </a>
 
-            <div className="bg-black w-0.5 h-20 mb-3" />
+            <div className="w-0.5 h-20 mb-3 transition-colors duration-200 ease-in-out bg-black dark:bg-slate-50" />
         </Trail>
     )
 }

@@ -10,13 +10,15 @@ export const footer = cntl`
 export const tab = ({ isActive }: { isActive: boolean }) => cntl`
     p-3
     bg-transparent
-    duration-500
-    transition-colors
+    config-transition
+    bg-opacity-0
     hover:bg-opacity-25
     hover:bg-blue-200
     hover:text-blue-500
+    dark:hover:bg-opacity-10
+    dark:hover:bg-blue-100
 
-    ${isActive ? cntl`text-blue-500` : 'text-black'}
+    ${isActive ? cntl`text-blue-500` : 'text-transition-dark'}
 `;
 
 export const highlight = cntl`

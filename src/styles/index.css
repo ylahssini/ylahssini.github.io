@@ -24,22 +24,148 @@ html, body, #__next {
     @apply w-10/12 max-w-5xl;
 }
 
-.svg-icon {
-    @apply inline-block align-middle transition-all fill-black hover:-translate-y-1;
+/* TRANSITION TO DARK */
+.config-transition {
+    @apply transition-colors duration-300 ease-in-out
 }
 
+.bg-transition-dark {
+    @apply config-transition bg-black dark:bg-slate-50
+}
+
+.border-transition-dark {
+    @apply config-transition ease-in-out border-black dark:border-slate-50
+}
+
+.text-transition-dark {
+    @apply config-transition text-gray-800 dark:text-slate-50
+}
+/* TRANSITION TO DARK */
+
+.svg-icon {
+    @apply inline-block align-middle transition-all duration-200 ease-in-out fill-black dark:fill-slate-50 hover:-translate-y-1;
+}
+
+/* DARK MODE SWITCH */
+.sky {
+    @apply
+    rounded-full
+    w-9
+    h-5
+    p-1
+    block
+    bg-gradient-to-r
+    overflow-hidden
+    transition-colors
+    bg-sky-200
+    from-sky-200
+    to-sky-500
+    relative
+    dark:bg-purple-800
+    dark:from-purple-800
+    dark:to-purple-900
+}
+
+.sphere {
+    @apply
+    rounded-full
+    h-3
+    w-3
+    block
+    bg-white
+    shadow-sun
+    relative
+    translate-x-0
+    overflow-hidden
+    transition-all
+    ease-in-out
+    duration-300
+    dark:bg-stone-400
+    dark:shadow-moon
+    dark:translate-x-[calc(100%+5px)]
+    before:block
+    before:w-3
+    before:h-3
+    before:bg-yellow-50
+    before:-translate-x-5
+    before:-translate-y-5
+    before:rounded-full
+    before:absolute
+    before:transition-all
+    before:ease-in-out
+    before:duration-200
+    before:opacity-0
+    dark:before:opacity-100
+    dark:before:-translate-x-[0.1rem]
+    dark:before:-translate-y-[0.1rem]
+}
+
+.cloud {
+    @apply
+    block
+    absolute
+    top-0
+    left-0
+    rounded-full
+    bg-blue-50
+    w-4
+    h-1.5
+    transition-all
+    ease-in-out
+    duration-300
+    before:block
+    before:rounded-full
+    before:w-2
+    before:h-2
+    before:bg-blue-50
+    before:translate-x-0.5
+    before:-translate-y-1
+    after:block
+    after:bg-blue-50
+    after:rounded-full
+    after:w-1.5
+    after:h-1.5
+    after:translate-x-2
+    after:-translate-y-2.5
+    dark:translate-y-10
+}
+
+.star {
+    @apply
+    rounded-full
+    bg-yellow-50
+    bg-opacity-70
+    block
+    w-px
+    h-px
+    absolute
+    top-0
+    left-0
+    translate-x-0
+    translate-y-0
+    transition-all
+    ease-in-out
+    duration-300
+    opacity-0
+    dark:opacity-95
+}
+/* DARK MODE SWITCH */
+
+/* MENU */
 .menu.swiper-pagination-vertical.swiper-pagination-bullets {
     @apply flex justify-between items-center gap-5 transform-none top-0 left-0;
 }
 
 .menu-item {
-    @apply text-lg cursor-pointer transition-colors text-gray-800 hover:text-blue-500;
+    @apply text-lg cursor-pointer text-transition-dark hover:text-blue-500;
 }
 
 .menu-item.__current {
     @apply text-blue-500;
 }
+/* MENU */
 
+/* SWIPER */
 .swiper {
     @apply w-full h-full;
 }
@@ -49,5 +175,23 @@ html, body, #__next {
 }
 
 .section-title {
-    @apply text-4xl text-blue-500 font-bold uppercase flex items-center justify-start gap-5 mb-5 after:h-0.5 after:bg-black after:w-44 after:block;
+    @apply
+    text-4xl
+    text-blue-500
+    font-bold
+    uppercase
+    flex
+    items-center
+    justify-start
+    gap-5
+    mb-5
+    after:bg-black
+    after:h-0.5
+    after:w-44
+    after:block
+    after:transition-colors
+    after:duration-300
+    after:ease-in-out
+    dark:after:bg-slate-50
 }
+/* SWIPER */

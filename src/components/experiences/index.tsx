@@ -26,14 +26,14 @@ const Experiences = () => {
             <div className="mt-8">
                 {data.experiences.map((experience: Experience, index: number) => (
                     <article key={experience.company} className={`${index !== tab ? 'hidden' : ''} text-left h-72`}>
-                        <h4 className="text-2xl">{experience.job} ~ <span className="text-blue-300">{experience.company}</span></h4>
-                        <small>{experience.period.join(' - ')}</small>
+                        <h4 className="text-2xl text-transition-dark">{experience.job} ~ <span className="text-blue-300">{experience.company}</span></h4>
+                        <small className="text-blue-300">{experience.period.join(' - ')}</small>
 
                         <div className="py-3">
-                            {experience.description.map((description) => (<p key={description} className="text-base">- {description}</p>))}
+                            {experience.description.map((description) => (<p key={description} className="text-base text-transition-dark">- {description}</p>))}
                         </div>
 
-                        <h5>Skills</h5>
+                        <h5 className="text-transition-dark">Skills</h5>
                         <ul>
                             {experience.skills.map((skill) => (
                                 <li key={skill} className={styles.skill}>{skill}</li>

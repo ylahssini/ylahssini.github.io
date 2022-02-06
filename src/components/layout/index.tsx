@@ -1,3 +1,6 @@
+import { useLayoutEffect } from 'react';
+import shallow from 'zustand/shallow';
+import { useStore } from '@src/store';
 import Head from './head';
 import Back from './back';
 import External from './external';
@@ -7,16 +10,28 @@ interface Props {
     children: React.ReactElement;
 }
 
-const Header = ({ children }: Props): React.ReactElement => (
-    <main className="relative h-full">
-        <Head />
+const Header = ({ children }: Props): React.ReactElement => {
+    const { setMode } = useStore(({ setMode }) => ({ setMode }), shallow);
 
-        {children}
+    useLayoutEffect(() => {
+        if (localStorage.theme === 'dark') {
+            document.documentElement.classList.add('dark');
+            setMode('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+            setMode('light');
+        }
+    }, []);
 
-        <External />
-        <ScrollWheel />
-        <Back />
-    </main>
-);
+    return (
+        <main className="relative h-full">
+            <Head />
+            {children}
+            <External />
+            <ScrollWheel />
+            <Back />
+        </main>
+    );
+};
 
 export default Header;

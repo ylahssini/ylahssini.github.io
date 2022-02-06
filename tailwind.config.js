@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 module.exports = {
+    darkMode: 'class',
     content: [
         './public/index.html',
         './src/pages/**/*.{js,ts,jsx,tsx}',
@@ -11,6 +12,15 @@ module.exports = {
             'body': ['Cairo'],
         },
         extend: {
+            backgroundColor: {
+                dark: '#000206'
+            },
+
+            boxShadow: {
+                'sun': '0 0 4px 1px rgba(255, 252, 238, 0.8)',
+                'moon': '0 0 2px 0 rgba(255, 255, 255, 0.5)',
+            },
+
             keyframes: {
                 menu: {
                     '0%': { opacity: 0, transform: 'translateX(2em)' },

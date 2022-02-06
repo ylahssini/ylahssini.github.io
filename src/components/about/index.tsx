@@ -1,7 +1,9 @@
 import { useEffect, useRef } from 'react';
+import Image from 'next/image'
 import { useSpring, animated, to } from '@react-spring/web'
 import { useGesture } from 'react-use-gesture'
 import data from '@src/data/index.yml';
+import Me from '@src/assets/images/youssef-lahssini.jpg';
 import Marker from '../../assets/svg/map-marker-alt-solid.svg';
 import * as styles from './styles';
 
@@ -51,7 +53,7 @@ const About = (): React.ReactElement => {
                 <h3 className="section-title"><span>01. About</span></h3>
 
                 {data.about.map((p: string) => (
-                    <p key={p} className="text-base text-justify pb-4">{p}</p>
+                    <p key={p} className="text-base text-justify pb-4 text-transition-dark">{p}</p>
                 ))}
             </article>
     
@@ -69,17 +71,19 @@ const About = (): React.ReactElement => {
                         rotateZ,
                     }}
                 >
-                    <img
-                        src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${data.author.image}`}
+                    <Image
+                        src={Me}
                         width={270}
                         height={270}
-                        alt="Youssef Lahssini"
+                        layout="fixed"
+                        alt={data.author.name}
+                        quality={90}
                     />
                 </animated.figure>
 
                 <address className="not-italic pt-8">
                     <Marker width={24} height={24} className="inline-block fill-current text-blue-500" />
-                    <span className="font-hairline">{data.author.location}</span>
+                    <span className="font-hairline text-transition-dark">{data.author.location}</span>
                 </address>
             </aside>
         </section>
