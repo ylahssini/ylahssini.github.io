@@ -33,6 +33,14 @@ html, body, #__next {
     @apply config-transition bg-black dark:bg-slate-50
 }
 
+.before-bg-transition-dark {
+    @apply before:transition-colors before:duration-300 before:ease-in-out before:bg-black before:dark:bg-slate-50
+}
+
+.after-bg-transition-dark {
+    @apply after:transition-colors after:duration-300 after:ease-in-out after:bg-black after:dark:bg-slate-50
+}
+
 .border-transition-dark {
     @apply config-transition ease-in-out border-black dark:border-slate-50
 }
@@ -44,6 +52,29 @@ html, body, #__next {
 
 .svg-icon {
     @apply inline-block align-middle transition-all duration-200 ease-in-out fill-black dark:fill-slate-50 hover:-translate-y-1;
+}
+
+.mobile-button {
+    @apply
+    block
+    w-full
+    h-0.5
+    bg-transition-dark
+    group-hover:bg-blue-300
+    before:block
+    before:w-1/2
+    before:h-0.5
+    before:-translate-y-2
+    before:mx-auto
+    before-bg-transition-dark
+    group-hover:before:bg-blue-300
+    after:block
+    after:w-1/2
+    after:h-0.5
+    after:translate-y-1.5
+    after:mx-auto
+    group-hover:after:bg-blue-300
+    after-bg-transition-dark
 }
 
 /* DARK MODE SWITCH */
@@ -61,9 +92,9 @@ html, body, #__next {
     from-sky-200
     to-sky-500
     relative
-    dark:bg-purple-800
-    dark:from-purple-800
-    dark:to-purple-900
+    dark:bg-sky-800
+    dark:from-sky-800
+    dark:to-sky-900
 }
 
 .sphere {
@@ -153,7 +184,7 @@ html, body, #__next {
 
 /* MENU */
 .menu.swiper-pagination-vertical.swiper-pagination-bullets {
-    @apply flex justify-between items-center gap-5 transform-none top-0 left-0;
+    @apply hidden md:flex justify-between items-center gap-5 transform-none top-0 left-0;
 }
 
 .menu-item {

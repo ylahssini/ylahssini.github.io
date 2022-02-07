@@ -16,7 +16,7 @@ const menu = ['Intro', 'About', 'Experiences', 'Contact'];
 
 const pagination = {
     clickable: true,
-    el: '#menu',
+    el: '.menu',
     bulletClass: 'menu-item',
     bulletActiveClass: '__current',
     renderBullet: (index: number, className: string) => {
@@ -25,7 +25,7 @@ const pagination = {
 };
 
 const Home = (): React.ReactElement => {
-    const { setDetail } = useStore(state => ({ setDetail: state.setDetail }), shallow);
+    const { setDetail, menuOpened } = useStore(({ setDetail, menuOpened }) => ({ setDetail, menuOpened }), shallow);
 
     function handleSwiperChange(swiper: any): void {
         setDetail(3 - swiper.activeIndex);
@@ -50,10 +50,10 @@ const Home = (): React.ReactElement => {
                     modules={[Mousewheel, Pagination]}
                     onSlideChange={handleSwiperChange}
                 >
-                    <SwiperSlide className="z-10"><Intro /></SwiperSlide>
-                    <SwiperSlide className="z-10"><About /></SwiperSlide>
-                    <SwiperSlide className="z-10"><Experiences /></SwiperSlide>
-                    <SwiperSlide className="Z-10"><Contact /></SwiperSlide>
+                    <SwiperSlide className={`z-10 transition-all ${menuOpened ? 'blur-sm' : 'blur-none'}`}><Intro /></SwiperSlide>
+                    <SwiperSlide className={`z-10 transition-all ${menuOpened ? 'blur-sm' : 'blur-none'}`}><About /></SwiperSlide>
+                    <SwiperSlide className={`z-10 transition-all ${menuOpened ? 'blur-sm' : 'blur-none'}`}><Experiences /></SwiperSlide>
+                    <SwiperSlide className={`z-10 transition-all ${menuOpened ? 'blur-sm' : 'blur-none'}`}><Contact /></SwiperSlide>
                 </Swiper>
             </Layout>
         </>

@@ -1,16 +1,15 @@
-import { useState, ChangeEvent } from 'react';
+import { ChangeEvent } from 'react';
 import shallow from 'zustand/shallow';
 import { useStore } from '@src/store';
 import data from '@src/data/index.yml';
 import * as styles from './styles';
 
 const Header = () => {
-    const { mode, setMode } = useStore(({ mode, setMode }) => ({ mode, setMode }), shallow);
-    const [checked, setChecked] = useState(false);
+    const { mode, setMode, menuOpened, setMenuOpened } = useStore(({ mode, setMode, menuOpened, setMenuOpened }) => ({
+        mode, setMode, menuOpened, setMenuOpened
+    }), shallow);
 
     function handleDarkMode(event: ChangeEvent<HTMLInputElement>) {
-        setChecked(event.target.checked);
-
         if (event.target.checked) {
             document.documentElement.classList.add('dark');
             setMode('dark');
@@ -29,13 +28,14 @@ const Header = () => {
             </div>
 
             <div className="flex justify-between items-center gap-5 animate-menu">
-                <div className="bg-transition-dark w-12 h-0.5" />
-                <div id="menu" className="menu" />
+                <div className="bg-transition-dark w-12 h-0.5 hidden md:block" />
+                <div className="menu" />
                 <div title={`${mode} mode`}>
-                    <input type="checkbox" className="hidden" id="mode" name="mode" onChange={handleDarkMode} checked={checked} />
+                    <input type="checkbox" className="hidden" id="mode" name="mode" onChange={handleDarkMode} checked={mode === 'dark'} />
                     <label htmlFor="mode" className="block cursor-pointer group">
                         <span className="sky">
                             <span className="sphere group-active:w-6" />
+
                             <span className="cloud scale-[0.35] translate-x-4 translate-y-1" />
                             <span className="cloud scale-[0.35] translate-x-5 translate-y-2.5" />
 
@@ -46,6 +46,14 @@ const Header = () => {
                         </span>
                     </label>
                 </div>
+                <button
+                    type="button"
+                    className="w-6 h-6 flex items-center group md:hidden"
+                    aria-label="Open menu"
+                    onClick={() => setMenuOpened(!menuOpened)}
+                >
+                    <div className="mobile-button" />
+                </button>
             </div>
         </header>
     );

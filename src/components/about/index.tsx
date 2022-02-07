@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { useSpring, animated, to } from '@react-spring/web'
 import { useGesture } from 'react-use-gesture'
 import data from '@src/data/index.yml';
-import Me from '@src/assets/images/youssef-lahssini.jpg';
+import AuthorImage from '@src/assets/images/author.jpg';
 import Marker from '../../assets/svg/map-marker-alt-solid.svg';
 import * as styles from './styles';
 
@@ -72,10 +72,10 @@ const About = (): React.ReactElement => {
                     }}
                 >
                     <Image
-                        src={Me}
+                        src={AuthorImage}
                         width={270}
                         height={270}
-                        layout="fixed"
+                        layout="responsive"
                         alt={data.author.name}
                         quality={90}
                     />
