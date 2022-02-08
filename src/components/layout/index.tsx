@@ -1,4 +1,4 @@
-import { useLayoutEffect } from 'react';
+import { useEffect } from 'react';
 import shallow from 'zustand/shallow';
 import { useStore } from '@src/store';
 import Head from './head';
@@ -10,10 +10,10 @@ interface Props {
     children: React.ReactElement;
 }
 
-const Header = ({ children }: Props): React.ReactElement => {
+const Layout = ({ children }: Props): React.ReactElement => {
     const { setMode } = useStore(({ setMode }) => ({ setMode }), shallow);
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         if (localStorage.theme === 'dark') {
             document.documentElement.classList.add('dark');
             setMode('dark');
@@ -34,4 +34,4 @@ const Header = ({ children }: Props): React.ReactElement => {
     );
 };
 
-export default Header;
+export default Layout;

@@ -1,5 +1,7 @@
 import { Children, ReactChild } from 'react';
+import shallow from 'zustand/shallow';
 import { a, useTrail } from '@react-spring/web';
+import { useStore } from '@src/store';
 import Github from '../../../assets/svg/github-alt.svg';
 import LinkedIn from '../../../assets/svg/linkedin.svg';
 import Twitter from '../../../assets/svg/twitter.svg';
@@ -7,6 +9,7 @@ import Twitter from '../../../assets/svg/twitter.svg';
 
 const Trail = ({ children }: { children: ReactChild[] }) => {
     const items = Children.toArray(children);
+    const { menuOpened } = useStore(({ menuOpened }) => ({ menuOpened }), shallow);
     const trail = useTrail(items.length, {
         config: { mass: 1, tension: 1000, friction: 100 },
         delay: 800,
@@ -17,7 +20,7 @@ const Trail = ({ children }: { children: ReactChild[] }) => {
     });
 
     return (
-        <aside className="fixed left-4 bottom-0 flex justify-center items-center flex-col z-10">
+        <aside className={`fixed left-4 bottom-0 flex justify-center items-center flex-col z-10 transition-all ${menuOpened ? 'blur-sm' : 'blur-none'}`}>
             {trail.map(({ ...style }, index) => (
                 <a.div key={index} style={style}>
                     <a.div>{items[index]}</a.div>

@@ -11,25 +11,28 @@ import "swiper/css/pagination";
 import About from '@src/components/about';
 import Experiences from '@src/components/experiences';
 import Contact from '@src/components/contact';
-
-const menu = ['Intro', 'About', 'Experiences', 'Contact'];
-
-const pagination = {
-    clickable: true,
-    el: '.menu',
-    bulletClass: 'menu-item',
-    bulletActiveClass: '__current',
-    renderBullet: (index: number, className: string) => {
-        return `<span class="${className}"><span>0${index}.</span> ${menu[index]}</span>`;
-    },
-};
+import MobileMenu from '@src/components/mobileMenu';
 
 const Home = (): React.ReactElement => {
-    const { setDetail, menuOpened } = useStore(({ setDetail, menuOpened }) => ({ setDetail, menuOpened }), shallow);
+    const { setDetail, menu, menuOpened } = useStore(({ setDetail, menu, menuOpened }) => ({
+        setDetail, menu, menuOpened,
+    }), shallow);
+
+    const pagination = {
+        clickable: true,
+        el: '.menu',
+        bulletClass: 'menu-item',
+        bulletActiveClass: '__current',
+        renderBullet: (index: number, className: string) => {
+            return `<span class="${className}"><span>0${index}.</span> ${menu[index]}</span>`;
+        },
+    };
 
     function handleSwiperChange(swiper: any): void {
         setDetail(3 - swiper.activeIndex);
     }
+
+    console.log(menuOpened);
 
     return (
         <>
@@ -39,13 +42,13 @@ const Home = (): React.ReactElement => {
                 <meta name="author" content={data.author.name} />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-    
+
             <Layout>
                 <Swiper
                     direction="vertical"
                     slidesPerView={1}
                     spaceBetween={30}
-                    mousewheel={true}
+                    mousewheel
                     pagination={pagination}
                     modules={[Mousewheel, Pagination]}
                     onSlideChange={handleSwiperChange}
@@ -54,7 +57,10 @@ const Home = (): React.ReactElement => {
                     <SwiperSlide className={`z-10 transition-all ${menuOpened ? 'blur-sm' : 'blur-none'}`}><About /></SwiperSlide>
                     <SwiperSlide className={`z-10 transition-all ${menuOpened ? 'blur-sm' : 'blur-none'}`}><Experiences /></SwiperSlide>
                     <SwiperSlide className={`z-10 transition-all ${menuOpened ? 'blur-sm' : 'blur-none'}`}><Contact /></SwiperSlide>
+
+                    <MobileMenu />
                 </Swiper>
+
             </Layout>
         </>
     )

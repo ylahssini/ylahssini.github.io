@@ -1,9 +1,15 @@
+import shallow from "zustand/shallow";
+import { useStore } from "@src/store";
+import * as styles from './styles';
+
 const ScrollWheel = () => {
+    const { menuOpened } = useStore(({ menuOpened }) => ({ menuOpened }), shallow);
+
     return (
-        <footer className="fixed bottom-0 w-full z-10 flex justify-center items-center flex-col py-2 animate-scroll-wheel">
+        <footer className={styles.container({ menuOpened })}>
             <div className="bg-transition-dark w-0.5 h-6 mb-3" />
-            <div className="border-transition-dark border-2 rounded-t-full rounded-b-full w-5 h-7 flex justify-center pt-1">
-                <div className="border-transition-dark border-2 rounded-t-full rounded-b-full w-[6px] h-2 animate-bounce" />
+            <div className={styles.mouse}>
+                <div className={styles.wheel} />
             </div>
         </footer>
     );
