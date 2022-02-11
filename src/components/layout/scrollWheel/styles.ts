@@ -1,18 +1,17 @@
 import cntl from 'cntl';
 
-export const container = ({ menuOpened }: { menuOpened: boolean }) => cntl`
+export const container = cntl`
     fixed
     bottom-0
     w-full
     z-[4]
-    flex
-    justify-center
-    items-center
-    flex-col
+    hidden
+    md:flex
+    md:justify-center
+    md:items-center
+    md:flex-col
     py-2
     animate-scroll-wheel
-    transition-all
-    ${menuOpened ? 'blur-sm' : 'blur-none'}
 `;
 
 export const mouse = cntl`

@@ -17,6 +17,7 @@ export const tab = ({ isActive }: { isActive: boolean }) => cntl`
     hover:text-blue-500
     dark:hover:bg-opacity-10
     dark:hover:bg-blue-100
+    h-full
 
     ${isActive ? cntl`text-blue-500` : 'text-transition-dark'}
 `;

@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import dynamic from 'next/dynamic';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel, Pagination } from "swiper";
 import shallow from 'zustand/shallow';
@@ -11,7 +12,8 @@ import "swiper/css/pagination";
 import About from '@src/components/about';
 import Experiences from '@src/components/experiences';
 import Contact from '@src/components/contact';
-import MobileMenu from '@src/components/mobileMenu';
+
+const MobileMenu = dynamic(() => import('@src/components/mobileMenu'), { ssr: false })
 
 const Home = (): React.ReactElement => {
     const { setDetail, menu, menuOpened } = useStore(({ setDetail, menu, menuOpened }) => ({
@@ -31,8 +33,6 @@ const Home = (): React.ReactElement => {
     function handleSwiperChange(swiper: any): void {
         setDetail(3 - swiper.activeIndex);
     }
-
-    console.log(menuOpened);
 
     return (
         <>

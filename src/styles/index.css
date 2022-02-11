@@ -18,10 +18,19 @@ html, body, #__next {
     font-family: 'Cairo', Sans-serif;
     width: 100%;
     height: 100%;
+    min-width: 320px;
 }
 
 .wrapper {
     @apply w-10/12 max-w-5xl;
+}
+
+.over-scroll {
+    overflow: scroll !important;
+}
+
+.over-hidden {
+    overflow: hidden !important;
 }
 
 /* TRANSITION TO DARK */
@@ -59,22 +68,58 @@ html, body, #__next {
     block
     w-full
     h-0.5
-    bg-transition-dark
-    group-hover:bg-blue-300
+    transition-all
+    duration-500
+    ease-in-out
+    bg-opacity-100
+    bg-dark
+    dark:bg-slate-50
+    group-hover:bg-blue-500
     before:block
     before:w-1/2
     before:h-0.5
     before:-translate-y-2
     before:mx-auto
-    before-bg-transition-dark
-    group-hover:before:bg-blue-300
+    before:transition-all
+    before:duration-500
+    before:ease-in-out
+    before:bg-dark
+    dark:before:bg-slate-50
+    group-hover:before:bg-blue-500
     after:block
     after:w-1/2
     after:h-0.5
     after:translate-y-1.5
     after:mx-auto
-    group-hover:after:bg-blue-300
-    after-bg-transition-dark
+    after:transition-all
+    after:duration-500
+    after:ease-in-out
+    after:bg-dark
+    dark:after:bg-slate-50
+    group-hover:after:bg-blue-500
+}
+
+.mobile-button.__clicked {
+    @apply
+    bg-dark
+    dark:bg-slate-50
+    dark:before:bg-slate-50
+    dark:after:bg-slate-50
+    group-hover:dark:bg-blue-500
+    dark:group-hover:before:bg-blue-500
+    dark:group-hover:after:bg-blue-500
+    bg-opacity-0
+    dark:bg-opacity-0
+    group-hover:bg-opacity-0
+    group-hover:dark:bg-opacity-0
+    before:rotate-45
+    before:w-full
+    before:-translate-x-0
+    before:translate-y-0
+    after:-rotate-45
+    after:w-full
+    after:-translate-x-0
+    after:-translate-y-0.5
 }
 
 /* DARK MODE SWITCH */
@@ -158,7 +203,7 @@ html, body, #__next {
     after:h-1.5
     after:translate-x-2
     after:-translate-y-2.5
-    dark:translate-y-10
+    dark:!translate-y-10
 }
 
 .star {
@@ -204,6 +249,7 @@ html, body, #__next {
 .swiper-slide {
     @apply text-center text-lg flex items-center justify-center;
 }
+/* SWIPER */
 
 .section-title {
     @apply
@@ -211,6 +257,7 @@ html, body, #__next {
     text-blue-500
     font-bold
     uppercase
+    text-left
     flex
     items-center
     justify-start
@@ -225,4 +272,3 @@ html, body, #__next {
     after:ease-in-out
     dark:after:bg-slate-50
 }
-/* SWIPER */

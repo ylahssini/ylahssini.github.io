@@ -1,9 +1,10 @@
 import cntl from 'cntl';
 
 export const section = cntl`
-    flex
-    items-center
-    justify-between
+    block
+    sm:flex
+    sm:items-center
+    sm:justify-between
     gap-5
     wrapper
 `;
@@ -14,8 +15,8 @@ export const figure = cntl`
     mx-auto
     border-white
     border-solid
-    w-[270px]
-    h-[270px]
+    w-full
+    h-full
     overflow-hidden
     will-change-transform
     transition-all

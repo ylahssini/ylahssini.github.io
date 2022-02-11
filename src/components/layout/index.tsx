@@ -3,8 +3,8 @@ import shallow from 'zustand/shallow';
 import { useStore } from '@src/store';
 import Head from './head';
 import Back from './back';
-import External from './external';
 import ScrollWheel from './scrollWheel';
+import External from '../external';
 
 interface Props {
     children: React.ReactElement;

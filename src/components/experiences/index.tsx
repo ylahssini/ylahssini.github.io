@@ -25,7 +25,7 @@ const Experiences = () => {
 
             <div className="mt-8">
                 {data.experiences.map((experience: Experience, index: number) => (
-                    <article key={experience.company} className={`${index !== tab ? 'hidden' : ''} text-left h-72`}>
+                    <article key={experience.company} className={`${index !== tab ? 'hidden' : ''} text-left mb-5`}>
                         <h4 className="text-2xl text-transition-dark">{experience.job} ~ <span className="text-blue-300">{experience.company}</span></h4>
                         <small className="text-blue-300">{experience.period.join(' - ')}</small>
 
@@ -45,7 +45,7 @@ const Experiences = () => {
                 <footer aria-label="Companies" className={styles.footer}>
                     <div className={styles.highlight} style={{ width, transform: `translateX(calc(100%*${tab}))` }} />
 
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between self-stretch">
                         {data.experiences.map((experience: Experience, index: number) => (
                             <button
                                 key={experience.company}

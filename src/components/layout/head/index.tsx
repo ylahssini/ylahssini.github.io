@@ -52,7 +52,7 @@ const Header = () => {
                     aria-label="Open menu"
                     onClick={() => setMenuOpened(!menuOpened)}
                 >
-                    <div className="mobile-button" />
+                    <div className={`mobile-button ${menuOpened ? '__clicked' : ''}`} />
                 </button>
             </div>
         </header>

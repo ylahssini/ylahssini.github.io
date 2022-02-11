@@ -39,8 +39,8 @@ const About = (): React.ReactElement => {
             onHover: ({ hovering }) => !hovering && api.start({ rotateX: 0, rotateY: 0, scale: 1 }),
             onMove: ({ xy: [px, py] }) =>
                 api.start({
-                    rotateX: calcX(px, x.get()),
-                    rotateY: calcY(py, y.get()),
+                    rotateX: calcX(py, y.get()),
+                    rotateY: calcY(px, x.get()),
                     scale: 1.1,
                 }),
         },
@@ -49,7 +49,7 @@ const About = (): React.ReactElement => {
 
     return (
         <section className={styles.section}>
-            <article className="w-8/12">
+            <article className="w-full sm:w-8/12">
                 <h3 className="section-title"><span>01. About</span></h3>
 
                 {data.about.map((p: string) => (
@@ -57,7 +57,7 @@ const About = (): React.ReactElement => {
                 ))}
             </article>
     
-            <aside className="mx-w-[270px] w-4/12">
+            <aside className="max-w-[270px] w-full mx-auto sm:m-0 sm:w-4/12">
                 <animated.figure
                     ref={figure}
                     className={styles.figure}
