@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import shallow from 'zustand/shallow';
 import { useStore } from '@src/store';
-import Head from './head';
+import Header from './header';
 import Back from './back';
-import ScrollWheel from './scrollWheel';
+import Footer from './footer';
 import External from '../external';
 
 interface Props {
@@ -25,10 +25,10 @@ const Layout = ({ children }: Props): React.ReactElement => {
 
     return (
         <main className="relative h-full">
-            <Head />
+            <Header />
             {children}
             <External />
-            <ScrollWheel />
+            <Footer />
             <Back />
         </main>
     );

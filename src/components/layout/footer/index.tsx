@@ -1,6 +1,6 @@
 import * as styles from './styles';
 
-const ScrollWheel = () => {
+const Footer = () => {
     return (
         <footer className={styles.container}>
             <div className="bg-transition-dark w-0.5 h-6 mb-3" />
@@ -11,4 +11,4 @@ const ScrollWheel = () => {
     );
 }
 
-export default ScrollWheel;
+export default Footer;

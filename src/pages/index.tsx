@@ -53,10 +53,18 @@ const Home = (): React.ReactElement => {
                     modules={[Mousewheel, Pagination]}
                     onSlideChange={handleSwiperChange}
                 >
-                    <SwiperSlide className={`z-10 transition-all ${menuOpened ? 'blur-sm' : 'blur-none'}`}><Intro /></SwiperSlide>
-                    <SwiperSlide className={`z-10 transition-all ${menuOpened ? 'blur-sm' : 'blur-none'}`}><About /></SwiperSlide>
-                    <SwiperSlide className={`z-10 transition-all ${menuOpened ? 'blur-sm' : 'blur-none'}`}><Experiences /></SwiperSlide>
-                    <SwiperSlide className={`z-10 transition-all ${menuOpened ? 'blur-sm' : 'blur-none'}`}><Contact /></SwiperSlide>
+                    <SwiperSlide id="intro" className={`z-10 transition-all ${menuOpened ? 'blur-sm' : 'blur-none'}`}>
+                        <Intro />
+                    </SwiperSlide>
+                    <SwiperSlide id="about" className={`z-10 transition-all ${menuOpened ? 'blur-sm' : 'blur-none'}`}>
+                        <About />
+                    </SwiperSlide>
+                    <SwiperSlide id="experiences" className={`z-10 transition-all ${menuOpened ? 'blur-sm' : 'blur-none'}`}>
+                        <Experiences />
+                    </SwiperSlide>
+                    <SwiperSlide id="contact" className={`z-10 transition-all ${menuOpened ? 'blur-sm' : 'blur-none'}`}>
+                        <Contact />
+                    </SwiperSlide>
 
                     <MobileMenu />
                 </Swiper>

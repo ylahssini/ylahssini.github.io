@@ -24,6 +24,24 @@ const Experiences = () => {
             <h3 className="section-title"><span>02. Experiences</span></h3>
 
             <div className="mt-8">
+                <header aria-label="Companies" className={styles.header}>
+                    <div className="flex items-center justify-between self-stretch">
+                        {data.experiences.map((experience: Experience, index: number) => (
+                            <button
+                                key={experience.company}
+                                type="button"
+                                className={styles.tab({ isActive: tab === index })}
+                                style={{ width }}
+                                onClick={() => setTab(index)}
+                            >
+                                {experience.company}
+                            </button>
+                        ))}
+                    </div>
+
+                    <div className={styles.highlight} style={{ width, transform: `translateX(calc(100%*${tab}))` }} />
+                </header>
+
                 {data.experiences.map((experience: Experience, index: number) => (
                     <article key={experience.company} className={`${index !== tab ? 'hidden' : ''} text-left mb-5`}>
                         <h4 className="text-2xl text-transition-dark">{experience.job} ~ <span className="text-blue-300">{experience.company}</span></h4>
@@ -41,24 +59,6 @@ const Experiences = () => {
                         </ul>
                     </article>
                 ))}
-
-                <footer aria-label="Companies" className={styles.footer}>
-                    <div className={styles.highlight} style={{ width, transform: `translateX(calc(100%*${tab}))` }} />
-
-                    <div className="flex items-center justify-between self-stretch">
-                        {data.experiences.map((experience: Experience, index: number) => (
-                            <button
-                                key={experience.company}
-                                type="button"
-                                className={styles.tab({ isActive: tab === index })}
-                                style={{ width }}
-                                onClick={() => setTab(index)}
-                            >
-                                {experience.company}
-                            </button>
-                        ))}
-                    </div>
-                </footer>
             </div>
         </section>
     )

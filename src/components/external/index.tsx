@@ -1,11 +1,17 @@
 import { Children, ReactChild } from 'react';
 import { a, useTrail } from '@react-spring/web';
-import { useWindowSize } from '@src/hooks';
+import useWindowSize from '@src/hooks/useWindowSize';
 import Github from '../../assets/svg/github-alt.svg';
 import LinkedIn from '../../assets/svg/linkedin.svg';
 import Twitter from '../../assets/svg/twitter.svg';
 
-export const Trail = ({ children, isMobile }: { isMobile: boolean; children: ReactChild[] }) => {
+interface TrailProps {
+    isMobile: boolean;
+    showMobile: boolean;
+    children: ReactChild[];
+}
+
+export const Trail = ({ children, isMobile, showMobile }: TrailProps) => {
     const items = Children.toArray(children);
     const trail = useTrail(items.length, {
         config: { mass: 1, tension: 1000, friction: 100 },
@@ -16,9 +22,9 @@ export const Trail = ({ children, isMobile }: { isMobile: boolean; children: Rea
         to: { opacity: 1, y: 0 },
     });
 
-    if (isMobile) {
+    if (isMobile && showMobile) {
         return (
-            <nav>
+            <nav className="flex items-center justify-between gap-4 mt-5">
                 {children}
             </nav>
         );
@@ -35,11 +41,13 @@ export const Trail = ({ children, isMobile }: { isMobile: boolean; children: Rea
     );
 }
 
-const External = () => {
+const External = ({ showMobile = false }: { showMobile?: boolean }) => {
     const { width } = useWindowSize();
+    const isMobile = (width || 0) < 768;
+    const size = isMobile ? 44 : 32;
 
     return (
-        <Trail isMobile={(width || 0) < 768}>
+        <Trail isMobile={isMobile} showMobile={showMobile}>
             <a
                 href="https://github.com/ylahssini"
                 target="_blank"
@@ -47,7 +55,7 @@ const External = () => {
                 className="block mb-3"
                 title="Github"
             >
-                <Github width={32} height={32} className="svg-icon hover:fill-purple-700" />
+                <Github width={size} height={size} className="svg-icon hover:fill-purple-700" />
             </a>
 
             <a
@@ -57,7 +65,7 @@ const External = () => {
                 className="block mb-3"
                 title="Linkedin"
             >
-                <LinkedIn width={32} height={32} className="svg-icon hover:fill-blue-600" />
+                <LinkedIn width={size} height={size} className="svg-icon hover:fill-blue-600" />
             </a>
 
             <a
@@ -67,7 +75,7 @@ const External = () => {
                 className="block mb-3"
                 title="Twitter"
             >
-                <Twitter width={32} height={32} className="svg-icon hover:fill-cyan-500" />
+                <Twitter width={size} height={size} className="svg-icon hover:fill-cyan-500" />
             </a>
 
             <div className="w-0.5 h-20 mb-3 hidden md:block transition-colors duration-200 ease-in-out bg-black dark:bg-slate-50" />

@@ -1,10 +1,11 @@
 import cntl from 'cntl';
 
-export const footer = cntl`
-    border-t-4
+export const header = cntl`
+    border-b-4
     border-solid
     border-slate-200
     relative
+    mb-5
 `;
 
 export const tab = ({ isActive }: { isActive: boolean }) => cntl`
@@ -18,7 +19,6 @@ export const tab = ({ isActive }: { isActive: boolean }) => cntl`
     dark:hover:bg-opacity-10
     dark:hover:bg-blue-100
     h-full
-
     ${isActive ? cntl`text-blue-500` : 'text-transition-dark'}
 `;
 
@@ -26,7 +26,7 @@ export const highlight = cntl`
     h-1
     bg-blue-500
     absolute
-    -top-1
+    -bottom-1
     left-0
     transition-transform
 `;

@@ -8,6 +8,7 @@ export const nav = ({ menuOpened }: { menuOpened: boolean }) => cntl`
     flex
     items-center
     justify-center
+    flex-col
     fixed
     top-0
     right-0
