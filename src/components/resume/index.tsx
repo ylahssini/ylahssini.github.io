@@ -1,13 +1,13 @@
 import * as styles from './styles';
 
-const Resume = () => {
+const Resume = ({ isMobile }: { isMobile?: boolean }) => {
     return (
         <a
             href="/cvs/youssef-lahssini-cv-eng.pdf"
-            className={styles.resume}
+            className={isMobile ? styles.mobile : styles.resume}
             download
         >
-            <span className="rotate-90 block -translate-y-7">Resume</span>
+            <span className={isMobile ? '' : 'rotate-90 block -translate-y-7'}>Resume</span>
         </a>
     );
 }

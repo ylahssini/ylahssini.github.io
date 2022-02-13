@@ -20,5 +20,5 @@ export const nav = ({ menuOpened }: { menuOpened: boolean }) => cntl`
     h-full
     duration-300
     ease-in-out
-    ${menuOpened ? 'translate-x-0' : 'translate-x-full'}
+    ${menuOpened ? 'translate-x-0 md:translate-x-full' : 'translate-x-full'}
 `;

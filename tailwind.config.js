@@ -1,4 +1,5 @@
 /* eslint-disable no-undef */
+
 module.exports = {
     darkMode: 'class',
     content: [
@@ -12,6 +13,10 @@ module.exports = {
         },
         extend: {
             backgroundColor: {
+                dark: '#000206'
+            },
+
+            colors: {
                 dark: '#000206'
             },
 

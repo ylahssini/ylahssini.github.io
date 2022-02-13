@@ -9,7 +9,7 @@ const Back = (): React.ReactElement => {
 
     return (
         <div className="fixed z-[-1] w-full h-full top-0 left-0 config-transition bg-slate-50 dark:bg-dark">
-            <Canvas camera={{ position: [0, -10, 0] }} className={`transition-all ${menuOpened ? 'blur-xl' : 'blur-none'}`}>
+            <Canvas camera={{ position: [0, -10, 0] }} className={`transition-all ${menuOpened ? 'blur-xl  md:blur-none' : 'blur-none'}`}>
                 <Suspense fallback={null}>
                     <Shape />
                 </Suspense>

@@ -1,4 +1,3 @@
-import data from '@src/data/index.yml';
 import * as styles from './styles';
 
 const Footer = () => {
@@ -8,9 +7,6 @@ const Footer = () => {
             <div className={styles.mouse}>
                 <div className={styles.wheel} />
             </div>
-            <p className="block md:hidden text-transition-dark w-full text-center">
-                Created by {data.author.name} @{new Date().getFullYear()}
-            </p>
         </footer>
     );
 }

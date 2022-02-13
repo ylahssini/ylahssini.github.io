@@ -5,7 +5,8 @@ export const resume = cntl`
     right-4
     bottom-4
     z-10
-    flex
+    hidden
+    md:flex
     justify-between
     items-center
     flex-col
@@ -21,4 +22,22 @@ export const resume = cntl`
     after:bg-black
     hover:after:bg-blue-500
     after:dark:bg-slate-50
+`;
+
+export const mobile = cntl`
+    inline-block
+    md:hidden
+    border
+    border-solid
+    border-blue-500
+    text-blue-500
+    text-2xl
+    px-8
+    py-2
+    rounded-full
+    mt-4
+    transition-colors
+    duration-200
+    hover:bg-blue-500
+    hover:text-white
 `;

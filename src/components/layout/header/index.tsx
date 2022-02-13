@@ -24,7 +24,7 @@ const Header = () => {
     return (
         <header className={styles.header}>
             <div className={styles.logo}>
-                <span className="text-2xl text-blue-500">{data.author.logo}</span>
+                <span className="text-lg md:text-2xl text-blue-500">{data.author.logo}</span>
             </div>
 
             <div id="offset-menu" className="flex justify-between items-center gap-5 animate-menu">

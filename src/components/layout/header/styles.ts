@@ -13,11 +13,18 @@ export const header = cntl`
     top-0
     left-0
     w-full
+    bg-gradient-to-b
+    from-slate-50
+    via-slate-50
+    dark:from-dark
+    dark:via-dark
 `;
 
 export const logo = cntl`
-    w-16
-    h-16
+    w-12
+    h-12
+    md:w-16
+    md:h-16
     border-2
     border-blue-500
     rounded-full

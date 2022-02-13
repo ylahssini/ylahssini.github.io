@@ -134,6 +134,10 @@ const Contact = (): React.ReactElement | null => {
                 >
                     {loading ? 'Loading...' : 'Submit'}
                 </button>
+
+                <footer className="block md:hidden text-transition-dark w-full text-center pt-6">
+                    Created by {data.author.name} @{new Date().getFullYear()}
+                </footer>
             </form>
         );
     }

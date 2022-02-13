@@ -5,7 +5,8 @@ export const container = cntl`
     bottom-0
     w-full
     z-[4]
-    flex
+    hidden
+    md:flex
     justify-center
     items-center
     md:flex-col

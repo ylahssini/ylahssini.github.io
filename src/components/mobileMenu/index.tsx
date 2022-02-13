@@ -6,6 +6,7 @@ import useWindowSize from "@src/hooks/useWindowSize";
 import useOutsideClick from "@src/hooks/useOutsideClick";
 import * as styles from './styles';
 import External from "../external";
+import Resume from "../resume";
 
 const MobileMenu = () => {
     const mobileRef = useRef(null);
@@ -25,6 +26,11 @@ const MobileMenu = () => {
             swiper.disable();
             swiper.$el.removeClass('over-hidden')
             swiper.$el.addClass('over-scroll');
+
+            const sections = Array.from(document.getElementsByClassName('slide') as HTMLCollectionOf<HTMLElement>);
+            for (let i = 0; i < sections.length; i += 1) {
+                sections[i].style.height = 'auto';
+            }
 
             if (menuOpened) {
                 swiper.$el.removeClass('over-scroll')
@@ -61,6 +67,7 @@ const MobileMenu = () => {
             </div>
 
             <External showMobile />
+            <Resume isMobile />
         </aside>
     );
 }
