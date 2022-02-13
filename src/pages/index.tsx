@@ -1,38 +1,78 @@
 import Head from 'next/head';
+import dynamic from 'next/dynamic';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Mousewheel, Pagination } from "swiper";
+import shallow from 'zustand/shallow';
 import Layout from '@src/components/layout';
-import Side from '@src/components/side';
-import Content from '@src/components/content';
 import data from '@src/data/index.yml';
+import Intro from '@src/components/intro';
+import { useStore } from '@src/store';
+import "swiper/css";
+import "swiper/css/pagination";
+import About from '@src/components/about';
+import Experiences from '@src/components/experiences';
+import Contact from '@src/components/contact';
 
-const GOOGLE_FONT_HREF = 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap';
+const MobileMenu = dynamic(() => import('@src/components/mobileMenu'), { ssr: false })
 
-const Home = (): React.ReactElement => (
-    <div>
-        <Head>
-            <title>{data.meta.title}</title>
-            <meta name="description" content={data.meta.description} />
-            <meta name="author" content={data.side.name} />
-            <link rel="icon" href="/favicon.ico" />
-            <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-            <link
-                href={GOOGLE_FONT_HREF}
-                rel="preload"
-                as="style"
-            />
-            <link
-                href={GOOGLE_FONT_HREF}
-                rel="stylesheet"
-            />
-        </Head>
+const Home = (): React.ReactElement => {
+    const { setDetail, menu, menuOpened } = useStore(({ setDetail, menu, menuOpened }) => ({
+        setDetail, menu, menuOpened,
+    }), shallow);
 
-        <Layout>
-            <div className="md:flex flex-row-reverse block">
-                <Side />
-                <Content />
-            </div>
-        </Layout>
-    </div>
-);
+    const pagination = {
+        clickable: true,
+        el: '.menu',
+        bulletClass: 'menu-item',
+        bulletActiveClass: '__current',
+        renderBullet: (index: number, className: string) => {
+            return `<span class="${className}"><span>0${index}.</span> ${menu[index]}</span>`;
+        },
+    };
+
+    function handleSwiperChange(swiper: any): void {
+        setDetail(3 - swiper.activeIndex);
+    }
+
+    return (
+        <>
+            <Head>
+                <title>{data.meta.title}</title>
+                <meta name="description" content={data.meta.description} />
+                <meta name="author" content={data.author.name} />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
+
+            <Layout>
+                <Swiper
+                    direction="vertical"
+                    slidesPerView={1}
+                    spaceBetween={30}
+                    mousewheel
+                    pagination={pagination}
+                    modules={[Mousewheel, Pagination]}
+                    onSlideChange={handleSwiperChange}
+                >
+                    <SwiperSlide id="intro" className={`z-10 transition-all ${menuOpened ? 'blur-sm' : 'blur-none'}`}>
+                        <Intro />
+                    </SwiperSlide>
+                    <SwiperSlide id="about" className={`z-10 transition-all ${menuOpened ? 'blur-sm' : 'blur-none'}`}>
+                        <About />
+                    </SwiperSlide>
+                    <SwiperSlide id="experiences" className={`z-10 transition-all ${menuOpened ? 'blur-sm' : 'blur-none'}`}>
+                        <Experiences />
+                    </SwiperSlide>
+                    <SwiperSlide id="contact" className={`z-10 transition-all ${menuOpened ? 'blur-sm' : 'blur-none'}`}>
+                        <Contact />
+                    </SwiperSlide>
+
+                    <MobileMenu />
+                </Swiper>
+
+            </Layout>
+        </>
+    )
+};
 
 export const getStaticProps = (): { props: any } => ({ props: {} });
 
