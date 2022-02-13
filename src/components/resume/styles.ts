@@ -19,5 +19,6 @@ export const resume = cntl`
     after:duration-200
     after:ease-in-out
     after:bg-black
+    hover:after:bg-blue-500
     after:dark:bg-slate-50
 `;

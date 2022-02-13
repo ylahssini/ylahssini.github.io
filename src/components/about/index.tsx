@@ -1,9 +1,7 @@
 import { useEffect, useRef } from 'react';
-import Image from 'next/image'
 import { useSpring, animated, to } from '@react-spring/web'
 import { useGesture } from 'react-use-gesture'
 import data from '@src/data/index.yml';
-import AuthorImage from '@src/assets/images/author.jpg';
 import Marker from '../../assets/svg/map-marker-alt-solid.svg';
 import * as styles from './styles';
 
@@ -39,8 +37,8 @@ const About = (): React.ReactElement => {
             onHover: ({ hovering }) => !hovering && api.start({ rotateX: 0, rotateY: 0, scale: 1 }),
             onMove: ({ xy: [px, py] }) =>
                 api.start({
-                    rotateX: calcX(py, y.get()),
-                    rotateY: calcY(px, x.get()),
+                    rotateX: calcX(px, x.get()),
+                    rotateY: calcY(py, y.get()),
                     scale: 1.1,
                 }),
         },
@@ -71,14 +69,7 @@ const About = (): React.ReactElement => {
                         rotateZ,
                     }}
                 >
-                    <Image
-                        src={AuthorImage}
-                        width={270}
-                        height={270}
-                        layout="responsive"
-                        alt={data.author.name}
-                        quality={90}
-                    />
+                    <img src="/images/author.jpg" alt={data.author.name} />
                 </animated.figure>
 
                 <address className="not-italic pt-8">
