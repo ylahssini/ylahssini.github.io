@@ -16,7 +16,6 @@ type Notif = {
 };
 
 const duration = 5000;
-
 const pattern = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
 
 const Contact = (): React.ReactElement | null => {
@@ -66,7 +65,7 @@ const Contact = (): React.ReactElement | null => {
             <form id="contact" className="wrapper">
                 <h2 className="section-title"><span>03. Contact me</span></h2>
 
-                <p className="text-base text-left py-3 text-transition-dark">Although I’m not currently looking for any new opportunities, my inbox is always open.</p>
+                <p className="text-base text-left py-3 pb-6 text-transition-dark">Although I’m not currently looking for any new opportunities, my inbox is always open.</p>
 
                 <div className={styles.notif({ type: notif.type })}>
                     <h5 className="text-xl text-white capitalize">{notif.type}</h5>
@@ -79,7 +78,7 @@ const Contact = (): React.ReactElement | null => {
                     }
                 </div>
 
-                <fieldset className="flex justify-center">
+                <fieldset className="block md:flex justify-center">
                     <label htmlFor="email" className="w-full md:w-1/2 relative z-20 block">
                         <input
                             {...register('email', { required: true, pattern })}
@@ -87,7 +86,7 @@ const Contact = (): React.ReactElement | null => {
                             id="email"
                             name="email"
                             placeholder="Email address *"
-                            className="border border-gray-400 border-r-0 bg-transparent p-4 outline-none w-full text-transition-dark transition-shadow focus:shadow-inner"
+                            className={styles.input({ isLeft: true })}
                         />
 
                         {errors.email?.type === 'required' && (
@@ -105,7 +104,7 @@ const Contact = (): React.ReactElement | null => {
                             id="name"
                             name="name"
                             placeholder="Full name or Company *"
-                            className="border border-gray-400 bg-transparent p-4 outline-none w-full text-transition-dark transition-shadow focus:shadow-inner"
+                            className={styles.input({ isLeft: false })}
                         />
 
                         {errors.name?.type === 'required' && (
@@ -119,7 +118,7 @@ const Contact = (): React.ReactElement | null => {
                         {...register('message', { required: true })}
                         name="message"
                         placeholder="Your message *"
-                        className="bg-transparent p-4 w-full resize-y h-48 max-h-56 border border-t-0 border-gray-400 outline-none text-transition-dark transition-shadow focus:shadow-inner"
+                        className={styles.area}
                     />
 
                     {errors.message?.type === 'required' && (

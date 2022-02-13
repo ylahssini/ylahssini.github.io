@@ -4,8 +4,10 @@ export const header = cntl`
     flex
     justify-between
     items-center
-    px-10
-    py-6
+    py-4
+    px-6
+    md:px-10
+    md:py-6
     z-20
     fixed
     top-0

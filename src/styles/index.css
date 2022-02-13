@@ -265,7 +265,8 @@ html, body, #__next {
     mb-5
     after:bg-black
     after:h-0.5
-    after:w-44
+    after:w-16
+    md:after:w-44
     after:block
     after:transition-colors
     after:duration-300

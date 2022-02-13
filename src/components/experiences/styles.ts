@@ -9,7 +9,11 @@ export const header = cntl`
 `;
 
 export const tab = ({ isActive }: { isActive: boolean }) => cntl`
+    flex-1
+    block
     p-3
+    text-xs
+    sm:text-base
     bg-transparent
     config-transition
     bg-opacity-0

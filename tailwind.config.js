@@ -35,17 +35,19 @@ module.exports = {
                 'scroll-wheel': {
                     '0%': { opacity: 0, transform: 'translateY(2em)' },
                     '100%': { opacity: 1, transform: 'translateY(0)' },
+                },
+
+                resume: {
+                    '0%': { opacity: 0, transform: 'translateY(2em)' },
+                    '100%': { opacity: 1, transform: 'translateY(0)' },
                 }
             },
             animation: {
                 logo: 'logo .2s ease-in-out 0s 1 alternate both',
                 menu: 'menu .2s ease-in-out .5s 1 alternate both',
                 'scroll-wheel': 'scroll-wheel .2s ease-in-out 1.1s 1 alternate both',
+                resume: 'resume .2s ease-in-out .8s 1 alternate both'
             }
         }
-    },
-    variants: {
-        // Defaults are ['responsive', 'hover', 'focus']
-        backgroundColor: ({ before }) => before(['active']),
     },
 };

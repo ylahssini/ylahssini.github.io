@@ -5,6 +5,7 @@ import Header from './header';
 import Back from './back';
 import Footer from './footer';
 import External from '../external';
+import Resume from '../resume';
 
 interface Props {
     children: React.ReactElement;
@@ -28,6 +29,7 @@ const Layout = ({ children }: Props): React.ReactElement => {
             <Header />
             {children}
             <External />
+            <Resume />
             <Footer />
             <Back />
         </main>

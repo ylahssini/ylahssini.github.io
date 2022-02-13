@@ -1,5 +1,6 @@
 import React from 'react';
 import { a, useTrail } from '@react-spring/web';
+import data from '@src/data/index.yml';
 
 const Trail = ({ children }: { children: React.ReactChild[] }) => {
     const items = React.Children.toArray(children);
@@ -26,9 +27,9 @@ const Intro = () => {
     return (
         <div className="flex items-center justify-center h-[100vh] wrapper">
             <Trail>
-                <span className="font-display text-5xl leading-none text-transition-dark">Hi, my name is</span>
-                <h1 className="font-bold text-blue-600 text-7xl leading-none">Youssef Lahssini</h1>
-                <h2 className="text-6xl text-blue-400 leading-none">A passionate front-end developer</h2>
+                <span className="font-display text-4xl md:text-5xl leading-none text-transition-dark">Hi, my name is</span>
+                <h1 className="font-bold text-blue-600 text-6xl md:text-7xl leading-none">{data.author.name}</h1>
+                <h2 className="text-5xl md:text-6xl text-blue-400 leading-none">{data.author.sub}</h2>
             </Trail>
         </div>
     );

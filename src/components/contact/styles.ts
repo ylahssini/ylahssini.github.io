@@ -1,5 +1,53 @@
 import cntl from 'cntl';
 
+export const input = ({ isLeft }: { isLeft: boolean }) => cntl`
+    border
+    border-gray-400
+    bg-white
+    bg-opacity-50
+    dark:bg-dark
+    dark:bg-opacity-50
+    p-4
+    outline-none
+    w-full
+    transition-all
+    duration-300
+    ease-in-out
+    text-dark
+    dark:text-slate-50
+    focus:shadow-[inset_0_0_5px_0_#cde0f8ee]
+    focus:dark:shadow-[inset_0_0_5px_0_#033f97fd]
+    focus:text-blue-500
+    caret-blue-500
+    ${isLeft ? 'border-r border-b-0 md:border-r-0 md:border-b' : ''}
+`;
+
+export const area = cntl`
+    border
+    border-t-0
+    border-gray-400
+    bg-white
+    bg-opacity-50
+    dark:bg-dark
+    dark:bg-opacity-50
+    p-4
+    w-full
+    resize-y
+    h-48
+    max-h-56
+    outline-none
+    transition-all
+    duration-300
+    ease-in-out
+    text-dark
+    dark:text-slate-50
+    transition-shadow
+    focus:shadow-[inset_0_0_7px_0_#cde0f8ee]
+    focus:dark:shadow-[inset_0_0_5px_0_#033f97fd]
+    focus:text-blue-500
+    caret-blue-500
+`;
+
 export const button = cntl`
     font-bold
     bg-blue-500

@@ -27,7 +27,7 @@ const Header = () => {
                 <span className="text-2xl text-blue-500">{data.author.logo}</span>
             </div>
 
-            <div className="flex justify-between items-center gap-5 animate-menu">
+            <div id="offset-menu" className="flex justify-between items-center gap-5 animate-menu">
                 <div className="bg-transition-dark w-12 h-0.5 hidden md:block" />
                 <div className="menu" />
                 <div title={`${mode} mode`}>
@@ -46,6 +46,7 @@ const Header = () => {
                         </span>
                     </label>
                 </div>
+
                 <button
                     type="button"
                     className="w-6 h-6 flex items-center group md:hidden"

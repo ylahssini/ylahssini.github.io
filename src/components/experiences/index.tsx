@@ -25,7 +25,7 @@ const Experiences = () => {
 
             <div className="mt-8">
                 <header aria-label="Companies" className={styles.header}>
-                    <div className="flex items-center justify-between self-stretch">
+                    <div className="flex justify-between w-full h-full items-center self-stretch">
                         {data.experiences.map((experience: Experience, index: number) => (
                             <button
                                 key={experience.company}

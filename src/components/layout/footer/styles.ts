@@ -5,10 +5,9 @@ export const container = cntl`
     bottom-0
     w-full
     z-[4]
-    hidden
-    md:flex
-    md:justify-center
-    md:items-center
+    flex
+    justify-center
+    items-center
     md:flex-col
     py-2
     animate-scroll-wheel
@@ -21,8 +20,9 @@ export const mouse = cntl`
     rounded-b-full
     w-5
     h-7
-    flex
-    justify-center
+    hidden
+    md:flex
+    md:justify-center
     pt-1
 `;
 

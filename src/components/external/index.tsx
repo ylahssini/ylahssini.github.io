@@ -4,6 +4,7 @@ import useWindowSize from '@src/hooks/useWindowSize';
 import Github from '../../assets/svg/github-alt.svg';
 import LinkedIn from '../../assets/svg/linkedin.svg';
 import Twitter from '../../assets/svg/twitter.svg';
+import * as styles from './styles';
 
 interface TrailProps {
     isMobile: boolean;
@@ -31,7 +32,7 @@ export const Trail = ({ children, isMobile, showMobile }: TrailProps) => {
     }
 
     return (
-        <aside className="fixed left-4 bottom-0 hidden md:flex md:justify-center md:items-center md:flex-col z-10">
+        <aside className={styles.aside}>
             {trail.map(({ ...style }, index) => (
                 <a.div key={index} style={style}>
                     <a.div>{items[index]}</a.div>
@@ -77,8 +78,6 @@ const External = ({ showMobile = false }: { showMobile?: boolean }) => {
             >
                 <Twitter width={size} height={size} className="svg-icon hover:fill-cyan-500" />
             </a>
-
-            <div className="w-0.5 h-20 mb-3 hidden md:block transition-colors duration-200 ease-in-out bg-black dark:bg-slate-50" />
         </Trail>
     )
 }

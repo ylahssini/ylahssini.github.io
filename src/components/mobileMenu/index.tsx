@@ -1,5 +1,5 @@
-import { useSwiper } from "swiper/react";
 import { useEffect, useRef } from "react";
+import { useSwiper } from "swiper/react";
 import shallow from "zustand/shallow";
 import { useStore } from "@src/store";
 import useWindowSize from "@src/hooks/useWindowSize";
@@ -15,10 +15,10 @@ const MobileMenu = () => {
     }), shallow);
     const { width } = useWindowSize();
 
-    useOutsideClick(mobileRef, () => { setMenuOpened(false); })
+    useOutsideClick(mobileRef, () => { setMenuOpened(false); }, ['offset-menu']);
 
     useEffect(() => {
-        const isDesktop = !((width || 0) < 768);
+        const isDesktop = !((width || 0) <= 768);
 
         if (!isDesktop) {
             swiper.mousewheel.disable();
@@ -52,7 +52,7 @@ const MobileMenu = () => {
                     <button
                         key={section}
                         type="button"
-                        className={`config-transition block text-3xl py-3`}
+                        className="text-transition-dark block text-3xl py-3"
                         onClick={() => handleMobileMenu(section)}
                     >
                         <span className="text-blue-500">0{index}.</span> {section}
