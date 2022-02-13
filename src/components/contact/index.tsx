@@ -68,7 +68,7 @@ const Contact = (): React.ReactElement | null => {
                 <p className="text-base text-left py-3 pb-6 text-transition-dark">Although I’m not currently looking for any new opportunities, my inbox is always open.</p>
 
                 <div className={styles.notif({ type: notif.type })}>
-                    <h5 className="text-xl text-white capitalize">{notif.type}</h5>
+                    <strong className="text-xl text-white capitalize">{notif.type}</strong>
                     <p className="text-sm text-gray-700 p-0">{notif.message}</p>
 
                     {

@@ -35,11 +35,13 @@ jobs:
       run: npm run build
       env:
         NEXT_PUBLIC_BASE_PATH: /
+        NEXT_PUBLIC_DEPLOYMENT: ghpages
 
     - name: Export my app 🚢
       run: npm run export
       env:
         NEXT_PUBLIC_BASE_PATH: /
+        NEXT_PUBLIC_DEPLOYMENT: ghpages
 
     - name: No jeckyll file 😈
       run: touch ./out/.nojekyll

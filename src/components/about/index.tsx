@@ -1,7 +1,9 @@
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import { useSpring, animated, to } from '@react-spring/web'
 import { useGesture } from '@use-gesture/react'
 import data from '@src/data/index.yml';
+import AuthorImage from '@src/assets/images/author.jpg';
 import Marker from '../../assets/svg/map-marker-alt-solid.svg';
 import * as styles from './styles';
 
@@ -69,7 +71,20 @@ const About = (): React.ReactElement => {
                         rotateZ,
                     }}
                 >
-                    <img src="/images/author.jpg" alt={data.author.name} />
+                    {
+                        process.env.NEXT_PUBLIC_DEPLOYMENT === 'vercel' ? (
+                            <Image
+                                src={AuthorImage}
+                                width={270}
+                                height={270}
+                                layout="responsive"
+                                alt={data.author.name}
+                                quality={90}
+                            />
+                        ) : (
+                            <img src="/images/author.jpg" width="270" height="270" alt={data.author.name} />
+                        )
+                    }
                 </animated.figure>
 
                 <address className="not-italic pt-8">

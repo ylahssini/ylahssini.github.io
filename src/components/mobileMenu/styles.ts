@@ -3,8 +3,8 @@ import cntl from 'cntl';
 export const nav = ({ menuOpened }: { menuOpened: boolean }) => cntl`
     transition-transform
     transition-colors
-    bg-slate-50
-    bg-opacity-50
+    bg-white
+    bg-opacity-20
     dark:bg-dark
     dark:bg-opacity-50
     flex

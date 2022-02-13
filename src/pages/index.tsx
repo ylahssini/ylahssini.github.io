@@ -3,16 +3,16 @@ import dynamic from 'next/dynamic';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel, Pagination } from "swiper";
 import shallow from 'zustand/shallow';
-import Layout from '@src/components/layout';
 import data from '@src/data/index.yml';
-import Intro from '@src/components/intro';
 import { useStore } from '@src/store';
-import About from '@src/components/about';
-import Experiences from '@src/components/experiences';
-import Contact from '@src/components/contact';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
+const Layout = dynamic(() => import('@src/components/layout'), { ssr: true });
+const Intro = dynamic(() => import('@src/components/intro'), { ssr: true });
+const About = dynamic(() => import('@src/components/about'), { ssr: true });
+const Experiences = dynamic(() => import('@src/components/experiences'), { ssr: true });
+const Contact = dynamic(() => import('@src/components/contact'), { ssr: true });
 const MobileMenu = dynamic(() => import('@src/components/mobileMenu'), { ssr: false });
 
 const Home = (): React.ReactElement => {
@@ -54,16 +54,16 @@ const Home = (): React.ReactElement => {
                     onSlideChange={handleSwiperChange}
                     className="slides"
                 >
-                    <SwiperSlide id="intro" className={`slide z-10 transition-all ${menuOpened ? 'blur-sm' : 'blur-none'}`}>
+                    <SwiperSlide id="intro" className={`slide z-10 transition-all ${menuOpened ? 'blur-xl' : 'blur-none'}`}>
                         <Intro />
                     </SwiperSlide>
-                    <SwiperSlide id="about" className={`slide z-10 transition-all ${menuOpened ? 'blur-sm' : 'blur-none'}`}>
+                    <SwiperSlide id="about" className={`slide z-10 transition-all ${menuOpened ? 'blur-xl' : 'blur-none'}`}>
                         <About />
                     </SwiperSlide>
-                    <SwiperSlide id="experiences" className={`slide z-10 transition-all ${menuOpened ? 'blur-sm' : 'blur-none'}`}>
+                    <SwiperSlide id="experiences" className={`slide z-10 transition-all ${menuOpened ? 'blur-xl' : 'blur-none'}`}>
                         <Experiences />
                     </SwiperSlide>
-                    <SwiperSlide id="contact" className={`slide z-10 transition-all ${menuOpened ? 'blur-sm' : 'blur-none'}`}>
+                    <SwiperSlide id="contact" className={`slide z-10 transition-all ${menuOpened ? 'blur-xl' : 'blur-none'}`}>
                         <Contact />
                     </SwiperSlide>
 
