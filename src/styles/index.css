@@ -57,6 +57,7 @@ html, body, #__next {
 .text-transition-dark {
     @apply config-transition text-gray-800 dark:text-slate-50
 }
+
 /* TRANSITION TO DARK */
 
 .svg-icon {
@@ -64,167 +65,30 @@ html, body, #__next {
 }
 
 .mobile-button {
-    @apply
-    block
-    w-full
-    h-0.5
-    transition-all
-    duration-500
-    ease-in-out
-    bg-opacity-100
-    bg-dark
-    dark:bg-slate-50
-    group-hover:bg-blue-500
-    before:block
-    before:w-1/2
-    before:h-0.5
-    before:-translate-y-2
-    before:mx-auto
-    before:transition-all
-    before:duration-500
-    before:ease-in-out
-    before:bg-dark
-    dark:before:bg-slate-50
-    group-hover:before:bg-blue-500
-    after:block
-    after:w-1/2
-    after:h-0.5
-    after:translate-y-1.5
-    after:mx-auto
-    after:transition-all
-    after:duration-500
-    after:ease-in-out
-    after:bg-dark
-    dark:after:bg-slate-50
-    group-hover:after:bg-blue-500
+    @apply block w-full h-0.5 transition-all duration-500 ease-in-out bg-opacity-100 bg-dark dark:bg-slate-50 group-hover:bg-blue-500 before:block before:w-1/2 before:h-0.5 before:-translate-y-2 before:mx-auto before:transition-all before:duration-500 before:ease-in-out before:bg-dark dark:before:bg-slate-50 group-hover:before:bg-blue-500 after:block after:w-1/2 after:h-0.5 after:translate-y-1.5 after:mx-auto after:transition-all after:duration-500 after:ease-in-out after:bg-dark dark:after:bg-slate-50 group-hover:after:bg-blue-500
 }
 
 .mobile-button.__clicked {
-    @apply
-    bg-dark
-    dark:bg-slate-50
-    dark:before:bg-slate-50
-    dark:after:bg-slate-50
-    group-hover:dark:bg-blue-500
-    dark:group-hover:before:bg-blue-500
-    dark:group-hover:after:bg-blue-500
-    bg-opacity-0
-    dark:bg-opacity-0
-    group-hover:bg-opacity-0
-    group-hover:dark:bg-opacity-0
-    before:rotate-45
-    before:w-full
-    before:-translate-x-0
-    before:translate-y-0
-    after:-rotate-45
-    after:w-full
-    after:-translate-x-0
-    after:-translate-y-0.5
+    @apply bg-dark dark:bg-slate-50 dark:before:bg-slate-50 dark:after:bg-slate-50 group-hover:dark:bg-blue-500 dark:group-hover:before:bg-blue-500 dark:group-hover:after:bg-blue-500 bg-opacity-0 dark:bg-opacity-0 group-hover:bg-opacity-0 group-hover:dark:bg-opacity-0 before:rotate-45 before:w-full before:-translate-x-0 before:translate-y-0 after:-rotate-45 after:w-full after:-translate-x-0 after:-translate-y-0.5
 }
 
 /* DARK MODE SWITCH */
 .sky {
-    @apply
-    rounded-full
-    w-9
-    h-5
-    p-1
-    block
-    bg-gradient-to-r
-    overflow-hidden
-    transition-colors
-    bg-sky-200
-    from-sky-200
-    to-sky-500
-    relative
-    dark:bg-sky-800
-    dark:from-sky-800
-    dark:to-sky-900
+    @apply rounded-full w-9 h-5 p-1 block bg-gradient-to-r overflow-hidden transition-colors bg-sky-200 from-sky-200 to-sky-500 relative dark:bg-sky-800 dark:from-sky-800 dark:to-sky-900
 }
 
 .sphere {
-    @apply
-    rounded-full
-    h-3
-    w-3
-    block
-    bg-white
-    shadow-sun
-    relative
-    translate-x-0
-    overflow-hidden
-    transition-all
-    ease-in-out
-    duration-300
-    dark:bg-stone-400
-    dark:shadow-moon
-    dark:translate-x-[calc(100%+5px)]
-    before:block
-    before:w-3
-    before:h-3
-    before:bg-yellow-50
-    before:-translate-x-5
-    before:-translate-y-5
-    before:rounded-full
-    before:absolute
-    before:transition-all
-    before:ease-in-out
-    before:duration-200
-    before:opacity-0
-    dark:before:opacity-100
-    dark:before:-translate-x-[0.1rem]
-    dark:before:-translate-y-[0.1rem]
+    @apply rounded-full h-3 w-3 block bg-white shadow-sun relative translate-x-0 overflow-hidden transition-all ease-in-out duration-300 dark:bg-stone-400 dark:shadow-moon dark:translate-x-[calc(100%+5px)] before:block before:w-3 before:h-3 before:bg-yellow-50 before:-translate-x-5 before:-translate-y-5 before:rounded-full before:absolute before:transition-all before:ease-in-out before:duration-200 before:opacity-0 dark:before:opacity-100 dark:before:-translate-x-[0.1rem] dark:before:-translate-y-[0.1rem]
 }
 
 .cloud {
-    @apply
-    block
-    absolute
-    top-0
-    left-0
-    rounded-full
-    bg-blue-50
-    w-4
-    h-1.5
-    transition-all
-    ease-in-out
-    duration-300
-    before:block
-    before:rounded-full
-    before:w-2
-    before:h-2
-    before:bg-blue-50
-    before:translate-x-0.5
-    before:-translate-y-1
-    after:block
-    after:bg-blue-50
-    after:rounded-full
-    after:w-1.5
-    after:h-1.5
-    after:translate-x-2
-    after:-translate-y-2.5
-    dark:!translate-y-10
+    @apply block absolute top-0 left-0 rounded-full bg-blue-50 w-4 h-1.5 transition-all ease-in-out duration-300 before:block before:rounded-full before:w-2 before:h-2 before:bg-blue-50 before:translate-x-0.5 before:-translate-y-1 after:block after:bg-blue-50 after:rounded-full after:w-1.5 after:h-1.5 after:translate-x-2 after:-translate-y-2.5 dark:!translate-y-10
 }
 
 .star {
-    @apply
-    rounded-full
-    bg-yellow-50
-    bg-opacity-70
-    block
-    w-px
-    h-px
-    absolute
-    top-0
-    left-0
-    translate-x-0
-    translate-y-0
-    transition-all
-    ease-in-out
-    duration-300
-    opacity-0
-    dark:opacity-95
+    @apply rounded-full bg-yellow-50 bg-opacity-70 block w-px h-px absolute top-0 left-0 translate-x-0 translate-y-0 transition-all ease-in-out duration-300 opacity-0 dark:opacity-95
 }
+
 /* DARK MODE SWITCH */
 
 /* MENU */
@@ -239,37 +103,17 @@ html, body, #__next {
 .menu-item.__current {
     @apply text-blue-500;
 }
+
 /* MENU */
 
-/* SWIPER */
-.swiper {
+.section-title {
+    @apply text-4xl text-blue-500 font-bold uppercase text-left flex items-center justify-start gap-5 mb-5 after:bg-black after:h-0.5 after:w-16 md:after:w-44 after:block after:transition-colors after:duration-300 after:ease-in-out dark:after:bg-slate-50
+}
+
+.swiper.slides {
     @apply w-full h-full;
 }
 
-.swiper-slide {
+.slide {
     @apply text-center text-lg flex items-center justify-center;
-}
-/* SWIPER */
-
-.section-title {
-    @apply
-    text-4xl
-    text-blue-500
-    font-bold
-    uppercase
-    text-left
-    flex
-    items-center
-    justify-start
-    gap-5
-    mb-5
-    after:bg-black
-    after:h-0.5
-    after:w-16
-    md:after:w-44
-    after:block
-    after:transition-colors
-    after:duration-300
-    after:ease-in-out
-    dark:after:bg-slate-50
 }

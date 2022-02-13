@@ -10,9 +10,8 @@ import { useStore } from '@src/store';
 import About from '@src/components/about';
 import Experiences from '@src/components/experiences';
 import Contact from '@src/components/contact';
-
-import "swiper/css";
-import "swiper/css/pagination";
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 const MobileMenu = dynamic(() => import('@src/components/mobileMenu'), { ssr: false });
 
@@ -35,8 +34,6 @@ const Home = (): React.ReactElement => {
         setDetail(3 - swiper.activeIndex);
     }
 
-    console.log(menuOpened);
-
     return (
         <>
             <Head>
@@ -55,17 +52,18 @@ const Home = (): React.ReactElement => {
                     pagination={pagination}
                     modules={[Mousewheel, Pagination]}
                     onSlideChange={handleSwiperChange}
+                    className="slides"
                 >
-                    <SwiperSlide id="intro" className={`z-10 transition-all ${menuOpened ? 'blur-sm' : 'blur-none'}`}>
+                    <SwiperSlide id="intro" className={`slide z-10 transition-all ${menuOpened ? 'blur-sm' : 'blur-none'}`}>
                         <Intro />
                     </SwiperSlide>
-                    <SwiperSlide id="about" className={`z-10 transition-all ${menuOpened ? 'blur-sm' : 'blur-none'}`}>
+                    <SwiperSlide id="about" className={`slide z-10 transition-all ${menuOpened ? 'blur-sm' : 'blur-none'}`}>
                         <About />
                     </SwiperSlide>
-                    <SwiperSlide id="experiences" className={`z-10 transition-all ${menuOpened ? 'blur-sm' : 'blur-none'}`}>
+                    <SwiperSlide id="experiences" className={`slide z-10 transition-all ${menuOpened ? 'blur-sm' : 'blur-none'}`}>
                         <Experiences />
                     </SwiperSlide>
-                    <SwiperSlide id="contact" className={`z-10 transition-all ${menuOpened ? 'blur-sm' : 'blur-none'}`}>
+                    <SwiperSlide id="contact" className={`slide z-10 transition-all ${menuOpened ? 'blur-sm' : 'blur-none'}`}>
                         <Contact />
                     </SwiperSlide>
 

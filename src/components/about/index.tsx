@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { useSpring, animated, to } from '@react-spring/web'
-import { useGesture } from 'react-use-gesture'
+import { useGesture } from '@use-gesture/react'
 import data from '@src/data/index.yml';
 import Marker from '../../assets/svg/map-marker-alt-solid.svg';
 import * as styles from './styles';
@@ -42,7 +42,7 @@ const About = (): React.ReactElement => {
                     scale: 1.1,
                 }),
         },
-        { domTarget: figure, eventOptions: { passive: false } }
+        { target: figure, eventOptions: { passive: false } }
     );
 
     return (
