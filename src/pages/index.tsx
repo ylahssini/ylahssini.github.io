@@ -7,13 +7,14 @@ import Layout from '@src/components/layout';
 import data from '@src/data/index.yml';
 import Intro from '@src/components/intro';
 import { useStore } from '@src/store';
-import "swiper/css";
-import "swiper/css/pagination";
 import About from '@src/components/about';
 import Experiences from '@src/components/experiences';
 import Contact from '@src/components/contact';
 
-const MobileMenu = dynamic(() => import('@src/components/mobileMenu'), { ssr: false })
+import "swiper/css";
+import "swiper/css/pagination";
+
+const MobileMenu = dynamic(() => import('@src/components/mobileMenu'), { ssr: false });
 
 const Home = (): React.ReactElement => {
     const { setDetail, menu, menuOpened } = useStore(({ setDetail, menu, menuOpened }) => ({
@@ -33,6 +34,8 @@ const Home = (): React.ReactElement => {
     function handleSwiperChange(swiper: any): void {
         setDetail(3 - swiper.activeIndex);
     }
+
+    console.log(menuOpened);
 
     return (
         <>
