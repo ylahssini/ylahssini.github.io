@@ -3,7 +3,6 @@ import { useSwiper } from "swiper/react";
 import shallow from "zustand/shallow";
 import { useStore } from "@src/store";
 import useWindowSize from "@src/hooks/useWindowSize";
-import useOutsideClick from "@src/hooks/useOutsideClick";
 import * as styles from './styles';
 import External from "../external";
 import Resume from "../resume";
@@ -16,10 +15,9 @@ const MobileMenu = () => {
     }), shallow);
     const { width } = useWindowSize();
 
-    useOutsideClick(mobileRef, () => { setMenuOpened(false); }, ['offset-menu']);
-
     useEffect(() => {
         const isDesktop = !((width || 0) <= 768);
+        const sections = Array.from(document.getElementsByClassName('slide') as HTMLCollectionOf<HTMLElement>);
 
         if (!isDesktop) {
             swiper.mousewheel.disable();
@@ -27,9 +25,8 @@ const MobileMenu = () => {
             swiper.$el.removeClass('over-hidden')
             swiper.$el.addClass('over-scroll');
 
-            const sections = Array.from(document.getElementsByClassName('slide') as HTMLCollectionOf<HTMLElement>);
             for (let i = 0; i < sections.length; i += 1) {
-                sections[i].style.height = 'auto';
+                sections[i].className = `${sections[i].className} force-height`;
             }
 
             if (menuOpened) {
@@ -41,6 +38,10 @@ const MobileMenu = () => {
             swiper.enable();
             swiper.$el.removeClass('over-scroll')
             swiper.$el.addClass('over-hidden');
+
+            for (let i = 0; i < sections.length; i += 1) {
+                sections[i].className = sections[i].className.replace('force-height', '');
+            }
         }
     }, [menuOpened, width]);
 

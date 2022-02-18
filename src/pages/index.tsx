@@ -6,6 +6,7 @@ import data from '@src/data/index.yml';
 import { useStore } from '@src/store';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import useWindowSize from '@src/hooks/useWindowSize';
 
 const Layout = dynamic(() => import('@src/components/layout'), { ssr: true });
 const Intro = dynamic(() => import('@src/components/intro'), { ssr: true });

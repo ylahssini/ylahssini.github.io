@@ -28,12 +28,8 @@
         "FormData": true
     },
     "rules": {
-        "indent": [
-            "error",
-            4
-        ],
-        "@typescript-eslint/indent": 0,
-        "@typescript-eslint/no-explicit-any": 0,
+        "indent": "off",
+        "@typescript-eslint/indent": ["error", 4],
         "no-console": 0,
         "react/jsx-indent": [
             "error",
