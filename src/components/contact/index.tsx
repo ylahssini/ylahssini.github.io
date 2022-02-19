@@ -82,7 +82,7 @@ const Contact = (): React.ReactElement | null => {
                     <label htmlFor="email" className="w-full md:w-1/2 relative z-20 block">
                         <input
                             {...register('email', { required: true, pattern })}
-                            type="text"
+                            type="email"
                             id="email"
                             name="email"
                             placeholder="Email address *"
