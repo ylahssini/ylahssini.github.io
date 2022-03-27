@@ -62,7 +62,7 @@ const MobileMenu = () => {
                         className="text-transition-dark block text-3xl py-3"
                         onClick={() => handleMobileMenu(section)}
                     >
-                        <span className="text-blue-500">0{index}.</span> {section}
+                        <span className="text-gray-500">0{index}.</span> {section}
                     </button>
                 ))}
             </div>

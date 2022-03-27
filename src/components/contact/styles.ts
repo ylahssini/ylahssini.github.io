@@ -17,8 +17,8 @@ export const input = ({ isLeft }: { isLeft: boolean }) => cntl`
     dark:text-slate-50
     focus:shadow-[inset_0_0_5px_0_#cde0f8ee]
     focus:dark:shadow-[inset_0_0_5px_0_#033f97fd]
-    focus:text-blue-500
-    caret-blue-500
+    focus:text-gray-500
+    caret-gray-500
     ${isLeft ? 'border-r border-b-0 md:border-r-0 md:border-b' : ''}
 `;
 
@@ -41,24 +41,25 @@ export const area = cntl`
     ease-in-out
     text-dark
     dark:text-slate-50
-    transition-shadow
     focus:shadow-[inset_0_0_7px_0_#cde0f8ee]
     focus:dark:shadow-[inset_0_0_5px_0_#033f97fd]
-    focus:text-blue-500
-    caret-blue-500
+    focus:text-gray-500
+    caret-gray-500
 `;
 
 export const button = cntl`
     font-bold
-    bg-blue-500
+    bg-gradient-to-r
+    from-blue-500
+    to-red-500
     text-white
     w-full
     p-4
     bg-opacity-80
     transition-colors
-    hover:bg-blue-800
-    hover:bg-opacity-80
-    disabled:bg-blue-800
+    hover:from-blue-800
+    hover:to-red-800
+    disabled:bg-gray-800
     disabled:bg-opacity-80
 `;
 

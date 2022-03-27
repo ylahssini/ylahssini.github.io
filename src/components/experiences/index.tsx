@@ -23,9 +23,10 @@ const Experiences = () => {
         <section className="wrapper">
             <h3 className="section-title"><span>02. Experiences</span></h3>
 
-            <div className="mt-8">
-                <header aria-label="Companies" className={styles.header}>
+            <div className="mt-8 block">
+                <header aria-label="Companies" className={styles.side}>
                     <div className="flex justify-between w-full h-full items-center self-stretch">
+
                         {data.experiences.map((experience: Experience, index: number) => (
                             <button
                                 key={experience.company}
@@ -37,28 +38,32 @@ const Experiences = () => {
                                 {experience.company}
                             </button>
                         ))}
-                    </div>
 
-                    <div className={styles.highlight} style={{ width, transform: `translateX(calc(100%*${tab}))` }} />
+                        <div className={styles.highlight} style={{ width, transform: `translateX(calc(100%*${tab}))` }} />
+                    </div>
                 </header>
 
-                {data.experiences.map((experience: Experience, index: number) => (
-                    <article key={experience.company} className={`${index !== tab ? 'hidden' : ''} text-left mb-5`}>
-                        <h4 className="text-2xl text-transition-dark">{experience.job} ~ <span className="text-blue-300">{experience.company}</span></h4>
-                        <small className="text-blue-300">{experience.period.join(' - ')}</small>
+                <div className="text-left w-5/6 relative">
+                    {data.experiences.map((experience: Experience, index: number) => (
+                        <article key={experience.company} className={`${index !== tab ? 'invisible absolute' : 'visible relative'} h-full md:h-72`}>
+                            <h4 className="text-2xl leading-none config-transition text-gray-900 dark:text-white">
+                                <strong>{experience.job}</strong>&nbsp;~&nbsp;<span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-red-500">{experience.company}</span>
+                            </h4>
+                            <small className="config-transition text-gray-500 font-light dark:text-slate-50">{experience.period.join(' - ')}</small>
 
-                        <div className="py-3">
-                            {experience.description.map((description) => (<p key={description} className="text-base text-transition-dark">- {description}</p>))}
-                        </div>
+                            <div className="py-3">
+                                {experience.description.map((description) => (<p key={description} className="text-base text-transition-dark">- {description}</p>))}
+                            </div>
 
-                        <h5 className="text-transition-dark">Skills</h5>
-                        <ul>
-                            {experience.skills.map((skill) => (
-                                <li key={skill} className={styles.skill}>{skill}</li>
-                            ))}
-                        </ul>
-                    </article>
-                ))}
+                            <h5 className="config-transition text-gray-900 dark:text-slate-50 font-bold">Skills</h5>
+                            <ul>
+                                {experience.skills.map((skill) => (
+                                    <li key={skill} className={styles.skill}>{skill}</li>
+                                ))}
+                            </ul>
+                        </article>
+                    ))}
+                </div>
             </div>
         </section>
     )

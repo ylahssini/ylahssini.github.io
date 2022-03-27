@@ -6,7 +6,6 @@ import data from '@src/data/index.yml';
 import { useStore } from '@src/store';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import useWindowSize from '@src/hooks/useWindowSize';
 
 const Layout = dynamic(() => import('@src/components/layout'), { ssr: true });
 const Intro = dynamic(() => import('@src/components/intro'), { ssr: true });
@@ -28,7 +27,7 @@ const Home = (): React.ReactElement => {
         bulletClass: 'menu-item',
         bulletActiveClass: '__current',
         renderBullet: (index: number, className: string) => {
-            return `<span class="${className}"><span>0${index}.</span> ${menu[index]}</span>`;
+            return `<span class="${className}" data-name="0${index}. ${menu[index]}"><span>0${index}.</span> ${menu[index]}</span>`;
         },
     };
 
@@ -42,7 +41,7 @@ const Home = (): React.ReactElement => {
                 <title>{data.meta.title}</title>
                 <meta name="description" content={data.meta.description} />
                 <meta name="author" content={data.author.name} />
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/favicon.png" />
             </Head>
 
             <Layout>
@@ -50,7 +49,7 @@ const Home = (): React.ReactElement => {
                     direction="vertical"
                     slidesPerView={1}
                     spaceBetween={30}
-                    mousewheel
+                    mousewheel={{ sensitivity: 0.83, thresholdTime: 900 }}
                     pagination={pagination}
                     modules={[Mousewheel, Pagination]}
                     onSlideChange={handleSwiperChange}

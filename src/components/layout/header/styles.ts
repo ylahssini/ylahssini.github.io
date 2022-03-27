@@ -25,18 +25,65 @@ export const logo = cntl`
     h-12
     md:w-16
     md:h-16
-    border-2
-    border-blue-500
-    rounded-full
     flex
     items-center
     justify-center
     animate-logo
     relative
-    bg-white
     transition-colors
     duration-200
     ease-in-out
     z-10
-    dark:bg-dark
+`;
+
+export const polygon = cntl`
+    absolute
+    left-0
+    top-0
+    w-12
+    h-12
+    md:w-16
+    md:h-16
+    opacity-50
+`;
+
+export const text = cntl`
+    text-lg
+    md:text-2xl
+    tracking-wide
+    font-bold
+    text-gray-900
+    dark:text-white
+    relative
+    block
+    before:block
+    before:w-full
+    before:h-full
+    before:text-lg
+    before:md:text-2xl
+    before:tracking-wide
+    before:text-blue-500
+    before:text-opacity-50
+    before:content-[attr(data-name)]
+    before:absolute
+    before:top-0
+    before:left-0
+    before:z-0
+    before:-translate-x-[1px]
+    before:-translate-y-[1px]
+    after:block
+    after:w-full
+    after:h-full
+    after:text-lg
+    after:md:text-2xl
+    after:tracking-wide
+    after:text-red-500
+    after:text-opacity-50
+    after:content-[attr(data-name)]
+    after:absolute
+    after:top-0
+    after:left-0
+    after:z-0
+    after:translate-x-[1px]
+    after:translate-y-[1px]
 `;

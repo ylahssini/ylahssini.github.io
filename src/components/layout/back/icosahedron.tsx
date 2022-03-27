@@ -8,7 +8,7 @@ import { useStore } from '@src/store';
 const selector = ({ detail, mode }: Record<string, any>) => ({ detail, mode });
 const colorsMode: Record<string, string> = { light: '#EEEEEE', dark: '#333335' };
 
-const Shape = (): React.ReactElement => {
+const Icosahedron = (): React.ReactElement => {
     const icosahedron = useRef<THREE.Mesh>();
     const { detail, mode } = useStore(selector);
     const springs = useSpring({
@@ -35,4 +35,4 @@ const Shape = (): React.ReactElement => {
     )
 }
 
-export default Shape;
+export default Icosahedron;

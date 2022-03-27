@@ -1,7 +1,9 @@
 import { ChangeEvent } from 'react';
+import Image from 'next/image';
 import shallow from 'zustand/shallow';
 import { useStore } from '@src/store';
 import data from '@src/data/index.yml';
+import Polygon from '@src/assets/images/polygon.png';
 import * as styles from './styles';
 
 const Header = () => {
@@ -23,8 +25,21 @@ const Header = () => {
 
     return (
         <header className={styles.header}>
-            <div className={styles.logo}>
-                <span className="text-lg md:text-2xl text-blue-500">{data.author.logo}</span>
+            <div className={styles.logo} >
+                <figure className={styles.polygon}>
+                    <Image
+                        src={Polygon}
+                        width={64}
+                        height={64}
+                        layout="responsive"
+                        alt=""
+                        priority
+                    />
+                </figure>
+
+                <span className={styles.text} data-name={data.author.logo}>
+                    <b className="relative z-10">{data.author.logo}</b>
+                </span>
             </div>
 
             <div id="offset-menu" className="flex justify-between items-center gap-5 animate-menu">

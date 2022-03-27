@@ -1,6 +1,6 @@
 import cntl from 'cntl';
 
-export const header = cntl`
+export const side = cntl`
     border-b-4
     border-solid
     border-slate-200
@@ -12,23 +12,25 @@ export const tab = ({ isActive }: { isActive: boolean }) => cntl`
     flex-1
     block
     p-3
-    text-xs
-    sm:text-base
+    text-base
+    sm:text-lg
     bg-transparent
     config-transition
     bg-opacity-0
     hover:bg-opacity-25
-    hover:bg-blue-200
-    hover:text-blue-500
+    hover:bg-gray-200
+    hover:text-gray-900
+    dark:hover:text-slate-50
     dark:hover:bg-opacity-10
-    dark:hover:bg-blue-100
-    h-full
-    ${isActive ? cntl`text-blue-500` : 'text-transition-dark'}
+    dark:hover:bg-slate-50
+    ${isActive ? cntl`text-gray-900 dark:text-slate-50 font-bold` : 'text-transition-dark'}
 `;
 
 export const highlight = cntl`
     h-1
-    bg-blue-500
+    bg-gradient-to-r
+    from-blue-500
+    to-red-500
     absolute
     -bottom-1
     left-0
@@ -48,6 +50,6 @@ export const skill = cntl`
     bg-slate-100
     bg-opacity-80
     transition-colors
-    hover:border-blue-500
-    hover:bg-blue-100
+    hover:border-gray-500
+    hover:bg-gray-100
 `;

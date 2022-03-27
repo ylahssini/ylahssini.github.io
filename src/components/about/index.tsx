@@ -88,7 +88,7 @@ const About = (): React.ReactElement => {
                 </animated.figure>
 
                 <address className="not-italic pt-8">
-                    <Marker width={24} height={24} className="inline-block fill-current text-blue-500" />
+                    <Marker width={24} height={24} className="inline-block fill-current text-black dark:text-white" />
                     <span className="font-hairline text-transition-dark">{data.author.location}</span>
                 </address>
             </aside>
