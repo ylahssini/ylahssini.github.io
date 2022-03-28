@@ -27,14 +27,21 @@ const Header = () => {
         <header className={styles.header}>
             <div className={styles.logo} >
                 <figure className={styles.polygon}>
-                    <Image
-                        src={Polygon}
-                        width={64}
-                        height={64}
-                        layout="responsive"
-                        alt=""
-                        priority
-                    />
+                    {
+                        process.env.NEXT_PUBLIC_DEPLOYMENT === 'vercel' ? (
+                            <Image
+                                src={Polygon}
+                                width={64}
+                                height={64}
+                                layout="responsive"
+                                alt=""
+                                priority
+                            />
+                        ) : (
+                            <img src="/images/polygon,png" width="64" height="64" alt={data.author.name} />
+                        )
+                    }
+                    
                 </figure>
 
                 <span className={styles.text} data-name={data.author.logo}>
