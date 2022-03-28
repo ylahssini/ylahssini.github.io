@@ -38,7 +38,7 @@ const Header = () => {
                                 priority
                             />
                         ) : (
-                            <img src="/images/polygon,png" width="64" height="64" alt={data.author.name} />
+                            <img src="/images/polygon.png" width="64" height="64" alt={data.author.name} />
                         )
                     }
                     
