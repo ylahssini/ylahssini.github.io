@@ -21,7 +21,7 @@ const Experiences = () => {
 
     return (
         <section className="wrapper h-screen block sm:flex sm:items-center">
-            <div className="mt-8 block">
+            <div className="mt-8 block flex-1">
                 <h3 className="section-title"><span>02. Experiences</span></h3>
 
                 <header aria-label="Companies" className={styles.side}>
@@ -43,7 +43,7 @@ const Experiences = () => {
                     </div>
                 </header>
 
-                <div className="text-left w-5/6 relative">
+                <div className="text-left relative">
                     {data.experiences.map((experience: Experience, index: number) => (
                         <article key={experience.company} className={`${index !== tab ? 'invisible absolute' : 'visible relative'} h-full md:h-72`}>
                             <h4 className="text-2xl leading-none config-transition text-gray-900 dark:text-white">
