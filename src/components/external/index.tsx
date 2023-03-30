@@ -45,7 +45,7 @@ export const Trail = ({ children, isMobile, showMobile }: TrailProps) => {
 const External = ({ showMobile = false }: { showMobile?: boolean }) => {
     const { width } = useWindowSize();
     const isMobile = (width || 0) < 768;
-    const size = isMobile ? 44 : 32;
+    // const size = isMobile ? 44 : 32;
 
     return (
         <Trail isMobile={isMobile} showMobile={showMobile}>
@@ -56,7 +56,7 @@ const External = ({ showMobile = false }: { showMobile?: boolean }) => {
                 className="block mb-3"
                 title="Github"
             >
-                <Github width={size} height={size} className="svg-icon hover:fill-purple-700" />
+                {/* <Github width={size} height={size} className="svg-icon hover:fill-purple-700" /> */}
             </a>
 
             <a
@@ -66,7 +66,7 @@ const External = ({ showMobile = false }: { showMobile?: boolean }) => {
                 className="block mb-3"
                 title="Linkedin"
             >
-                <LinkedIn width={size} height={size} className="svg-icon hover:fill-blue-600" />
+                {/* <LinkedIn width={size} height={size} className="svg-icon hover:fill-blue-600" /> */}
             </a>
 
             <a
@@ -76,7 +76,7 @@ const External = ({ showMobile = false }: { showMobile?: boolean }) => {
                 className="block mb-3"
                 title="Twitter"
             >
-                <Twitter width={size} height={size} className="svg-icon hover:fill-cyan-500" />
+                {/* <Twitter width={size} height={size} className="svg-icon hover:fill-cyan-500" /> */}
             </a>
         </Trail>
     )
