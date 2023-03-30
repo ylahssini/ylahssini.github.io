@@ -43,6 +43,7 @@ const Header = (): React.ReactElement => {
                                 priority
                             />
                         ) : (
+                            // eslint-disable-next-line @next/next/no-img-element
                             <img src="/images/polygon.png" width="64" height="64" alt={data.author.name} />
                         )
                     }
@@ -58,7 +59,7 @@ const Header = (): React.ReactElement => {
                 <div className="bg-transition-dark w-12 h-0.5 hidden md:block" />
                 <div className="hidden md:flex md:items-center gap-4">
                     {menu.map((section, index) => (
-                        <button key={section} type="button" onClick={handleSection(section)} className={`menu-item ${active === section.toLowerCase() ? '__current' : ''}`}>
+                        <button key={section} type="button" onClick={handleSection(section as Menu)} className={`menu-item ${active === section.toLowerCase() ? '__current' : ''}`}>
                             <span>0{index}.</span> {section}
                         </button>
                     ))}
