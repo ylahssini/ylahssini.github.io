@@ -11,7 +11,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    @apply overflow-hidden;
 }
 
 html, body, #__next {
@@ -23,18 +23,6 @@ html, body, #__next {
 
 .wrapper {
     @apply w-10/12 max-w-5xl;
-}
-
-.over-scroll {
-    overflow: scroll !important;
-}
-
-.over-hidden {
-    overflow: hidden !important;
-}
-
-.force-height {
-    height: max-content !important;
 }
 
 /* TRANSITION TO DARK */
@@ -63,7 +51,6 @@ html, body, #__next {
 }
 
 /* TRANSITION TO DARK */
-
 .svg-icon {
     @apply inline-block align-middle transition-all duration-200 ease-in-out fill-black dark:fill-slate-50 hover:-translate-y-1;
 }
@@ -229,44 +216,21 @@ html, body, #__next {
     dark:opacity-95
 }
 
-/* DARK MODE SWITCH */
 
 /* MENU */
-.menu.swiper-pagination-vertical.swiper-pagination-bullets {
-    @apply hidden md:flex justify-between items-center gap-5 transform-none top-0 left-0;
-}
-
 .menu-item {
-    @apply
-    text-lg
-    cursor-pointer
-    text-transition-dark
-    hover:text-black
+    @apply text-lg cursor-pointer text-transition-dark hover:text-black dark:hover:text-white
 }
 
 .menu-item.__current {
-    @apply
-    bg-clip-text
-    bg-gradient-to-r
-    text-transparent
-    from-blue-500
-    to-red-500
+    @apply bg-clip-text bg-gradient-to-r text-transparent from-blue-500 to-red-500
 }
-
 /* MENU */
 
 .section-title {
-    @apply text-4xl font-bold uppercase text-left mb-5
-}
-
-.section-title > span {
-    @apply bg-clip-text bg-gradient-to-r text-transparent from-blue-500 to-red-500
-}
-
-.swiper.slides {
-    @apply w-full h-full;
+    @apply font-display text-5xl font-bold text-left mb-5 text-dark dark:text-white
 }
 
 .slide {
-    @apply text-center text-lg flex items-center justify-center scroll-m-28 pb-10 md:pb-0;
+    @apply snap-center text-center text-lg flex items-center justify-center scroll-m-28 pb-10 md:pb-0;
 }

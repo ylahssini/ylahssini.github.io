@@ -62,82 +62,84 @@ const Contact = (): React.ReactElement | null => {
 
     if (data.contact) {
         return (
-            <form id="contact" className="wrapper">
-                <h2 className="section-title"><span>03. Contact me</span></h2>
+            <form id="contact" className="wrapper h-screen block sm:flex sm:items-center">
+                <section className="flex-1">
+                    <h2 className="section-title"><span>03. Contact me</span></h2>
 
-                <p className="text-base text-left py-3 pb-6 text-transition-dark">Although I’m not currently looking for any new opportunities, my inbox is always open.</p>
+                    <p className="text-base text-left py-3 pb-6 text-transition-dark">Although I’m not currently looking for any new opportunities, my inbox is always open.</p>
 
-                <div className={styles.notif({ type: notif.type })}>
-                    <strong className="text-xl text-white capitalize">{notif.type}</strong>
-                    <p className="text-sm text-gray-700 p-0">{notif.message}</p>
+                    <div className={styles.notif({ type: notif.type })}>
+                        <strong className="text-xl text-white capitalize">{notif.type}</strong>
+                        <p className="text-sm text-gray-700 p-0">{notif.message}</p>
 
-                    {
-                        notif.type !== null && (
-                            <animated.div ref={progress} className={styles.progress} style={style} />
-                        )
-                    }
-                </div>
+                        {
+                            notif.type !== null && (
+                                <animated.div ref={progress} className={styles.progress} style={style} />
+                            )
+                        }
+                    </div>
 
-                <fieldset className="block md:flex justify-center">
-                    <label htmlFor="email" className="w-full md:w-1/2 relative z-20 block">
-                        <input
-                            {...register('email', { required: true, pattern })}
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="Email address *"
-                            className={styles.input({ isLeft: true })}
+                    <fieldset className="block md:flex justify-center">
+                        <label htmlFor="email" className="w-full md:w-1/2 relative z-20 block">
+                            <input
+                                {...register('email', { required: true, pattern })}
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Email address *"
+                                className={styles.input({ isLeft: true })}
+                            />
+
+                            {errors.email?.type === 'required' && (
+                                <span className={styles.error}>Please insert email address</span>
+                            )}
+                            {errors.email?.type === 'pattern' && (
+                                <span className={styles.error}>Email is incorrect</span>
+                            )}
+                        </label>
+
+                        <label htmlFor="name" className="w-full md:w-1/2 relative z-20 block">
+                            <input
+                                {...register('name', { required: true })}
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Full name or Company *"
+                                className={styles.input({ isLeft: false })}
+                            />
+
+                            {errors.name?.type === 'required' && (
+                                <span className={styles.error}>Please insert your name or company</span>
+                            )}
+                        </label>
+                    </fieldset>
+
+                    <label htmlFor="message" className="relative block">
+                        <textarea
+                            {...register('message', { required: true })}
+                            name="message"
+                            placeholder="Your message *"
+                            className={styles.area}
                         />
 
-                        {errors.email?.type === 'required' && (
-                            <span className={styles.error}>Please insert email address</span>
-                        )}
-                        {errors.email?.type === 'pattern' && (
-                            <span className={styles.error}>Email is incorrect</span>
+                        {errors.message?.type === 'required' && (
+                            <span className={styles.error}>Please insert your message</span>
                         )}
                     </label>
 
-                    <label htmlFor="name" className="w-full md:w-1/2 relative z-20 block">
-                        <input
-                            {...register('name', { required: true })}
-                            type="text"
-                            id="name"
-                            name="name"
-                            placeholder="Full name or Company *"
-                            className={styles.input({ isLeft: false })}
-                        />
+                    <button
+                        type="button"
+                        className={styles.button}
+                        onClick={handleSubmit(handleSend)}
+                        disabled={loading}
+                    >
+                        {loading ? 'Loading...' : 'Submit'}
+                    </button>
 
-                        {errors.name?.type === 'required' && (
-                            <span className={styles.error}>Please insert your name or company</span>
-                        )}
-                    </label>
-                </fieldset>
-
-                <label htmlFor="message" className="relative block">
-                    <textarea
-                        {...register('message', { required: true })}
-                        name="message"
-                        placeholder="Your message *"
-                        className={styles.area}
-                    />
-
-                    {errors.message?.type === 'required' && (
-                        <span className={styles.error}>Please insert your message</span>
-                    )}
-                </label>
-
-                <button
-                    type="button"
-                    className={styles.button}
-                    onClick={handleSubmit(handleSend)}
-                    disabled={loading}
-                >
-                    {loading ? 'Loading...' : 'Submit'}
-                </button>
-
-                <footer className="block md:hidden text-transition-dark w-full text-center pt-6">
-                    Created by {data.author.name} @{new Date().getFullYear()}
-                </footer>
+                    <footer className="block md:hidden text-transition-dark w-full text-center pt-6">
+                        Created by {data.author.name} @{new Date().getFullYear()}
+                    </footer>
+                </section>
             </form>
         );
     }

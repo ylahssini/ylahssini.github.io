@@ -1,11 +1,8 @@
+import { useEffect, useRef } from 'react';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Mousewheel, Pagination } from "swiper";
 import data from '@src/data/index.yml';
-import { useStore } from '@src/store';
-import 'swiper/css';
-import 'swiper/css/pagination';
+import { Menu, StoreState, useStore } from '@src/store';
 
 const Layout = dynamic(() => import('@src/components/layout'), { ssr: true });
 const Intro = dynamic(() => import('@src/components/intro'), { ssr: true });
@@ -14,26 +11,49 @@ const Experiences = dynamic(() => import('@src/components/experiences'), { ssr: 
 const Contact = dynamic(() => import('@src/components/contact'), { ssr: true });
 const MobileMenu = dynamic(() => import('@src/components/mobileMenu'), { ssr: false });
 
-const selector = ({ setDetail, menu, menuOpened }: Record<string, any>) => ({
-    setDetail, menu, menuOpened,
+const selector = ({ menuOpened, active, setActive }: StoreState) => ({
+    menuOpened, active, setActive,
 });
 
 const Home = (): React.ReactElement => {
-    const { setDetail, menu, menuOpened } = useStore(selector);
+    const { menuOpened, setActive } = useStore(selector);
+    const introRef = useRef(null);
+    const aboutRef = useRef(null);
+    const experiencesRef = useRef(null);
+    const contactRef = useRef(null);
 
-    const pagination = {
-        clickable: true,
-        el: '.menu',
-        bulletClass: 'menu-item',
-        bulletActiveClass: '__current',
-        renderBullet: (index: number, className: string) => {
-            return `<span class="${className}" data-name="0${index}. ${menu[index]}"><span>0${index}.</span> ${menu[index]}</span>`;
-        },
+    function callbackObserver(entries: IntersectionObserverEntry[]) {
+        if (entries.length === 2) {
+            const entry = entries.find((el) => el.isIntersecting);
+            const { target } = entry || {};
+
+            const key = target?.getAttribute('id');
+            console.log('key', key);
+            if (key) {
+                setActive(key as Menu);
+            }
+        }
+    }
+
+    const sections = {
+        intro: introRef.current,
+        about: aboutRef.current,
+        experiences: experiencesRef.current,
+        contact: contactRef.current,
     };
 
-    function handleSwiperChange(swiper: any): void {
-        setDetail(3 - swiper.activeIndex);
-    }
+    useEffect(() => {
+        const observer = new IntersectionObserver(callbackObserver, { root: null, rootMargin: '0px', threshold: 0.5 });
+        Object.values(sections).forEach((section) => {
+            if (section) observer.observe(section);
+        });
+
+        return () => {
+            Object.values(sections).forEach((section) => {
+                if (section) observer.unobserve(section);
+            });
+        };
+    }, [sections]);
 
     return (
         <>
@@ -45,33 +65,21 @@ const Home = (): React.ReactElement => {
             </Head>
 
             <Layout>
-                <Swiper
-                    direction="vertical"
-                    slidesPerView={1}
-                    spaceBetween={30}
-                    mousewheel={{ sensitivity: 0.83, thresholdTime: 900 }}
-                    pagination={pagination}
-                    modules={[Mousewheel, Pagination]}
-                    onSlideChange={handleSwiperChange}
-                    className="slides"
-                >
-                    <SwiperSlide id="intro" className={`slide z-10 transition-all ${menuOpened ? 'blur-xl  md:blur-none' : 'blur-none'}`}>
-                        <Intro />
-                    </SwiperSlide>
-                    <SwiperSlide id="about" className={`slide z-10 transition-all ${menuOpened ? 'blur-xl  md:blur-none' : 'blur-none'}`}>
-                        <About />
-                    </SwiperSlide>
-                    <SwiperSlide id="experiences" className={`slide z-10 transition-all ${menuOpened ? 'blur-xl  md:blur-none' : 'blur-none'}`}>
-                        <Experiences />
-                    </SwiperSlide>
-                    <SwiperSlide id="contact" className={`slide z-10 transition-all ${menuOpened ? 'blur-xl  md:blur-none' : 'blur-none'}`}>
-                        <Contact />
-                    </SwiperSlide>
-
-                    <MobileMenu />
-                </Swiper>
-
+                <div id="intro" ref={introRef} className={`slide z-10 transition-all ${menuOpened ? 'blur-xl  md:blur-none' : 'blur-none'}`}>
+                    <Intro />
+                </div>
+                <div id="about" ref={aboutRef} className={`slide z-10 transition-all ${menuOpened ? 'blur-xl  md:blur-none' : 'blur-none'}`}>
+                    <About />
+                </div>
+                <div id="experiences" ref={experiencesRef} className={`slide z-10 transition-all ${menuOpened ? 'blur-xl  md:blur-none' : 'blur-none'}`}>
+                    <Experiences />
+                </div>
+                <div id="contact" ref={contactRef} className={`slide z-10 transition-all ${menuOpened ? 'blur-xl  md:blur-none' : 'blur-none'}`}>
+                    <Contact />
+                </div>
             </Layout>
+
+            <MobileMenu />
         </>
     )
 };

@@ -20,10 +20,10 @@ const Experiences = () => {
     }
 
     return (
-        <section className="wrapper">
-            <h3 className="section-title"><span>02. Experiences</span></h3>
-
+        <section className="wrapper h-screen block sm:flex sm:items-center">
             <div className="mt-8 block">
+                <h3 className="section-title"><span>02. Experiences</span></h3>
+
                 <header aria-label="Companies" className={styles.side}>
                     <div className="flex justify-between w-full h-full items-center self-stretch">
 

@@ -7,6 +7,7 @@ export const section = cntl`
     sm:justify-between
     gap-5
     wrapper
+    h-screen
 `;
 
 export const figure = cntl`

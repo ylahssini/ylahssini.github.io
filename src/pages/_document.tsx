@@ -8,7 +8,7 @@ class AppDocument extends Document {
             <Html lang="en-US">
                 <Head>
                     <link rel="preconnect" href="https://fonts.googleapis.com" />
-                    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
                     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
                     <link href={GOOGLE_FONT_HREF} rel="preload" as="style" />
                     <link href={GOOGLE_FONT_HREF} rel="stylesheet" />

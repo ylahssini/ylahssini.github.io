@@ -9,7 +9,7 @@ const selector = ({ detail, mode }: Record<string, any>) => ({ detail, mode });
 const colorsMode: Record<string, string> = { light: '#EEEEEE', dark: '#333335' };
 
 const Icosahedron = (): React.ReactElement => {
-    const icosahedron = useRef<THREE.Mesh>();
+    const icosahedron = useRef<THREE.Mesh>(null);
     const { detail, mode } = useStore(selector);
     const springs = useSpring({
         color: colorsMode[mode],

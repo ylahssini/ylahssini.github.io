@@ -1,9 +1,9 @@
 import { Children, ReactChild } from 'react';
 import { a, useTrail } from '@react-spring/web';
 import useWindowSize from '@src/hooks/useWindowSize';
-import Github from '../../assets/svg/github-alt.svg';
+/* import Github from '../../assets/svg/github-alt.svg';
 import LinkedIn from '../../assets/svg/linkedin.svg';
-import Twitter from '../../assets/svg/twitter.svg';
+import Twitter from '../../assets/svg/twitter.svg'; */
 import * as styles from './styles';
 
 interface TrailProps {

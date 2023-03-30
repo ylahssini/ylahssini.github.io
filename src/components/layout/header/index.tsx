@@ -1,15 +1,14 @@
 import { ChangeEvent } from 'react';
 import Image from 'next/image';
-import shallow from 'zustand/shallow';
-import { useStore } from '@src/store';
+import { Menu, StoreState, useStore } from '@src/store';
 import data from '@src/data/index.yml';
 import Polygon from '@src/assets/images/polygon.png';
 import * as styles from './styles';
 
-const Header = () => {
-    const { mode, setMode, menuOpened, setMenuOpened } = useStore(({ mode, setMode, menuOpened, setMenuOpened }) => ({
-        mode, setMode, menuOpened, setMenuOpened
-    }), shallow);
+const Header = (): React.ReactElement => {
+    const { menu, active, mode, setMode, menuOpened, setMenuOpened } = useStore(({ menu, active, mode, setMode, menuOpened, setMenuOpened }: StoreState) => ({
+        menu, active, mode, setMode, menuOpened, setMenuOpened
+    }));
 
     function handleDarkMode(event: ChangeEvent<HTMLInputElement>) {
         if (event.target.checked) {
@@ -23,6 +22,13 @@ const Header = () => {
         }
     }
 
+    function handleSection(section: Menu) {
+        return () => {
+            const element = document.getElementById(section.toLowerCase());
+            element?.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
     return (
         <header className={styles.header}>
             <div className={styles.logo} >
@@ -33,7 +39,6 @@ const Header = () => {
                                 src={Polygon}
                                 width={64}
                                 height={64}
-                                layout="responsive"
                                 alt=""
                                 priority
                             />
@@ -51,7 +56,13 @@ const Header = () => {
 
             <div id="offset-menu" className="flex justify-between items-center gap-5 animate-menu">
                 <div className="bg-transition-dark w-12 h-0.5 hidden md:block" />
-                <div className="menu" />
+                <div className="hidden md:flex md:items-center gap-4">
+                    {menu.map((section, index) => (
+                        <button key={section} type="button" onClick={handleSection(section)} className={`menu-item ${active === section.toLowerCase() ? '__current' : ''}`}>
+                            <span>0{index}.</span> {section}
+                        </button>
+                    ))}
+                </div>
                 <div title={`${mode} mode`}>
                     <input type="checkbox" className="hidden" id="mode" name="mode" onChange={handleDarkMode} checked={mode === 'dark'} />
                     <label htmlFor="mode" className="block cursor-pointer group">
