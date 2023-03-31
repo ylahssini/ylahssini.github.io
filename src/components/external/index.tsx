@@ -1,15 +1,13 @@
-import { Children, ReactChild } from 'react';
+import { Children } from 'react';
 import { a, useTrail } from '@react-spring/web';
+import { TbBrandGithub, TbBrandLinkedin, TbBrandTwitter } from 'react-icons/tb';
 import useWindowSize from '@src/hooks/useWindowSize';
-/* import Github from '../../assets/svg/github-alt.svg';
-import LinkedIn from '../../assets/svg/linkedin.svg';
-import Twitter from '../../assets/svg/twitter.svg'; */
 import * as styles from './styles';
 
 interface TrailProps {
     isMobile: boolean;
     showMobile: boolean;
-    children: ReactChild[];
+    children: JSX.Element[];
 }
 
 export const Trail = ({ children, isMobile, showMobile }: TrailProps) => {
@@ -45,7 +43,7 @@ export const Trail = ({ children, isMobile, showMobile }: TrailProps) => {
 const External = ({ showMobile = false }: { showMobile?: boolean }) => {
     const { width } = useWindowSize();
     const isMobile = (width || 0) < 768;
-    // const size = isMobile ? 44 : 32;
+    const size = isMobile ? 44 : 32;
 
     return (
         <Trail isMobile={isMobile} showMobile={showMobile}>
@@ -56,7 +54,7 @@ const External = ({ showMobile = false }: { showMobile?: boolean }) => {
                 className="block mb-3"
                 title="Github"
             >
-                {/* <Github width={size} height={size} className="svg-icon hover:fill-purple-700" /> */}
+                <TbBrandGithub size={size} className="svg-icon hover:stroke-purple-700" />
             </a>
 
             <a
@@ -66,7 +64,7 @@ const External = ({ showMobile = false }: { showMobile?: boolean }) => {
                 className="block mb-3"
                 title="Linkedin"
             >
-                {/* <LinkedIn width={size} height={size} className="svg-icon hover:fill-blue-600" /> */}
+                <TbBrandLinkedin size={size} className="svg-icon hover:stroke-blue-600" />
             </a>
 
             <a
@@ -76,7 +74,7 @@ const External = ({ showMobile = false }: { showMobile?: boolean }) => {
                 className="block mb-3"
                 title="Twitter"
             >
-                {/* <Twitter width={size} height={size} className="svg-icon hover:fill-cyan-500" /> */}
+                <TbBrandTwitter size={size} className="svg-icon hover:stroke-cyan-500" />
             </a>
         </Trail>
     )

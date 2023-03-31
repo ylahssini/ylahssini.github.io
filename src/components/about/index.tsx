@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { TbMapPin } from 'react-icons/tb';
 import data from '@src/data/index.yml';
 import AuthorImage from '@src/assets/images/author.jpg';
 import * as styles from './styles';
@@ -33,6 +34,7 @@ const About = (): React.ReactElement => {
                 </figure>
 
                 <address className="not-italic pt-8">
+                    <TbMapPin className="inline-block w-6 h-6 stroke-blue-500" />
                     <span className="font-hairline text-transition-dark">{data.author.location}</span>
                 </address>
             </aside>

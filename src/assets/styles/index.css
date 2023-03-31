@@ -52,7 +52,7 @@ html, body, #__next {
 
 /* TRANSITION TO DARK */
 .svg-icon {
-    @apply inline-block align-middle transition-all duration-200 ease-in-out fill-black dark:fill-slate-50 hover:-translate-y-1;
+    @apply inline-block align-middle transition-all duration-200 ease-in-out stroke-black dark:stroke-slate-50 hover:-translate-y-1;
 }
 
 .mobile-button {

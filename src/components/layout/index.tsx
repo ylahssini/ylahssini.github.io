@@ -4,6 +4,7 @@ import { useStore } from '@src/store';
 
 const Header = dynamic((): LoaderComponent<any> => import('./header'), { ssr: true });
 const Back = dynamic((): LoaderComponent<any> => import('./back'), { ssr: false });
+const External = dynamic((): LoaderComponent<any> => import('../external'), { ssr: true });
 const Footer = dynamic((): LoaderComponent<any> => import('./footer'), { ssr: true });
 const Resume = dynamic((): LoaderComponent<any> => import('../resume'), { ssr: true });
 
@@ -30,6 +31,7 @@ const Layout = ({ children }: Props): React.ReactElement => {
             {children}
 
             <Resume />
+            <External />
             <Footer />
             <Back />
         </div>
