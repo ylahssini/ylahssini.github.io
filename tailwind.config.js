@@ -7,8 +7,8 @@ export const content = [
 ];
 export const theme = {
     fontFamily: {
-        'display': ['Caveat'],
-        'body': ['Cairo'],
+        'display': ['var(--font-caveat)'],
+        'body': ['var(--font-cairo)'],
     },
     extend: {
         backgroundColor: {
