@@ -25,10 +25,11 @@ const About = (): React.ReactElement => {
                                 height={270}
                                 alt={data.author.name}
                                 quality={90}
+                                className="rounded-full"
                             />
                         ) : (
                             // eslint-disable-next-line @next/next/no-img-element
-                            <img src="/images/author.jpg" width="270" height="270" alt={data.author.name} loading="lazy" />
+                            <img src="/images/author.jpg" width="270" height="270" alt={data.author.name} className="rounded-full" loading="lazy" />
                         )
                     }
                 </figure>

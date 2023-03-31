@@ -28,7 +28,6 @@ const Home = (): React.ReactElement => {
             const { target } = entry || {};
 
             const key = target?.getAttribute('id');
-            console.log('key', key);
             if (key) {
                 setActive(key as Menu);
             }
