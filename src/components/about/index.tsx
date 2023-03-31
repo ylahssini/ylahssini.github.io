@@ -26,7 +26,8 @@ const About = (): React.ReactElement => {
                                 quality={90}
                             />
                         ) : (
-                            <img src="/images/author.jpg" width="270" height="270" alt={data.author.name} />
+                            // eslint-disable-next-line @next/next/no-img-element
+                            <img src="/images/author.jpg" width="270" height="270" alt={data.author.name} loading="lazy" />
                         )
                     }
                 </figure>
