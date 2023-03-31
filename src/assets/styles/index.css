@@ -232,5 +232,5 @@ html, body, #__next {
 }
 
 .slide {
-    @apply snap-center text-center text-lg flex items-center justify-center scroll-m-28 pb-10 md:pb-0;
+    @apply snap-center snap-always text-center text-lg flex items-center justify-center scroll-m-28 pb-10 md:pb-0;
 }
