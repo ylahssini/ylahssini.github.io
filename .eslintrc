@@ -30,7 +30,7 @@
     },
     "rules": {
         "indent": "off",
-        "@typescript-eslint/indent": ["error", 4],
+        "@typescript-eslint/indent": "error",
         "no-console": 0,
         "react/jsx-indent": [
             "error",
