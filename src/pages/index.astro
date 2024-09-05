@@ -1,5 +1,8 @@
 ---
-
+import Header from '@components/layout/header/header.astro';
+import '@fontsource/public-sans/300.css';
+import '@fontsource/public-sans/900.css';
+import '@assets/styles/base.css';
 ---
 
 <html lang="en">
@@ -8,9 +11,13 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Youssef Lahssini Portfolio</title>
 	</head>
 	<body>
-		<h1 class="text-red-700">Astro</h1>
+		<main>
+			<header>
+				<Header />
+			</header>
+		</main>
 	</body>
 </html>

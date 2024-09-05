@@ -1,0 +1,41 @@
+---
+---
+
+<aside>
+    <div id="switch-mode-container" title="Light mode">
+        <input type="checkbox" class="hidden" id="mode" name="mode" />
+        <label for="mode" class="block cursor-pointer group">
+            <span class="sky">
+                <span class="sphere group-active:w-6" />
+
+                <span class="cloud scale-[0.35] translate-x-4 translate-y-1" />
+                <span class="cloud scale-[0.35] translate-x-5 translate-y-2.5" />
+
+                <span class="star dark:translate-x-3 dark:translate-y-2.5" />
+                <span class="star dark:translate-x-4 dark:translate-y-1.5" />
+                <span class="star dark:translate-x-2 dark:translate-y-[0.475rem]" />
+                <span class="star dark:translate-x-4 dark:translate-y-3" />
+            </span>
+        </label>
+    </div>
+</aside>
+
+<script>
+    const switchModeContainer = document.querySelector('#switch-mode-container');
+    const modeInput = document.querySelector('#mode');
+
+    modeInput?.addEventListener('change', (event) => {
+        const target = event.currentTarget as HTMLInputElement;
+        if (target && switchModeContainer) {
+            if (target.checked) {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+                switchModeContainer.setAttribute('title', 'Dark mode');
+            } else {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+                switchModeContainer.setAttribute('title', 'Light mode');
+            }
+        }
+    });
+</script>
