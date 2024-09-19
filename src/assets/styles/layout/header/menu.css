@@ -1,0 +1,12 @@
+.menu {
+    @apply flex gap-8 justify-between items-center;
+
+    > a {
+        @apply transition-colors uppercase font-light text-codgray-200 hover:text-codgray-950;
+        font-size: clamp(0.8125rem, -0.9375rem + 2.7344vw, 1.25rem);
+
+        &.__active {
+            @apply font-black text-codgray-950;
+        }
+    }
+}
