@@ -1,0 +1,118 @@
+.side-text {
+    @apply text-codgray-950 font-bold uppercase;
+    font-size: clamp(0.5rem, -0.3789rem + 1.5625vw, 0.875rem);
+}
+
+.locale-button {
+    @apply rounded-full h-9 leading-9 bg-codgray-50 px-4 flex justify-between items-center gap-2;
+}
+
+.sky {
+    @apply
+    rounded-full
+    w-9
+    h-5
+    p-1 block
+    bg-gradient-to-r
+    overflow-hidden
+    transition-colors
+    bg-sky-200
+    from-sky-200
+    to-sky-500
+    relative
+    dark:bg-sky-800
+    dark:from-sky-800
+    dark:to-sky-900
+}
+
+.sphere {
+    @apply
+    rounded-full
+    h-3
+    w-3
+    block
+    bg-white
+    shadow-sun
+    relative
+    translate-x-0
+    overflow-hidden
+    transition-all
+    ease-in-out
+    duration-300
+    dark:bg-stone-400
+    dark:shadow-moon
+    dark:translate-x-[calc(100%+5px)]
+    before:block
+    before:w-3
+    before:h-3
+    before:bg-yellow-50
+    before:-translate-x-5
+    before:-translate-y-5
+    before:rounded-full
+    before:absolute
+    before:transition-all
+    before:ease-in-out
+    before:duration-200
+    before:opacity-0
+    dark:before:opacity-100
+    dark:before:-translate-x-[0.1rem]
+    dark:before:-translate-y-[0.1rem]
+}
+
+.cloud {
+    @apply
+    block
+    absolute
+    top-0
+    left-0
+    rounded-full
+    bg-gray-50
+    w-4
+    h-1.5
+    transition-all
+    ease-in-out
+    duration-300
+    before:block
+    before:rounded-full
+    before:w-2
+    before:h-2
+    before:bg-gray-50
+    before:translate-x-0.5
+    before:-translate-y-1
+    after:block
+    after:bg-gray-50
+    after:rounded-full
+    after:w-1.5
+    after:h-1.5
+    after:translate-x-2
+    after:-translate-y-2.5
+    dark:!translate-y-10
+}
+
+.star {
+    @apply
+    rounded-full
+    bg-yellow-50
+    bg-opacity-70
+    block
+    w-px
+    h-px
+    absolute
+    top-0
+    left-0
+    translate-x-0
+    translate-y-0
+    transition-all
+    ease-in-out
+    duration-300
+    opacity-0
+    dark:opacity-95
+}
+
+nav[popover] {
+    @apply rounded-full py-3 px-5 bg-codgray-50 m-0 translate-y-10 translate-x-0;
+
+    > button {
+        @apply side-text;
+    }
+}
