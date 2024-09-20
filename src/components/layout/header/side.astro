@@ -22,13 +22,13 @@ import '@assets/styles/layout/header/side.css';
         <strong class="side-text">Light mode</strong>
     </div>
 
-    <div>
-        <button id="locale-button" type="button" popovertarget="locale-popover" class="locale-button">
+    <div class="locale">
+        <button type="button">
             <PhTranslateBold class:list="w-5 h-5 text-trinidad-600" />
             <span class="side-text">English</span>
         </button>
 
-        <nav id="locale-popover" popover>
+        <nav>
             <button type="button">French</button>
         </nav>
     </div>
@@ -50,20 +50,6 @@ import '@assets/styles/layout/header/side.css';
                 localStorage.theme = 'light';
                 switchModeContainer.setAttribute('title', 'Light mode');
             }
-        }
-    });
-
-    const localeButton = document.querySelector('#locale-button');
-    localeButton?.addEventListener('click', () => {
-        const target = localeButton.getAttribute('popovertarget');
-        const popover = document.querySelector(`#${target}`) as HTMLDivElement;
-
-        const computed = localeButton?.getBoundingClientRect();
-        console.log('p', popover);
-        if (popover) {
-            popover.style.left = `${computed.x}px`;
-            popover.style.top = `${computed.y}px`;
-            popover.style.width = `${computed.width}px`;
         }
     });
 </script>

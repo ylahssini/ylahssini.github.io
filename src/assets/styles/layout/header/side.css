@@ -3,8 +3,30 @@
     font-size: clamp(0.5rem, -0.3789rem + 1.5625vw, 0.875rem);
 }
 
-.locale-button {
-    @apply rounded-full h-9 leading-9 bg-codgray-50 px-4 flex justify-between items-center gap-2;
+.locale {
+    @apply relative pb-3 translate-y-1.5;
+
+    > button {
+        @apply rounded-full h-9 leading-9 bg-codgray-50 px-4 flex justify-between items-center gap-2 cursor-pointer transition-colors hover:bg-codgray-100;
+    }
+
+    > nav {
+        @apply rounded-2xl py-3 px-5 bg-codgray-50 m-0 transition-opacity ease-in-out opacity-0 absolute w-full pointer-events-none;
+    
+        > button {
+            @apply side-text transition-colors hover:text-trinidad-600 cursor-pointer !capitalize disabled:cursor-default hover:disabled:text-codgray-950 disabled:opacity-50;
+        }
+    }
+
+    &:hover {
+        > button {
+            @apply bg-codgray-100;
+        }
+
+        > nav {
+            @apply opacity-100 translate-y-2 pointer-events-auto;
+        }
+    }
 }
 
 .sky {
@@ -107,12 +129,4 @@
     duration-300
     opacity-0
     dark:opacity-95
-}
-
-nav[popover] {
-    @apply rounded-full py-3 px-5 bg-codgray-50 m-0 translate-y-10 translate-x-0;
-
-    > button {
-        @apply side-text;
-    }
 }
