@@ -38,11 +38,6 @@ export default {
 					950: '#411109',
 				},
 			},
-
-			boxShadow: {
-				'sun': '0 0 4px 1px rgba(255, 252, 238, 0.8)',
-				'moon': '0 0 2px 0 rgba(255, 255, 255, 0.5)',
-			},
 	
 			keyframes: {
 				menu: {
