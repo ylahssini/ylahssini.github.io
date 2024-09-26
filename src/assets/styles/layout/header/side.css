@@ -1,30 +1,12 @@
-.side-text {
-    @apply text-codgray-950 font-bold uppercase;
-    font-size: clamp(0.5rem, -0.3789rem + 1.5625vw, 0.875rem);
-}
-
 .locale {
-    @apply relative pb-3 translate-y-1.5;
-
-    > button {
-        @apply rounded-full h-9 leading-9 bg-codgray-50 px-4 flex justify-between items-center gap-2 cursor-pointer transition-colors hover:bg-codgray-100;
-    }
-
-    > nav {
-        @apply rounded-2xl py-3 px-5 bg-codgray-50 m-0 transition-opacity ease-in-out opacity-0 absolute w-full pointer-events-none;
+    @apply flex items-center gap-2;
     
-        > button {
-            @apply side-text transition-colors hover:text-trinidad-600 cursor-pointer !capitalize disabled:cursor-default hover:disabled:text-codgray-950 disabled:opacity-50;
-        }
-    }
+    a {
+        @apply uppercase font-light transition-colors text-codgray-300 hover:text-trinidad-600;
+        font-size: clamp(0.7rem, 0.2898rem + 0.7292vw, 0.875rem);
 
-    &:hover {
-        > button {
-            @apply bg-codgray-100;
-        }
-
-        > nav {
-            @apply opacity-100 translate-y-2 pointer-events-auto;
+        &.__active {
+            @apply text-codgray-950 font-bold hover:text-codgray-950;
         }
     }
 }
@@ -34,17 +16,17 @@
     rounded-full
     w-9
     h-5
-    p-1 block
+    p-0.5
+    block
     bg-gradient-to-r
     overflow-hidden
     transition-colors
-    bg-sky-200
-    from-sky-200
-    to-sky-500
+    border-codgray-950
+    border-2
+    bg-white
     relative
-    dark:bg-sky-800
-    dark:from-sky-800
-    dark:to-sky-900
+    dark:bg-codgray-950
+    dark:border-white
 }
 
 .sphere {
@@ -53,21 +35,22 @@
     h-3
     w-3
     block
-    bg-white
-    shadow-sun
     relative
+    border-codgray-950
+    shadow-[0_0_0_2px_black_inset]
+    dark:shadow-[0_0_0_4px_white_inset]
     translate-x-0
-    overflow-hidden
     transition-all
     ease-in-out
     duration-300
-    dark:bg-stone-400
-    dark:shadow-moon
-    dark:translate-x-[calc(100%+5px)]
+    bg-white
+    dark:bg-codgray-950
+    dark:translate-x-[calc(100%+4px)]
+    dark:border-white
     before:block
-    before:w-3
-    before:h-3
-    before:bg-yellow-50
+    before:w-[0.7rem]
+    before:h-[0.7rem]
+    before:bg-codgray-950
     before:-translate-x-5
     before:-translate-y-5
     before:rounded-full
@@ -78,7 +61,7 @@
     before:opacity-0
     dark:before:opacity-100
     dark:before:-translate-x-[0.1rem]
-    dark:before:-translate-y-[0.1rem]
+    dark:before:-translate-y-[0.1rem];
 }
 
 .cloud {
@@ -88,7 +71,7 @@
     top-0
     left-0
     rounded-full
-    bg-gray-50
+    bg-codgray-950
     w-4
     h-1.5
     transition-all
@@ -98,11 +81,11 @@
     before:rounded-full
     before:w-2
     before:h-2
-    before:bg-gray-50
+    before:bg-codgray-950
     before:translate-x-0.5
     before:-translate-y-1
     after:block
-    after:bg-gray-50
+    after:bg-codgray-950
     after:rounded-full
     after:w-1.5
     after:h-1.5
@@ -114,7 +97,7 @@
 .star {
     @apply
     rounded-full
-    bg-yellow-50
+    bg-white
     bg-opacity-70
     block
     w-px
