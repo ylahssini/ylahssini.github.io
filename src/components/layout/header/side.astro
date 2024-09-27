@@ -3,10 +3,10 @@ import PhTranslateBold from '@components/icons/phTranslateBold.astro';
 import '@assets/styles/layout/header/side.css';
 ---
 
-<aside class="flex justify-between items-center gap-4">
+<aside class="flex justify-between items-center gap-6">
     <div id="switch-mode-container" title="Light mode" class="flex justify-between items-center gap-2">
         <input type="checkbox" class="hidden" id="mode" name="mode" />
-        <label for="mode" class="block cursor-pointer group">
+        <label for="mode" class="block cursor-pointer group" role="checkbox">
             <span class="sky">
                 <span class="sphere group-active:w-6" />
 
@@ -27,7 +27,7 @@ import '@assets/styles/layout/header/side.css';
 
         <nav>
             <a href="/en" class="__active">en</a>
-            <span role="separator">/</span>
+            <span role="separator" class="mx-1.5">/</span>
             <a href="/fr">fr</a>
         </nav>
     </div>
