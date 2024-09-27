@@ -1,0 +1,17 @@
+.home {
+    @apply grid place-items-center;
+    height: calc(100vh - 9rem);
+}
+
+h1.presentation {
+    @apply text-codgray-700 font-black uppercase leading-none tracking-tighter w-full;
+    font-size: clamp(3rem, -6rem + 16vw, 8rem);
+
+    > span, > a {
+        @apply block;
+    }
+
+    > a {
+        @apply text-codgray-950
+    }
+}
