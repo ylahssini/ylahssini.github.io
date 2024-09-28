@@ -1,0 +1,47 @@
+.intro {
+    @apply grid place-items-center h-screen px-12 pt-20;
+}
+
+h1.presentation {
+    @apply text-codgray-700 font-black uppercase leading-none tracking-tighter w-full;
+    font-size: clamp(3rem, -6rem + 16vw, 8rem);
+
+    > span {
+        @apply block;
+    }
+}
+
+a.me {
+    @apply block text-codgray-950 hover:cursor-none;
+
+    &:hover > .bubble > span {
+        @apply opacity-100 scale-100;
+    }
+}
+
+.bubble {
+    @apply size-32 fixed pointer-events-none;
+
+    > span {
+        @apply
+        transition-all
+        duration-300
+        ease-in
+        scale-0
+        opacity-0
+        text-sm
+        shadow-xl
+        normal-case
+        rounded-full
+        bg-trinidad-50/75
+        backdrop-blur-md
+        size-full
+        px-4
+        flex
+        flex-col
+        items-center
+        justify-center
+        tracking-normal
+        text-center;
+    }
+}

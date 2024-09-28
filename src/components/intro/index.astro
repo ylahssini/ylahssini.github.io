@@ -1,0 +1,40 @@
+---
+import '@assets/styles/intro/style.css';
+import PhCaretDownBold from '@components/icons/phArrowDownBold.astro';
+---
+
+<section class="intro bg-transition-dark">
+    <h1 class="presentation" role="heading">
+        <span>Hello!</span>
+        <span>My name is</span>
+        <a id="me" href="#about" class="me">
+            Youssef Lahssini<b class="text-trinidad-600">.</b>
+            <strong id="bubble" class="bubble" aria-hidden>
+                <span>See more about me <PhCaretDownBold class="size-4" /></span>
+            </strong>
+        </a>
+        <span>A passionate front-end</span>
+        <span>developer</span>
+    </h1>
+</section>
+
+<script>
+    const me = document.querySelector('#me');
+    const bubble = document.querySelector('#bubble') as HTMLSpanElement;
+
+    me?.addEventListener('mousemove', (event) => {
+        if (bubble) {
+            const bubbleBox = bubble.getBoundingClientRect();
+            bubble.classList.remove('__hide');
+
+            bubble.style.left = `${(event as MouseEvent).x - (bubbleBox.width / 2)}px`;
+            bubble.style.top = `${(event as MouseEvent).y - (bubbleBox.height / 2)}px`;
+        }
+    });
+
+    me?.addEventListener('mouseleave', (event) => {
+        if (bubble) {
+            bubble.classList.add('__hide');
+        }
+    });
+</script>
