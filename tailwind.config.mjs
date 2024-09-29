@@ -1,3 +1,5 @@
+import plugin from 'tailwindcss/plugin';
+
 export const darkMode = 'class';
 
 /** @type {import('tailwindcss').Config} */
@@ -10,8 +12,8 @@ export default {
 			},
 
 			colors: {
-				'codgray': {
-					50: '#f6f7f6',
+				codgray: {
+					50: '#F4F5F5',
 					100: '#e3e4e3',
 					200: '#c6c9c6',
 					300: '#a2a7a1',
@@ -20,11 +22,11 @@ export default {
 					600: '#4e534e',
 					700: '#414540',
 					800: '#363936',
-					900: '#2f322f',
+					900: '#292B2C',
 					950: '#0e0f0e',
 				},
 
-				'trinidad': {
+				trinidad: {
 					50: '#fff6ed',
 					100: '#feead6',
 					200: '#fcd1ac',
@@ -40,32 +42,14 @@ export default {
 			},
 	
 			keyframes: {
-				menu: {
-					'0%': { opacity: 0, transform: 'translateX(2em)' },
-					'100%': { opacity: 1, transform: 'translateX(0)' },
-				},
-	
-				logo: {
-					'0%': { opacity: 0, transform: 'translateX(-2em)' },
-					'100%': { opacity: 1, transform: 'translateX(0)' },
-				},
-	
 				'scroll-wheel': {
 					'0%': { opacity: 0, transform: 'translateY(2em)' },
 					'100%': { opacity: 1, transform: 'translateY(0)' },
 				},
-	
-				resume: {
-					'0%': { opacity: 0, transform: 'translateY(2em)' },
-					'100%': { opacity: 1, transform: 'translateY(0)' },
-				}
 			},
 	
 			animation: {
-				logo: 'logo .2s ease-in-out 0s 1 alternate both',
-				menu: 'menu .2s ease-in-out .5s 1 alternate both',
 				'scroll-wheel': 'scroll-wheel .2s ease-in-out 1.1s 1 alternate both',
-				resume: 'resume .2s ease-in-out .8s 1 alternate both'
 			}
 		},
 	},
