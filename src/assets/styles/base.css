@@ -10,6 +10,10 @@
     box-sizing: border-box;
 }
 
+html {
+    @apply overflow-hidden;
+}
+
 html, body {
     font-family: 'Public Sans', Sans-serif;
     @apply w-full;
@@ -21,6 +25,10 @@ body {
 
 .wrapper {
     @apply w-10/12 max-w-5xl;
+}
+
+.slide {
+    @apply snap-center snap-always;
 }
 
 /* TRANSITION TO DARK */

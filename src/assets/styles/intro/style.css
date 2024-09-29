@@ -1,5 +1,5 @@
 .intro {
-    @apply grid place-items-center h-screen px-12 pt-20;
+    @apply grid place-items-center h-screen px-12 pt-32;
 }
 
 h1.presentation {
@@ -30,6 +30,7 @@ a.me {
         scale-0
         opacity-0
         text-sm
+        font-light
         shadow-xl
         shadow-codgray-950/10
         normal-case
@@ -49,4 +50,20 @@ a.me {
         tracking-normal
         text-center;
     }
+}
+
+.scroll-down {
+    @apply w-full md:flex justify-center items-center md:flex-col py-2 animate-scroll-wheel;
+}
+
+.mouse {
+    @apply border-codgray-950 dark:border-white border-2 rounded-t-full rounded-b-full w-5 h-7 mb-2 md:flex md:justify-center pt-1;
+}
+
+.wheel {
+    @apply border-codgray-950 dark:border-white border-2 rounded-t-full rounded-b-full w-[6px] h-2 animate-bounce;
+}
+
+.scroll-down-text {
+    @apply text-sm text-codgray-950 dark:text-white;
 }
