@@ -1,6 +1,7 @@
 ---
 import Header from '@components/layout/header.astro';
 import Intro from '@components/intro/index.astro';
+import About from '@components/about/index.astro';
 import '@fontsource/public-sans/200.css';
 import '@fontsource/public-sans/300.css';
 import '@fontsource/public-sans/700.css';
@@ -17,9 +18,10 @@ import '@assets/styles/base.css';
 		<title>Youssef Lahssini Portfolio</title>
 	</head>
 	<body>
-		<main class="relative h-screen overflow-y-auto scroll-smooth snap-mandatory snap-y scroll-pt-52 sm:scroll-pt-0">
+		<main class="relative h-screen scroll-smooth scroll-pt-52 sm:scroll-pt-0">
 			<Header />
 			<Intro />
+			<About />
 		</main>
 	</body>
 </html>
