@@ -1,15 +1,54 @@
 ---
-import '@assets/styles/layout/menu.css'
+import '@assets/styles/layout/menu.css';
 ---
 
-<nav class="menu">
-    <a href="#" class="__active">Home</a>
+<nav id="menu" class="menu">
+    <button type="button" data-slide="intro" class="__active">Home</button>
     <b>//</b>
-    <a href="#">About me</a>
+    <button type="button" data-slide="about">About me</button>
     <b>//</b>
-    <a href="#">Experiences</a>
+    <button type="button" data-slide="experiences">Experiences</button>
     <b>//</b>
-    <a href="#">Projects</a>
+    <button type="button" data-slide="projects">Projects</button>
     <b>//</b>
-    <a href="#">Contact</a>
+    <button type="button" data-slide="contact">Contact</button>
 </nav>
+
+<script>
+    const menuButtons = document.querySelectorAll('#menu > button');
+    const slides = Array.from(menuButtons)
+        .map((menuButton) => document.getElementById(menuButton.getAttribute('data-slide') as string))
+        .filter((menuButton) => !!menuButton);
+
+    menuButtons.forEach((menuButton) => {
+        menuButton.addEventListener('click', (event) => {
+            menuButtons.forEach((item) => item.classList.remove('__active'));
+
+            const element = event.target as HTMLButtonElement;
+            const activeMenu = element?.getAttribute('data-slide') as string;
+
+            const slide = document.getElementById(activeMenu);
+
+            if (slide) {
+                slide?.scrollIntoView({ behavior: 'smooth' });
+                menuButton.classList.add('__active');
+            }
+        });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            const id = entry.target.getAttribute('id');
+
+            if (entry.isIntersecting) {
+                document.querySelector(`[data-slide="${id}"`)?.classList.add('__active');
+            } else {
+                document.querySelector(`[data-slide="${id}"`)?.classList.remove('__active');
+            }
+        });
+    }, { threshold: 0.5 });
+
+    slides.forEach((slide) => {
+        observer.observe(slide as HTMLElement);
+    });
+</script>

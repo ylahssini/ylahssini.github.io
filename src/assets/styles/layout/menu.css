@@ -1,7 +1,7 @@
 .menu {
     @apply flex gap-8 justify-between items-center;
 
-    > a {
+    > button {
         @apply uppercase font-light transition-colors text-codgray-200 hover:text-codgray-950 dark:text-codgray-700 dark:hover:text-white;
         font-size: clamp(0.8125rem, -0.9375rem + 2.7344vw, 1.25rem);
 
