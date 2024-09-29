@@ -3,16 +3,16 @@ import '@assets/styles/intro.css';
 import PhCaretDownBold from '@components/icons/phArrowDownBold.astro';
 ---
 
-<section class="intro bg-transition-dark">
+<section id="intro" class="intro bg-transition-dark">
     <h1 class="presentation" role="heading">
         <span>Hello!</span>
         <span>My name is</span>
-        <a id="me" href="#about" class="me">
+        <button id="me" class="me" type="button">
             Youssef Lahssini<b class="text-trinidad-600">.</b>
             <strong id="bubble" class="bubble" aria-hidden>
                 <span>See more about me <PhCaretDownBold class="size-4" /></span>
             </strong>
-        </a>
+        </button>
         <span>A passionate front-end</span>
         <span>developer</span>
     </h1>
@@ -43,4 +43,9 @@ import PhCaretDownBold from '@components/icons/phArrowDownBold.astro';
             bubble.classList.add('__hide');
         }
     });
+
+    me?.addEventListener('click', () => {
+        const aboutSlide = document.querySelector('#about');
+        aboutSlide?.scrollIntoView({ behavior: 'smooth' });
+    })
 </script>
