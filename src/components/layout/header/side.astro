@@ -23,11 +23,11 @@ import '@assets/styles/layout/header/side.css';
     </div>
 
     <div class="locale">
-        <PhTranslateBold class:list="w-5 h-5 text-codgray-950" role="img" />
+        <PhTranslateBold class:list="w-5 h-5 transition-colors text-codgray-950 dark:text-white" role="img" />
 
         <nav>
             <a href="/en" class="__active">en</a>
-            <span role="separator" class="mx-1.5">/</span>
+            <span role="separator" class="mx-1.5 transition-colors text-codgray-950 dark:text-white">/</span>
             <a href="/fr">fr</a>
         </nav>
     </div>
@@ -37,7 +37,7 @@ import '@assets/styles/layout/header/side.css';
     const switchModeContainer = document.querySelector('#switch-mode-container');
     const modeInput = document.querySelector('#mode');
 
-    modeInput?.addEventListener('change', (event) => {
+    modeInput?.addEventListener('change', async (event) => {
         const target = event.currentTarget as HTMLInputElement;
         if (target && switchModeContainer) {
             if (target.checked) {

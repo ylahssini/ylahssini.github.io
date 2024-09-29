@@ -2,11 +2,11 @@
     @apply flex items-center gap-2;
     
     a {
-        @apply uppercase font-light transition-colors text-codgray-300 hover:text-trinidad-600;
+        @apply uppercase font-light transition-colors text-codgray-300 hover:text-codgray-950 dark:text-codgray-700 dark:hover:text-white;
         font-size: clamp(0.7rem, 0.2898rem + 0.7292vw, 0.875rem);
 
         &.__active {
-            @apply text-codgray-950 font-bold hover:text-codgray-950;
+            @apply text-codgray-950 font-bold hover:text-codgray-950 dark:text-white dark:hover:text-white;
         }
     }
 }
@@ -45,11 +45,14 @@
     duration-300
     bg-white
     dark:bg-codgray-950
-    dark:translate-x-[calc(100%+4px)]
+    dark:translate-x-[calc(100%+0.45rem)]
+    dark:translate-y-px
     dark:border-white
+    dark:w-2.5
+    dark:h-2.5
     before:block
-    before:w-[0.7rem]
-    before:h-[0.7rem]
+    before:w-[0.6rem]
+    before:h-[0.6rem]
     before:bg-codgray-950
     before:-translate-x-5
     before:-translate-y-5

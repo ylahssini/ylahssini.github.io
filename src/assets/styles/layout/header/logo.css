@@ -1,4 +1,4 @@
 .logo {
-    @apply text-4xl font-black text-codgray-950 cursor-default;
+    @apply transition-colors text-4xl font-black text-codgray-950 dark:text-white cursor-default tracking-tighter;
     font-size: clamp(1.5rem, -1.5rem + 4.6875vw, 2.25rem);
 }
