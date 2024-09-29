@@ -1,0 +1,52 @@
+.about {
+    @apply grid place-items-center h-screen px-12 pt-20 transition-colors bg-white dark:bg-codgray-900;
+}
+
+.about--container {
+    @apply grid gap-20 grid-flow-row max-w-7xl items-end;
+    grid-template-columns: 1fr minmax(200px, 493px);
+    grid-template-rows: 1fr;
+    grid-template-areas: "text image";
+}
+
+.about--text {
+    grid-area: text;
+
+    p {
+        @apply text-codgray-500 pb-7 text-pretty tracking-widest leading-relaxed;
+    }
+}
+
+.about-image { grid-area: image; }
+
+a.external-link {
+    @apply block text-center leading-none;
+
+    > strong {
+        @apply block;
+    }
+
+    > svg {
+        @apply transition-colors size-14 text-codgray-950 mx-auto mb-5;
+    }
+
+    > small {
+        @apply text-codgray-500;
+    }
+
+    &.__github:hover, &.__github:hover > svg {
+        @apply text-purple-700;
+    }
+
+    &.__codepen:hover, &.__codepen:hover > svg {
+        @apply text-orange-600;
+    }
+
+    &.__twitter:hover, &.__twitter:hover > svg {
+        @apply text-blue-600;
+    }
+
+    &.__linkedin:hover, &.__linkedin:hover > svg {
+        @apply text-cyan-500;
+    }
+}
