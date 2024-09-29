@@ -3,7 +3,7 @@
 }
 
 h1.presentation {
-    @apply text-codgray-700 font-black uppercase leading-none tracking-tighter w-full;
+    @apply transition-colors text-codgray-700 dark:text-codgray-200 font-black uppercase leading-none tracking-tighter w-full;
     font-size: clamp(3rem, -6rem + 16vw, 8rem);
 
     > span {
@@ -12,7 +12,7 @@ h1.presentation {
 }
 
 a.me {
-    @apply block text-codgray-950 hover:cursor-none;
+    @apply block text-codgray-950 dark:text-white hover:cursor-none;
 
     &:hover > .bubble > span {
         @apply opacity-100 scale-100;
@@ -31,9 +31,14 @@ a.me {
         opacity-0
         text-sm
         shadow-xl
+        shadow-codgray-950/10
         normal-case
         rounded-full
         bg-trinidad-50/75
+        text-codgray-950
+        dark:bg-codgray-950/75
+        dark:text-white
+        dark:shadow-white/5
         backdrop-blur-md
         size-full
         px-4
