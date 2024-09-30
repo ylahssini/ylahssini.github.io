@@ -1,5 +1,5 @@
 .about {
-    @apply grid place-items-center h-screen px-12 pt-20 transition-colors bg-white dark:bg-codgray-900;
+    @apply grid place-items-center h-screen px-12 pt-20 transition-colors bg-white dark:bg-codgray-950;
 }
 
 .about--container {
@@ -13,21 +13,21 @@
     grid-area: text;
 
     p {
-        @apply text-codgray-500 pb-7 text-pretty tracking-widest leading-relaxed;
+        @apply text-codgray-500 dark:text-codgray-300 pb-7 text-pretty tracking-widest leading-relaxed;
     }
 }
 
 .about-image { grid-area: image; }
 
 a.external-link {
-    @apply block text-center leading-none;
+    @apply block text-center leading-none text-codgray-950 dark:text-white;
 
     > strong {
         @apply block;
     }
 
     > svg {
-        @apply transition-colors size-14 text-codgray-950 mx-auto mb-5;
+        @apply transition-colors size-14 text-codgray-950 dark:text-white mx-auto mb-5;
     }
 
     > small {
