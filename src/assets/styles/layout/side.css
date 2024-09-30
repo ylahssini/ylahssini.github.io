@@ -18,7 +18,6 @@
     h-5
     p-0.5
     block
-    bg-gradient-to-r
     overflow-hidden
     transition-colors
     border-codgray-950
@@ -115,4 +114,22 @@
     duration-300
     opacity-0
     dark:opacity-95
+}
+
+.header.__odd {
+    .sphere {
+        @apply before:bg-codgray-50 dark:before:bg-codgray-900;
+    }
+
+    .sky {
+        @apply bg-codgray-50 dark:bg-codgray-900;
+    }
+
+    .locale a {
+        @apply text-codgray-400 hover:text-codgray-900 dark:text-codgray-400 dark:hover:text-codgray-50;
+
+        &.__active {
+            @apply text-codgray-900 dark:text-codgray-50;
+        }
+    }
 }

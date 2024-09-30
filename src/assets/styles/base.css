@@ -32,6 +32,7 @@ body {
     text-4xl
     flex
     items-center
+    text-codgray-950
     gap-4
     w-full
     before:content-['//']
@@ -39,6 +40,8 @@ body {
     after:h-px
     after:w-1/3
     after:bg-codgray-950
+    dark:text-white
+    dark:after:bg-white
 }
 
 /* T R A N S I T I O N   T O   D A R K */

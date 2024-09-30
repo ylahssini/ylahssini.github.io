@@ -41,6 +41,14 @@ import '@assets/styles/layout/menu.css';
             const id = entry.target.getAttribute('id');
 
             if (entry.isIntersecting) {
+                const slideIntersectingIndex = slides.findIndex((slide) => slide.getAttribute('id') === id);
+                
+                if (slideIntersectingIndex % 2 === 1) {
+                    document.querySelector('#header')?.classList.add('__odd');
+                } else {
+                    document.querySelector('#header')?.classList.remove('__odd');
+                }
+
                 document.querySelector(`[data-slide="${id}"`)?.classList.add('__active');
             } else {
                 document.querySelector(`[data-slide="${id}"`)?.classList.remove('__active');
