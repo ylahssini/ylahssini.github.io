@@ -1,0 +1,45 @@
+.experiences {
+    @apply transition-colors bg-codgray-50 dark:bg-codgray-900;
+}
+
+.experiences--container {
+    @apply grid grid-cols-2 gap-24 px-12 py-20 max-w-7xl mx-auto;
+}
+
+.experiences--side {
+    > div {
+        @apply sticky top-36 transition-colors dark:text-codgray-50;
+
+        > p {
+            @apply pb-5 text-pretty text-justify;
+        }
+    }
+}
+
+.experiences--item {
+    @apply sticky top-36 rounded-xl bg-white border border-codgray-100 dark:bg-codgray-950 dark:border-codgray-800 p-8 mb-11 last-of-type:mb-0;
+
+    > header {
+        @apply mb-6;
+
+        > small {
+            @apply text-sm font-light text-codgray-300 dark:text-codgray-50;
+        }
+
+        > h3 {
+            @apply text-trinidad-600 font-bold text-2xl uppercase;
+        }
+
+        > b {
+            @apply text-lg text-codgray-950 dark:text-white font-light;
+        }
+    }
+
+    > ul {
+        @apply list-disc list-outside pl-6 text-base flex flex-col gap-3 transition-colors dark:text-codgray-50;
+    }
+}
+
+a.resume {
+    @apply transition-colors bg-trinidad-600 hover:bg-trinidad-800 rounded-full w-full py-3 text-white font-black text-xl flex items-center justify-center gap-2 mb-1;
+}
