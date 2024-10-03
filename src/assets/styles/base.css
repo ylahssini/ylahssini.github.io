@@ -23,6 +23,26 @@ body {
     @apply w-10/12 max-w-5xl;
 }
 
+.header__odd {
+    @apply !bg-codgray-50 dark:!bg-codgray-900;
+
+    [data-menu] > button {
+        @apply text-codgray-300 dark:text-codgray-300 hover:text-codgray-950 dark:hover:text-white;
+
+        &.menu__active {
+            @apply text-codgray-950 dark:text-white;
+        }
+    }
+}
+
+.menu__active {
+    @apply font-black !text-codgray-950 dark:!text-white;
+}
+
+.locale__active {
+    @apply text-codgray-950 font-bold hover:text-codgray-950 dark:text-white dark:hover:text-white;
+}
+
 .title {
     @apply
     relative

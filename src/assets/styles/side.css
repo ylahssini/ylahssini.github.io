@@ -1,16 +1,3 @@
-.locale {
-    @apply flex items-center gap-2;
-    
-    a {
-        @apply uppercase font-light transition-colors text-codgray-300 hover:text-codgray-950 dark:text-codgray-700 dark:hover:text-white;
-        font-size: clamp(0.7rem, 0.2898rem + 0.7292vw, 0.875rem);
-
-        &.__active {
-            @apply text-codgray-950 font-bold hover:text-codgray-950 dark:text-white dark:hover:text-white;
-        }
-    }
-}
-
 .sky {
     @apply
     rounded-full
@@ -93,7 +80,7 @@
     after:h-1.5
     after:translate-x-2
     after:-translate-y-2.5
-    dark:!translate-y-10
+    dark:!translate-y-10;
 }
 
 .star {
@@ -116,7 +103,11 @@
     dark:opacity-95
 }
 
-.header.__odd {
+.locale__active {
+    @apply text-codgray-950 font-bold hover:text-codgray-950 dark:text-white dark:hover:text-white;
+}
+
+.header__odd {
     .sphere {
         @apply before:bg-codgray-50 dark:before:bg-codgray-900;
     }
@@ -125,11 +116,11 @@
         @apply bg-codgray-50 dark:bg-codgray-900;
     }
 
-    .locale a {
-        @apply text-codgray-400 hover:text-codgray-900 dark:text-codgray-400 dark:hover:text-codgray-50;
+    .locale__list > a {
+        @apply !text-codgray-400 hover:!text-codgray-900 dark:!text-codgray-300 dark:hover:!text-codgray-50;
 
-        &.__active {
-            @apply text-codgray-900 dark:text-codgray-50;
+        &.locale__active {
+            @apply !text-codgray-900 dark:!text-codgray-50;
         }
     }
 }

@@ -1,18 +1,54 @@
 ---
 import PhPdfFile from '@components/icons/phPdfFile.astro';
-import '@assets/styles/experiences.css';
+
+const experiences = [
+    {
+        time: 'Aug 2007 - Apr 2014',
+        title: 'Bnet Technologies',
+        job: 'Web designer',
+        points: [
+            'Make multiple e-commerce websites design and development them in front-end.',
+            'Management of the fluidity and speed of the sites.',
+            'Creation of business cards, Brochure & Roll-up.'
+        ]
+    },
+    {
+        time: 'May 2014 - Nov 2017',
+        title: 'Kenzamall',
+        job: 'UI developer',
+        points: [
+            'Interfaced with different departments (Marketing, Logistics...) to ensure thoughtful and coherent user experiences.',
+            'Creation design of logos and e-commerce websites.',
+            'Developed and maintained code for in-house and client websites.'
+        ]
+    },
+    {
+        time: 'Nov 2017 - Present',
+        title: 'Elavi (Flyer.ma)',
+        job: 'Front-end developer',
+        points: [
+            'Creation a multiple websites for a diverse clients and internal projects.',
+            'Establishment of the front-end technical structure of the projects & ensure cross-browser compatibility and responsiveness.',
+            'Communicate with back-end developers and clients on a daily basis.'
+        ]
+    }
+]
 ---
 
-<section id="experiences" class="experiences">
-    <div class="experiences--container">
-        <aside class="experiences--side">
-            <div>
+<section id="experiences" class="py-20 transition-colors bg-codgray-50 dark:bg-codgray-900">
+    <div class="grid grid-cols-2 gap-24 px-12 py-20 max-w-7xl mx-auto">
+        <aside>
+            <div class="sticky top-40 transition-colors dark:text-codgray-50">
                 <h2 class="title">Experiences</h2>
 
-                <p>Here my experiences in 15 years with +40 projects that made in my career of development and design.</p>
-                <p>For more details, you can download my CV by clicking the button in below:</p>
+                <p class="pb-5 text-pretty text-justify">Here my experiences in 15 years with +40 projects that made in my career of development and design.</p>
+                <p class="pb-5 text-pretty text-justify">For more details, you can download my CV by clicking the button in below:</p>
 
-                <a href="/public/resumes/youssef-lahssini-cv-en.pdf" download class="resume">
+                <a
+                    href="/public/resumes/youssef-lahssini-cv-en.pdf"
+                    download
+                    class="transition-colors bg-trinidad-600 hover:bg-trinidad-800 rounded-full w-full py-3 text-white font-black text-xl flex items-center justify-center gap-2 mb-1"
+                >
                     <PhPdfFile class:list="size-6" />
                     <strong>Download my resume</strong>
                 </a>
@@ -21,47 +57,21 @@ import '@assets/styles/experiences.css';
         </aside>
 
         <ol>
-            <li class="experiences--item">
-                <header>
-                    <small>Aug 2007 - Apr 2014</small>
-                    <h3>Bnet Technologies</h3>
-                    <b>Web designer</b>
-                </header>
-    
-                <ul>
-                    <li>Make multiple e-commerce websites design and development them in front-end.</li>
-                    <li>Management of the fluidity and speed of the sites.</li>
-                    <li>Creation of business cards, Brochure & Roll-up.</li>
-                </ul>
-            </li>
-    
-            <li class="experiences--item">
-                <header>
-                    <small>May 2014 - Nov 2017</small>
-                    <h3>Kenzamall</h3>
-                    <b>UI developer</b>
-                </header>
-    
-                <ul>
-                    <li>Interfaced with different departments (Marketing, Logistics...) to ensure thoughtful and coherent user experiences.</li>
-                    <li>Creation design of logos and e-commerce websites.</li>
-                    <li>Developed and maintained code for in-house and client websites.</li>
-                </ul>
-            </li>
-    
-            <li class="experiences--item">
-                <header>
-                    <small>Nov 2017 - Present</small>
-                    <h3>Elavi (Flyer.ma)</h3>
-                    <b>Front-end developer</b>
-                </header>
-    
-                <ul>
-                    <li>Creation a multiple websites for a diverse clients and internal projects.</li>
-                    <li>Establishment of the front-end technical structure of the projects & ensure cross-browser compatibility and responsiveness.</li>
-                    <li>Communicate with back-end developers and clients on a daily basis.</li>
-                </ul>
-            </li>
+            {experiences.map((experience) => (
+                <li class="sticky top-40 rounded-xl bg-white border border-codgray-100 dark:bg-codgray-950 dark:border-codgray-800 p-8 mb-11 last-of-type:mb-0">
+                    <header class="mb-6">
+                        <small class="text-sm font-light text-codgray-300 dark:text-codgray-50">{experience.time}</small>
+                        <h3 class="text-trinidad-600 font-bold text-2xl uppercase">{experience.title}</h3>
+                        <b class="text-lg text-codgray-950 dark:text-white font-light">{experience.job}</b>
+                    </header>
+
+                    <ul class="list-disc list-outside pl-6 text-base flex flex-col gap-3 transition-colors dark:text-codgray-50">
+                        {experience.points.map((point) => (
+                            <li>{point}</li>
+                        ))}
+                    </ul>
+                </li>
+            ))}
         </ol>
     </div>
 </section>

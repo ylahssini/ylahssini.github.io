@@ -8,40 +8,40 @@ import PhTwitterLogoBold from '@components/icons/phTwitterLogoBold.astro'
 import '@assets/styles/about.css'
 ---
 
-<section id="about" class="about">
-    <div class="about--container">
+<section id="about" class="grid place-items-center h-screen px-12 pt-20 transition-colors bg-white dark:bg-codgray-950">
+    <div class="about--container grid gap-20 grid-flow-row max-w-7xl items-end">
         <div class="about--text">
             <h2 class="title">About me</h2>
 
             <article class="pb-16">
-                <p>Hi! my name is Youssef Lahssini. I am a passionate Front-end developer who loves to  discover new technologies by creating demos to learn. My career starts back in 2007 when i was a web designer to become today a front-end developer.</p>
-                <p>Despite the years i have spent as a developer, i consider myself to be a beginner learning new technologies. But with experience, i acquired certain skills that i appreciated during my career.</p>
-                <p>I'm currently working at Elavi (Flyer.ma). My role is to lead my team and also architect and build client side projects.</p>
+                <p class="text-codgray-500 dark:text-codgray-300 pb-7 text-pretty tracking-widest leading-relaxed">Hi! my name is Youssef Lahssini. I am a passionate Front-end developer who loves to  discover new technologies by creating demos to learn. My career starts back in 2007 when i was a web designer to become today a front-end developer.</p>
+                <p class="text-codgray-500 dark:text-codgray-300 pb-7 text-pretty tracking-widest leading-relaxed">Despite the years i have spent as a developer, i consider myself to be a beginner learning new technologies. But with experience, i acquired certain skills that i appreciated during my career.</p>
+                <p class="text-codgray-500 dark:text-codgray-300 pb-7 text-pretty tracking-widest leading-relaxed">I'm currently working at Elavi (Flyer.ma). My role is to lead my team and also architect and build client side projects.</p>
             </article>
 
             <nav class="flex items-center justify-between">
-                <a href="https://github.com/ylahssini" target="_blank" class="external-link __github">
-                    <PhGithubLogoBold role="img" />
-                    <strong>Github</strong>
-                    <small>See my repositories</small>
+                <a href="https://github.com/ylahssini" target="_blank" class="external-link __github text-codgray-950 dark:text-white block text-center leading-none">
+                    <PhGithubLogoBold role="img" class:list="transition-colors size-14 mx-auto mb-5" />
+                    <strong class="block">Github</strong>
+                    <small class="text-codgray-500">See my repositories</small>
                 </a>
 
-                <a href="https://codepen.io/collection/VYJOdz" target="_blank" class="external-link __codepen">
-                    <PhCodepenLogo role="img" />
-                    <strong>Codepen</strong>
-                    <small>See my pens</small>
+                <a href="https://codepen.io/collection/VYJOdz" target="_blank" class="external-link __codepen text-codgray-950 dark:text-white block text-center leading-none">
+                    <PhCodepenLogo role="img" class:list="transition-colors size-14 mx-auto mb-5" />
+                    <strong class="block">Codepen</strong>
+                    <small class="text-codgray-500">See my pens</small>
                 </a>
 
-                <a href="https://x.com/ysfLahssini" target="_blank" class="external-link __twitter">
-                    <PhTwitterLogoBold role="img" />
-                    <strong>Twitter (X)</strong>
-                    <small>See my posts</small>
+                <a href="https://x.com/ysfLahssini" target="_blank" class="external-link __twitter text-codgray-950 dark:text-white block text-center leading-none">
+                    <PhTwitterLogoBold role="img" class:list="transition-colors size-14 mx-auto mb-5" />
+                    <strong class="block">Twitter (X)</strong>
+                    <small class="text-codgray-500">See my posts</small>
                 </a>
 
-                <a href="https://www.linkedin.com/in/youssef-lahssini-05583a16" target="_blank" class="external-link __linkedin">
-                    <PhLinkedinLogoBold role="img" />
-                    <strong>Linkedin</strong>
-                    <small>See my profile</small>
+                <a href="https://www.linkedin.com/in/youssef-lahssini-05583a16" target="_blank" class="external-link __linkedin text-codgray-950 dark:text-white block text-center leading-none">
+                    <PhLinkedinLogoBold role="img" class:list="transition-colors size-14 mx-auto mb-5" />
+                    <strong class="block">Linkedin</strong>
+                    <small class="text-codgray-500">See my profile</small>
                 </a>
             </nav>
         </div>

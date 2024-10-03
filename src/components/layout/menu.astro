@@ -1,18 +1,25 @@
 ---
-import '@assets/styles/layout/menu.css';
+const menu = [
+    { text: 'Home', slide: 'intro' },
+    { text: 'About me', slide: 'about' },
+    { text: 'Experiences', slide: 'experiences' },
+    { text: 'Projects', slide: 'projects' },
+    { text: 'Contact', slide: 'contact' },
+]
 ---
 
-<nav id="menu" class="menu">
-    <button type="button" data-slide="intro" class="__active">Home</button>
-    <b>//</b>
-    <button type="button" data-slide="about">About me</button>
-    <b>//</b>
-    <button type="button" data-slide="experiences">Experiences</button>
-    <b>//</b>
-    <button type="button" data-slide="projects">Projects</button>
-    <b>//</b>
-    <button type="button" data-slide="contact">Contact</button>
-</nav>
+<div id="menu" data-menu class="flex gap-8 justify-between items-center">
+    {menu.map((item) => (
+        <button
+            type="button"
+            data-slide={item.slide}
+            class="uppercase font-light text-[clamp(0.8125rem,-0.9375rem+2.7344vw,1.25rem)] transition-colors text-codgray-200 hover:text-codgray-950 dark:text-codgray-700 dark:hover:text-white"
+        >
+            {item.text}
+        </button>
+        <b class="transition-colors text-codgray-950 dark:text-white last:hidden">//</b>
+    ))}
+</div>
 
 <script>
     const menuButtons = document.querySelectorAll('#menu > button');
@@ -22,7 +29,7 @@ import '@assets/styles/layout/menu.css';
 
     menuButtons.forEach((menuButton) => {
         menuButton.addEventListener('click', (event) => {
-            menuButtons.forEach((item) => item.classList.remove('__active'));
+            menuButtons.forEach((item) => item.classList.remove('menu__active'));
 
             const element = event.target as HTMLButtonElement;
             const activeMenu = element?.getAttribute('data-slide') as string;
@@ -31,7 +38,7 @@ import '@assets/styles/layout/menu.css';
 
             if (slide) {
                 slide?.scrollIntoView({ behavior: 'smooth' });
-                menuButton.classList.add('__active');
+                menuButton.classList.add('menu__active');
             }
         });
     });
@@ -44,14 +51,14 @@ import '@assets/styles/layout/menu.css';
                 const slideIntersectingIndex = slides.findIndex((slide) => slide.getAttribute('id') === id);
                 
                 if (slideIntersectingIndex % 2 === 1) {
-                    document.querySelector('#header')?.classList.add('__odd');
+                    document.querySelector('#header')?.classList.add('header__odd');
                 } else {
-                    document.querySelector('#header')?.classList.remove('__odd');
+                    document.querySelector('#header')?.classList.remove('header__odd');
                 }
 
-                document.querySelector(`[data-slide="${id}"`)?.classList.add('__active');
+                document.querySelector(`[data-slide="${id}"`)?.classList.add('menu__active');
             } else {
-                document.querySelector(`[data-slide="${id}"`)?.classList.remove('__active');
+                document.querySelector(`[data-slide="${id}"`)?.classList.remove('menu__active');
             }
         });
     }, { threshold: 0.5 });

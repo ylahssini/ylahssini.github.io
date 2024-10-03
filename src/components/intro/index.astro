@@ -1,26 +1,28 @@
 ---
-import '@assets/styles/intro.css';
 import PhCaretDownBold from '@components/icons/phArrowDownBold.astro';
 ---
 
-<section id="intro" class="intro bg-transition-dark">
-    <h1 class="presentation" role="heading">
-        <span>Hello!</span>
-        <span>My name is</span>
-        <button id="me" class="me" type="button">
+<section id="intro" class="grid place-items-center h-screen px-12 pt-32 bg-transition-dark">
+    <h1 class="text-[clamp(3rem,-6rem+16vw,8rem)] transition-colors text-codgray-700 dark:text-codgray-200 font-black uppercase leading-none tracking-tighter w-full" role="heading">
+        <span class="block">Hello!</span>
+        <span class="block">My name is</span>
+        <button id="me" class="group block border-0 bg-transparent uppercase text-codgray-950 dark:text-white hover:cursor-none" type="button">
             Youssef Lahssini<b class="text-trinidad-600">.</b>
-            <strong id="bubble" class="bubble" aria-hidden>
-                <span>See more about me <PhCaretDownBold class="size-4" /></span>
+            <strong id="bubble" class="size-32 fixed pointer-events-none" aria-hidden>
+                <span class="transition-all duration-300 ease-in scale-0 opacity-0 text-sm font-light shadow-xl shadow-codgray-950/10 normal-case rounded-full bg-trinidad-50/75 text-codgray-950 dark:bg-codgray-950/75 dark:text-white dark:shadow-white/5 backdrop-blur-md size-full px-4 flex flex-col items-center justify-center tracking-normal text-center group-hover:opacity-100 group-hover:scale-100">
+                    See more about me
+                    <PhCaretDownBold class="size-4" />
+                </span>
             </strong>
         </button>
-        <span>A passionate front-end</span>
-        <span>developer</span>
+        <span class="block">A passionate front-end</span>
+        <span class="block">developer</span>
     </h1>
-    <footer class="scroll-down">
-        <div class="mouse config-transition">
-            <div class="wheel config-transition"></div>
+    <footer class="w-full md:flex justify-center items-center md:flex-col py-2 animate-scroll-wheel">
+        <div class="border-codgray-950 dark:border-white border-2 rounded-t-full rounded-b-full w-5 h-7 mb-2 md:flex md:justify-center pt-1 config-transition">
+            <div class="border-codgray-950 dark:border-white border-2 rounded-t-full rounded-b-full w-[6px] h-2 animate-bounce config-transition"></div>
         </div>
-        <small class="scroll-down-text config-transition">Scroll down</small>
+        <small class="text-sm text-codgray-950 dark:text-white config-transition">Scroll down</small>
     </footer>
 </section>
 

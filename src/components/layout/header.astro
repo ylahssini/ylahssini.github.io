@@ -2,10 +2,12 @@
 import Logo from './logo.astro';
 import Menu from './menu.astro';
 import Side from './side.astro';
-import '@assets/styles/layout/header.css';
 ---
 
-<header id="header" class="header">
+<header
+    id="header"
+    class="flex gap-4 items-center justify-between fixed top-0 left-0 w-full px-12 h-24 z-10 transition-colors bg-white dark:bg-codgray-950"
+>
     <Logo />
     <Menu />
     <Side />
