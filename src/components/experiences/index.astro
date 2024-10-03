@@ -47,7 +47,7 @@ const experiences = [
                 <a
                     href="/public/resumes/youssef-lahssini-cv-en.pdf"
                     download
-                    class="transition-colors bg-trinidad-600 hover:bg-trinidad-800 rounded-full w-full py-3 text-white font-black text-xl flex items-center justify-center gap-2 mb-1"
+                    class="transition-colors bg-trinidad-600 hover:bg-trinidad-800 rounded w-full py-3 text-white font-black text-xl flex items-center justify-center gap-2 mb-1"
                 >
                     <PhPdfFile class:list="size-6" />
                     <strong>Download my resume</strong>
@@ -58,7 +58,7 @@ const experiences = [
 
         <ol>
             {experiences.map((experience) => (
-                <li class="sticky top-40 rounded-xl bg-white border border-codgray-100 dark:bg-codgray-950 dark:border-codgray-800 p-8 mb-11 last-of-type:mb-0">
+                <li class="sticky top-40 rounded bg-white border border-codgray-100 dark:bg-codgray-950 dark:border-codgray-800 p-8 mb-11 last-of-type:mb-0">
                     <header class="mb-6">
                         <small class="text-sm font-light text-codgray-300 dark:text-codgray-50">{experience.time}</small>
                         <h3 class="text-trinidad-600 font-bold text-2xl uppercase">{experience.title}</h3>
