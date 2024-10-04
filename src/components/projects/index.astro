@@ -66,23 +66,23 @@ for (let j = 0; j < left.length; j++) {
 }
 ---
 
-<section id="projects" class="px-12 py-20 transition-colors bg-white dark:bg-codgray-950">
-    <div class="grid gap-20 grid-flow-row max-w-7xl pt-12 mx-auto">
+<section id="projects" class="bg-white px-12 py-20 transition-colors dark:bg-codgray-950">
+    <div class="mx-auto grid max-w-7xl grid-flow-row gap-20 pt-12">
         <h2 class="title">Latest projects</h2>
 
         <ul
-            class="grid gap-20 grid-cols-2"
+            class="grid grid-cols-2 gap-20"
             style={`grid-template-rows: repeat(${projects.length + 1}, minmax(0, max-content)); grid-template-areas: ${template}`}
         >
             {projects.map((project) => (
-                <li class="project__cell rounded bg-codgray-50 dark:bg-codgray-900 p-6 h-max" style={`grid-area: ${project.id}`}>
-                    <figure class="rounded block bg-white dark:bg-codgray-950 overflow-hidden mb-4">
+                <li class="project__cell h-max rounded bg-codgray-50 p-6 dark:bg-codgray-900" style={`grid-area: ${project.id}`}>
+                    <figure class="mb-4 block overflow-hidden rounded bg-white dark:bg-codgray-950">
                         <Image src={project.image} width={559} height={387} alt={project.title} />
                     </figure>
-                    <h4 class="text-trinidad-600 font-bold text-2xl">{project.title}</h4>
-                    <p class="transition-colors text-codgray-700 dark:text-codgray-200 text-lg tracking-wide font-light pb-4">{project.description}</p>
+                    <h4 class="text-2xl font-bold text-trinidad-600">{project.title}</h4>
+                    <p class="pb-4 text-lg font-light tracking-wide text-codgray-700 transition-colors dark:text-codgray-200">{project.description}</p>
                     {project.tags.map((tag) => (
-                        <span class="transition-colors inline-block border border-codgray-100 bg-white text-codgray-900 dark:border-codgray-950 dark:bg-codgray-900 dark:text-codgray-50 rounded px-2 py-1 text-sm  mr-2 last:mr-0">
+                        <span class="mr-2 inline-block rounded border border-codgray-100 bg-white px-2 py-1 text-sm text-codgray-900 transition-colors last:mr-0 dark:border-codgray-950  dark:bg-codgray-900 dark:text-codgray-50">
                             {tag}
                         </span>
                     ))}

@@ -2,14 +2,14 @@
 import PhCaretDownBold from '@components/icons/phArrowDownBold.astro';
 ---
 
-<section id="intro" class="grid place-items-center h-screen px-12 pt-32 bg-transition-dark">
-    <h1 class="text-[clamp(3rem,-6rem+16vw,8rem)] transition-colors text-codgray-700 dark:text-codgray-200 font-black uppercase leading-none tracking-tighter w-full" role="heading">
+<section id="intro" class="bg-transition-dark grid h-screen place-items-center px-12 pt-32">
+    <h1 class="w-full text-[clamp(3rem,-6rem+16vw,8rem)] font-black uppercase leading-none tracking-tighter text-codgray-700 transition-colors dark:text-codgray-200" role="heading">
         <span class="block">Hello!</span>
         <span class="block">My name is</span>
-        <button id="me" class="group block border-0 bg-transparent uppercase text-codgray-950 dark:text-white hover:cursor-none" type="button">
+        <button id="me" class="group block border-0 bg-transparent uppercase text-codgray-950 hover:cursor-none dark:text-white" type="button">
             Youssef Lahssini<b class="text-trinidad-600">.</b>
-            <strong id="bubble" class="size-32 fixed pointer-events-none" aria-hidden>
-                <span class="transition-all duration-300 ease-in scale-0 opacity-0 text-sm font-light shadow-xl shadow-codgray-950/10 normal-case rounded-full bg-trinidad-50/75 text-codgray-950 dark:bg-codgray-950/75 dark:text-white dark:shadow-white/5 backdrop-blur-md size-full px-4 flex flex-col items-center justify-center tracking-normal text-center group-hover:opacity-100 group-hover:scale-100">
+            <strong id="bubble" class="pointer-events-none fixed size-32" aria-hidden>
+                <span class="flex size-full scale-0 flex-col items-center justify-center rounded-full bg-trinidad-50/75 px-4 text-center text-sm font-light normal-case tracking-normal text-codgray-950 opacity-0 shadow-xl shadow-codgray-950/10 backdrop-blur-md transition-all duration-300 ease-in group-hover:scale-100 group-hover:opacity-100 dark:bg-codgray-950/75 dark:text-white dark:shadow-white/5">
                     See more about me
                     <PhCaretDownBold class="size-4" />
                 </span>
@@ -18,11 +18,11 @@ import PhCaretDownBold from '@components/icons/phArrowDownBold.astro';
         <span class="block">A passionate front-end</span>
         <span class="block">developer</span>
     </h1>
-    <footer class="w-full md:flex justify-center items-center md:flex-col py-2 animate-scroll-wheel">
-        <div class="border-codgray-950 dark:border-white border-2 rounded-t rounded-b w-5 h-7 mb-2 md:flex md:justify-center pt-1 config-transition">
-            <div class="border-codgray-950 dark:border-white border-2 rounded-t rounded-b w-[6px] h-2 animate-bounce config-transition"></div>
+    <footer class="w-full animate-scroll-wheel items-center justify-center py-2 md:flex md:flex-col">
+        <div class="config-transition mb-2 h-7 w-5 rounded border-2 border-codgray-950 pt-1 dark:border-white md:flex md:justify-center">
+            <div class="config-transition h-2 w-[6px] animate-bounce rounded border-2 border-codgray-950 dark:border-white"></div>
         </div>
-        <small class="text-sm text-codgray-950 dark:text-white config-transition">Scroll down</small>
+        <small class="config-transition text-sm text-codgray-950 dark:text-white">Scroll down</small>
     </footer>
 </section>
 
@@ -49,5 +49,5 @@ import PhCaretDownBold from '@components/icons/phArrowDownBold.astro';
     me?.addEventListener('click', () => {
         const aboutSlide = document.querySelector('#about');
         aboutSlide?.scrollIntoView({ behavior: 'smooth' });
-    })
+    });
 </script>

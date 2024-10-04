@@ -32,22 +32,22 @@ const experiences = [
             'Communicate with back-end developers and clients on a daily basis.'
         ]
     }
-]
+];
 ---
 
-<section id="experiences" class="py-20 transition-colors bg-codgray-50 dark:bg-codgray-900">
-    <div class="grid grid-cols-2 gap-24 px-12 py-20 max-w-7xl mx-auto">
+<section id="experiences" class="bg-codgray-50 py-20 transition-colors dark:bg-codgray-900">
+    <div class="mx-auto grid max-w-7xl grid-cols-2 gap-24 px-12 py-20">
         <aside>
             <div class="sticky top-40 transition-colors dark:text-codgray-50">
                 <h2 class="title">Experiences</h2>
 
-                <p class="pb-5 text-pretty text-justify">Here my experiences in 15 years with +40 projects that made in my career of development and design.</p>
-                <p class="pb-5 text-pretty text-justify">For more details, you can download my CV by clicking the button in below:</p>
+                <p class="text-pretty pb-5 text-justify">Here my experiences in 15 years with +40 projects that made in my career of development and design.</p>
+                <p class="text-pretty pb-5 text-justify">For more details, you can download my CV by clicking the button in below:</p>
 
                 <a
                     href="/public/resumes/youssef-lahssini-cv-en.pdf"
                     download
-                    class="transition-colors bg-trinidad-600 hover:bg-trinidad-800 rounded w-full py-3 text-white font-black text-xl flex items-center justify-center gap-2 mb-1"
+                    class="mb-1 flex w-full items-center justify-center gap-2 rounded bg-trinidad-600 py-3 text-xl font-black text-white transition-colors hover:bg-trinidad-800"
                 >
                     <PhPdfFile class:list="size-6" />
                     <strong>Download my resume</strong>
@@ -58,14 +58,14 @@ const experiences = [
 
         <ol>
             {experiences.map((experience) => (
-                <li class="sticky top-40 rounded bg-white border border-codgray-100 dark:bg-codgray-950 dark:border-codgray-800 p-8 mb-11 last-of-type:mb-0">
+                <li class="sticky top-40 mb-11 rounded border border-codgray-100 bg-white p-8 last-of-type:mb-0 dark:border-codgray-800 dark:bg-codgray-950">
                     <header class="mb-6">
                         <small class="text-sm font-light text-codgray-300 dark:text-codgray-50">{experience.time}</small>
-                        <h3 class="text-trinidad-600 font-bold text-2xl uppercase">{experience.title}</h3>
-                        <b class="text-lg text-codgray-950 dark:text-white font-light">{experience.job}</b>
+                        <h3 class="text-2xl font-bold uppercase text-trinidad-600">{experience.title}</h3>
+                        <b class="text-lg font-light text-codgray-950 dark:text-white">{experience.job}</b>
                     </header>
 
-                    <ul class="list-disc list-outside pl-6 text-base flex flex-col gap-3 transition-colors dark:text-codgray-50">
+                    <ul class="flex list-outside list-disc flex-col gap-3 pl-6 text-base transition-colors dark:text-codgray-50">
                         {experience.points.map((point) => (
                             <li>{point}</li>
                         ))}

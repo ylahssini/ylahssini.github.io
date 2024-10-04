@@ -5,19 +5,19 @@ const menu = [
     { text: 'Experiences', slide: 'experiences' },
     { text: 'Projects', slide: 'projects' },
     { text: 'Contact', slide: 'contact' },
-]
+];
 ---
 
-<div id="menu" data-menu class="flex gap-8 justify-between items-center">
+<div id="menu" data-menu class="flex items-center justify-between gap-8">
     {menu.map((item) => (
         <button
             type="button"
             data-slide={item.slide}
-            class="uppercase font-light text-[clamp(0.8125rem,-0.9375rem+2.7344vw,1.25rem)] transition-colors text-codgray-200 hover:text-codgray-950 dark:text-codgray-700 dark:hover:text-white"
+            class="text-[clamp(0.8125rem,-0.9375rem+2.7344vw,1.25rem)] font-light uppercase text-codgray-200 transition-colors hover:text-codgray-950 dark:text-codgray-700 dark:hover:text-white"
         >
             {item.text}
         </button>
-        <b class="transition-colors text-codgray-950 dark:text-white last:hidden">//</b>
+        <b class="text-codgray-950 transition-colors last:hidden dark:text-white">//</b>
     ))}
 </div>
 

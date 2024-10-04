@@ -1,14 +1,14 @@
-.about--container {
+.about__container {
     grid-template-columns: 1fr minmax(200px, 493px);
     grid-template-rows: 1fr;
     grid-template-areas: "text image";
 }
 
-.about--text { grid-area: text; }
+.about__text { grid-area: text; }
 
-.about-image { grid-area: image; }
+.about__image { grid-area: image; }
 
-a.external-link {
+a.external__link {
     &.__github:hover, &.__github:hover > svg {
         color: #7e22ce;
     }

@@ -12,20 +12,22 @@ import Projects from '@components/projects/index.astro';
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Youssef Lahssini Portfolio</title>
-	</head>
-	<body>
-		<main class="relative h-screen scroll-smooth scroll-pt-52 sm:scroll-pt-0">
-			<Header />
-			<Intro />
-			<About />
-			<Experiences />
-			<Projects />
-		</main>
-	</body>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Youssef Lahssini Portfolio</title>
+    </head>
+    <body>
+        <main
+            class="relative h-screen scroll-pt-52 scroll-smooth sm:scroll-pt-0"
+        >
+            <Header />
+            <Intro />
+            <About />
+            <Experiences />
+            <Projects />
+        </main>
+    </body>
 </html>

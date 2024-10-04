@@ -4,41 +4,41 @@ import ME from '@assets/images/me.webp';
 import PhGithubLogoBold from '@components/icons/phGithubLogoBold.astro';
 import PhCodepenLogo from '@components/icons/phCodepenLogo.astro';
 import PhLinkedinLogoBold from '@components/icons/phLinkedinLogoBold.astro';
-import PhTwitterLogoBold from '@components/icons/phTwitterLogoBold.astro'
-import '@assets/styles/about.css'
+import PhTwitterLogoBold from '@components/icons/phTwitterLogoBold.astro';
+import '@assets/styles/about.css';
 ---
 
-<section id="about" class="grid place-items-center h-screen px-12 pt-20 transition-colors bg-white dark:bg-codgray-950">
-    <div class="about--container grid gap-20 grid-flow-row max-w-7xl items-end">
-        <div class="about--text">
+<section id="about" class="grid h-screen place-items-center bg-white px-12 pt-20 transition-colors dark:bg-codgray-950">
+    <div class="about__container grid max-w-7xl grid-flow-row items-end gap-20">
+        <div class="about__text">
             <h2 class="title">About me</h2>
 
             <article class="pb-16">
-                <p class="text-codgray-500 dark:text-codgray-300 pb-7 text-pretty tracking-widest leading-relaxed">Hi! my name is Youssef Lahssini. I am a passionate Front-end developer who loves to  discover new technologies by creating demos to learn. My career starts back in 2007 when i was a web designer to become today a front-end developer.</p>
-                <p class="text-codgray-500 dark:text-codgray-300 pb-7 text-pretty tracking-widest leading-relaxed">Despite the years i have spent as a developer, i consider myself to be a beginner learning new technologies. But with experience, i acquired certain skills that i appreciated during my career.</p>
-                <p class="text-codgray-500 dark:text-codgray-300 pb-7 text-pretty tracking-widest leading-relaxed">I'm currently working at Elavi (Flyer.ma). My role is to lead my team and also architect and build client side projects.</p>
+                <p class="text-pretty pb-7 leading-relaxed tracking-widest text-codgray-500 dark:text-codgray-300">Hi! my name is Youssef Lahssini. I am a passionate Front-end developer who loves to  discover new technologies by creating demos to learn. My career starts back in 2007 when i was a web designer to become today a front-end developer.</p>
+                <p class="text-pretty pb-7 leading-relaxed tracking-widest text-codgray-500 dark:text-codgray-300">Despite the years i have spent as a developer, i consider myself to be a beginner learning new technologies. But with experience, i acquired certain skills that i appreciated during my career.</p>
+                <p class="text-pretty pb-7 leading-relaxed tracking-widest text-codgray-500 dark:text-codgray-300">I'm currently working at Elavi (Flyer.ma). My role is to lead my team and also architect and build client side projects.</p>
             </article>
 
             <nav class="flex items-center justify-between">
-                <a href="https://github.com/ylahssini" target="_blank" class="external-link __github text-codgray-950 dark:text-white block text-center leading-none">
+                <a href="https://github.com/ylahssini" target="_blank" class="external__link __github block text-center leading-none text-codgray-950 dark:text-white">
                     <PhGithubLogoBold role="img" class:list="transition-colors size-14 mx-auto mb-5" />
                     <strong class="block">Github</strong>
                     <small class="text-codgray-500">See my repositories</small>
                 </a>
 
-                <a href="https://codepen.io/collection/VYJOdz" target="_blank" class="external-link __codepen text-codgray-950 dark:text-white block text-center leading-none">
+                <a href="https://codepen.io/collection/VYJOdz" target="_blank" class="external__link __codepen block text-center leading-none text-codgray-950 dark:text-white">
                     <PhCodepenLogo role="img" class:list="transition-colors size-14 mx-auto mb-5" />
                     <strong class="block">Codepen</strong>
                     <small class="text-codgray-500">See my pens</small>
                 </a>
 
-                <a href="https://x.com/ysfLahssini" target="_blank" class="external-link __twitter text-codgray-950 dark:text-white block text-center leading-none">
+                <a href="https://x.com/ysfLahssini" target="_blank" class="external__link __twitter block text-center leading-none text-codgray-950 dark:text-white">
                     <PhTwitterLogoBold role="img" class:list="transition-colors size-14 mx-auto mb-5" />
                     <strong class="block">Twitter (X)</strong>
                     <small class="text-codgray-500">See my posts</small>
                 </a>
 
-                <a href="https://www.linkedin.com/in/youssef-lahssini-05583a16" target="_blank" class="external-link __linkedin text-codgray-950 dark:text-white block text-center leading-none">
+                <a href="https://www.linkedin.com/in/youssef-lahssini-05583a16" target="_blank" class="external__link __linkedin block text-center leading-none text-codgray-950 dark:text-white">
                     <PhLinkedinLogoBold role="img" class:list="transition-colors size-14 mx-auto mb-5" />
                     <strong class="block">Linkedin</strong>
                     <small class="text-codgray-500">See my profile</small>
@@ -46,7 +46,7 @@ import '@assets/styles/about.css'
             </nav>
         </div>
     
-        <figure class="about--image">
+        <figure class="about__image">
             <Image src={ME} width={493} height={560} alt="Youssef Lahssini" class="rounded" />
         </figure>
     </div>
