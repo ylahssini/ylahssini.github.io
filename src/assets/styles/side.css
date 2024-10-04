@@ -49,8 +49,8 @@
     before:duration-200
     before:opacity-0
     dark:before:opacity-100
-    dark:before:-translate-x-[0.1rem]
-    dark:before:-translate-y-[0.1rem];
+    dark:before:translate-x-[-0.1rem]
+    dark:before:translate-y-[-0.1rem];
 }
 
 .cloud {

@@ -1,5 +1,10 @@
 ---
+import fs from 'fs';
 import PhPdfFile from '@components/icons/phPdfFile.astro';
+
+const fileResume = fs.readFileSync(process.cwd() + '/public/resumes/youssef-lahssini-cv-en.pdf');
+const fileResumeBuffer = await fileResume.buffer;
+const resumeSize = Math.round(fileResumeBuffer.byteLength / 1000);
 
 const experiences = [
     {
@@ -47,12 +52,16 @@ const experiences = [
                 <a
                     href="/public/resumes/youssef-lahssini-cv-en.pdf"
                     download
-                    class="mb-1 flex w-full items-center justify-center gap-2 rounded bg-trinidad-600 py-3 text-xl font-black text-white transition-colors hover:bg-trinidad-800"
+                    class="group mx-auto mb-1 flex w-fit translate-y-0 items-center justify-center gap-2 rounded border-2 border-codgray-950 bg-transparent px-10 py-3 text-xl font-thin leading-none text-codgray-950 transition-all duration-500 ease-in-out hover:-translate-y-px hover:border-trinidad-600 hover:text-trinidad-600 active:border-trinidad-700 active:text-trinidad-700 dark:border-white dark:text-white dark:hover:border-trinidad-600 dark:hover:text-trinidad-600"
                 >
-                    <PhPdfFile class:list="size-6" />
-                    <strong>Download my resume</strong>
+                    <PhPdfFile class:list="size-10" />
+                    <span>
+                        <span>Download my resume</span>
+                        <small class="block text-xs leading-none text-codgray-500 transition-colors duration-500 group-hover:text-trinidad-400 dark:text-codgray-200">
+                            file size {resumeSize}KB
+                        </small>
+                    </span>
                 </a>
-                <small class="block text-center">English version, file size 1 mb</small>
             </div>
         </aside>
 
@@ -60,12 +69,12 @@ const experiences = [
             {experiences.map((experience) => (
                 <li class="sticky top-40 mb-11 rounded border border-codgray-100 bg-white p-8 last-of-type:mb-0 dark:border-codgray-800 dark:bg-codgray-950">
                     <header class="mb-6">
-                        <small class="text-sm font-light text-codgray-300 dark:text-codgray-50">{experience.time}</small>
+                        <small class="text-sm font-light text-codgray-300 dark:text-codgray-600">{experience.time}</small>
                         <h3 class="text-2xl font-bold uppercase text-trinidad-600">{experience.title}</h3>
                         <b class="text-lg font-light text-codgray-950 dark:text-white">{experience.job}</b>
                     </header>
 
-                    <ul class="flex list-outside list-disc flex-col gap-3 pl-6 text-base transition-colors dark:text-codgray-50">
+                    <ul class="flex list-outside list-disc flex-col gap-3 pl-6 text-base tracking-wide text-codgray-500 transition-colors dark:text-codgray-50">
                         {experience.points.map((point) => (
                             <li>{point}</li>
                         ))}
