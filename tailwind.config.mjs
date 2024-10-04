@@ -8,7 +8,7 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				body: ['"Public Sans"'] 
+				body: ['"Public Sans Variable"'] 
 			},
 
 			colors: {
@@ -54,4 +54,4 @@ export default {
 		},
 	},
 	plugins: [],
-}
+};
