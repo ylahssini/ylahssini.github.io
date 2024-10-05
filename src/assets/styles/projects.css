@@ -1,0 +1,19 @@
+.project__cell {
+    > figure {
+        &:before {
+            --size: 30px;
+            --radius: 6px;
+            --bg: #fff;
+
+            display: block;
+            content: "";
+            height: var(--size);
+            background: radial-gradient(circle, #ef0303 var(--radius), transparent var(--radius)) no-repeat border-box,
+                radial-gradient(circle, #ffd105 var(--radius), transparent var(--radius)) no-repeat border-box,
+                radial-gradient(circle, #02f202 var(--radius), transparent var(--radius)) no-repeat border-box;
+            background-size: var(--size) var(--size), var(--size) var(--size), var(--size) var(--size);
+            background-position: calc(100% - var(--size) * 0) 0, calc(100% - var(--size) * 0.6) 0, calc(100% - var(--size) * 1.2) 0;
+            @apply transition-colors bg-white dark:bg-codgray-950
+        }
+    }
+}

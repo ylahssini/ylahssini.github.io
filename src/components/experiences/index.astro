@@ -1,0 +1,86 @@
+---
+import fs from 'fs';
+import PhPdfFile from '@components/icons/phPdfFile.astro';
+
+const fileResume = fs.readFileSync(process.cwd() + '/public/resumes/youssef-lahssini-cv-en.pdf');
+const fileResumeBuffer = await fileResume.buffer;
+const resumeSize = Math.round(fileResumeBuffer.byteLength / 1000);
+
+const experiences = [
+    {
+        time: 'Aug 2007 - Apr 2014',
+        title: 'Bnet Technologies',
+        job: 'Web designer',
+        points: [
+            'Make multiple e-commerce websites design and development them in front-end.',
+            'Management of the fluidity and speed of the sites.',
+            'Creation of business cards, Brochure & Roll-up.'
+        ]
+    },
+    {
+        time: 'May 2014 - Nov 2017',
+        title: 'Kenzamall',
+        job: 'UI developer',
+        points: [
+            'Interfaced with different departments (Marketing, Logistics...) to ensure thoughtful and coherent user experiences.',
+            'Creation design of logos and e-commerce websites.',
+            'Developed and maintained code for in-house and client websites.'
+        ]
+    },
+    {
+        time: 'Nov 2017 - Present',
+        title: 'Elavi (Flyer.ma)',
+        job: 'Front-end developer',
+        points: [
+            'Creation a multiple websites for a diverse clients and internal projects.',
+            'Establishment of the front-end technical structure of the projects & ensure cross-browser compatibility and responsiveness.',
+            'Communicate with back-end developers and clients on a daily basis.'
+        ]
+    }
+];
+---
+
+<section id="experiences" class="bg-codgray-50 py-20 transition-colors dark:bg-codgray-900">
+    <div class="mx-auto grid max-w-7xl grid-cols-2 gap-24 px-12 py-20">
+        <aside>
+            <div class="sticky top-40 transition-colors dark:text-codgray-50">
+                <h2 class="title">Experiences</h2>
+
+                <p class="text-pretty pb-5 text-justify">Here my experiences in 15 years with +40 projects that made in my career of development and design.</p>
+                <p class="text-pretty pb-5 text-justify">For more details, you can download my CV by clicking the button in below:</p>
+
+                <a
+                    href="/public/resumes/youssef-lahssini-cv-en.pdf"
+                    download
+                    class="group mx-auto mb-1 flex w-fit translate-y-0 items-center justify-center gap-2 rounded border-2 border-codgray-950 bg-transparent px-10 py-3 text-xl font-thin leading-none text-codgray-950 transition-all duration-500 ease-in-out hover:-translate-y-px hover:border-trinidad-600 hover:text-trinidad-600 active:border-trinidad-700 active:text-trinidad-700 dark:border-white dark:text-white dark:hover:border-trinidad-600 dark:hover:text-trinidad-600"
+                >
+                    <PhPdfFile class:list="size-10" />
+                    <span>
+                        <span>Download my resume</span>
+                        <small class="block text-xs leading-none text-codgray-500 transition-colors duration-500 group-hover:text-trinidad-400 dark:text-codgray-200">
+                            file size {resumeSize}KB
+                        </small>
+                    </span>
+                </a>
+            </div>
+        </aside>
+
+        <ol>
+            {experiences.map((experience) => (
+                <li class="sticky top-40 mb-11 rounded border border-codgray-100 bg-white p-8 last-of-type:mb-0 dark:border-codgray-800 dark:bg-codgray-950">
+                    <header class="mb-6">
+                        <small class="text-sm font-light text-codgray-300 dark:text-codgray-600">{experience.time}</small>
+                        <h3 class="text-2xl font-bold uppercase text-trinidad-600">{experience.title}</h3>
+                        <b class="text-lg font-light text-codgray-950 dark:text-white">{experience.job}</b>
+                    </header>
+
+                    <ul class="flex list-outside list-disc flex-col gap-3 pl-6 text-base tracking-wide text-codgray-500 transition-colors dark:text-codgray-50">
+                        {experience.points.map((point) => (
+                            <li>{point}</li>
+                        ))}
+                    </ul>
+                </li>
+            ))}
+        </ol>
+    </div>
+</section>

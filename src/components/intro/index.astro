@@ -1,0 +1,53 @@
+---
+import PhCaretDownBold from '@components/icons/phArrowDownBold.astro';
+---
+
+<section id="intro" class="bg-transition-dark grid h-screen place-items-center px-12 pt-32">
+    <h1 class="w-full text-[clamp(3rem,-6rem+16vw,8rem)] font-black uppercase leading-none tracking-tighter text-codgray-700 transition-colors dark:text-codgray-200" role="heading">
+        <span class="block">Hello!</span>
+        <span class="block">My name is</span>
+        <button id="me" class="group block border-0 bg-transparent uppercase text-codgray-950 hover:cursor-none dark:text-white" type="button">
+            Youssef Lahssini<b class="text-trinidad-600">.</b>
+            <strong id="bubble" class="pointer-events-none fixed size-32" aria-hidden>
+                <span class="flex size-full scale-0 flex-col items-center justify-center rounded-full bg-trinidad-50/75 px-4 text-center text-sm font-light normal-case tracking-normal text-codgray-950 opacity-0 shadow-xl shadow-codgray-950/10 backdrop-blur-md transition-all duration-300 ease-in group-hover:scale-100 group-hover:opacity-100 dark:bg-codgray-950/75 dark:text-white dark:shadow-white/5">
+                    See more about me
+                    <PhCaretDownBold class="size-4" />
+                </span>
+            </strong>
+        </button>
+        <span class="block">A passionate front-end</span>
+        <span class="block">developer</span>
+    </h1>
+    <footer class="w-full animate-scroll-wheel items-center justify-center py-2 md:flex md:flex-col">
+        <div class="config-transition mb-2 h-7 w-5 rounded border-2 border-codgray-950 pt-1 dark:border-white md:flex md:justify-center">
+            <div class="config-transition h-2 w-[6px] animate-bounce rounded border-2 border-codgray-950 dark:border-white"></div>
+        </div>
+        <small class="config-transition text-sm text-codgray-950 dark:text-white">Scroll down</small>
+    </footer>
+</section>
+
+<script>
+    const me = document.querySelector('#me');
+    const bubble = document.querySelector('#bubble') as HTMLSpanElement;
+
+    me?.addEventListener('mousemove', (event) => {
+        if (bubble) {
+            const bubbleBox = bubble.getBoundingClientRect();
+            bubble.classList.remove('__hide');
+
+            bubble.style.left = `${(event as MouseEvent).x - (bubbleBox.width / 2)}px`;
+            bubble.style.top = `${(event as MouseEvent).y - (bubbleBox.height / 2)}px`;
+        }
+    });
+
+    me?.addEventListener('mouseleave', (event) => {
+        if (bubble) {
+            bubble.classList.add('__hide');
+        }
+    });
+
+    me?.addEventListener('click', () => {
+        const aboutSlide = document.querySelector('#about');
+        aboutSlide?.scrollIntoView({ behavior: 'smooth' });
+    });
+</script>

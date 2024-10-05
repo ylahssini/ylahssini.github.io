@@ -1,0 +1,93 @@
+---
+import { Image } from 'astro:assets';
+import FlyerFrImg from '@assets/images/flyer-fr.png';
+import MyLocalBlogImg from '@assets/images/my-local-blog.png';
+import RedAuditImg from '@assets/images/red-audit.png';
+import '@assets/styles/projects.css';
+
+const projects = [
+    {
+        id: 'p1',
+        title: 'Flyer.fr',
+        description: 'An online print shop (e-Commerce)',
+        tags: ['Next.js', 'React', 'Typescript', 'TailwindCSS'],
+        link: 'https://flyer.fr/frfr',
+        image: FlyerFrImg,
+    },
+
+    {
+        id: 'p2',
+        title: 'My local blog',
+        description: 'A personal tech blog in darija (moroccan dialect)',
+        tags: ['Astro', 'SCSS', 'Typescript', 'MDX'],
+        link: 'https://my-local-blog.vercel.app',
+        image: MyLocalBlogImg,
+    },
+
+    {
+        id: 'p3',
+        title: 'RED Audit',
+        description: 'A application of audit the stores (Android only not published in Google Play)',
+        tags: ['React native', 'Typescript'],
+        link: null,
+        image: RedAuditImg,
+    }
+];
+
+const cols = 2;
+const left = [];
+const right = [];
+let template = '';
+
+for (let i = 0; i < projects.length; i += 1) {
+    const project = projects[i];
+
+    for (let c = 0; c < cols; c++) {
+        if (i % 2 === 0) {
+            left.push(project.id);
+        }
+
+        if (i % 2 === 1) {
+            right.push(project.id);
+        }
+    }
+}
+
+if (left.length > right.length) {
+    right.unshift('.');
+    right.push('.');
+} else if (left.length === right.length) {
+    right.unshift('.');
+    left.push('.');
+}
+
+for (let j = 0; j < left.length; j++) {
+    template += `'${left[j]} ${right[j]}'${j !== left.length ? '\n' : ''}`;
+}
+---
+
+<section id="projects" class="bg-white px-12 py-20 transition-colors dark:bg-codgray-950">
+    <div class="mx-auto grid max-w-7xl grid-flow-row gap-20 pt-12">
+        <h2 class="title">Latest projects</h2>
+
+        <ul
+            class="grid grid-cols-2 gap-20"
+            style={`grid-template-rows: repeat(${projects.length + 1}, minmax(0, max-content)); grid-template-areas: ${template}`}
+        >
+            {projects.map((project) => (
+                <li class="project__cell h-max rounded bg-codgray-50 p-6 dark:bg-codgray-900" style={`grid-area: ${project.id}`}>
+                    <figure class="mb-4 block overflow-hidden rounded bg-white dark:bg-codgray-950">
+                        <Image src={project.image} width={559} height={387} alt={project.title} />
+                    </figure>
+                    <h4 class="text-2xl font-bold text-trinidad-600">{project.title}</h4>
+                    <p class="pb-4 text-lg font-light tracking-wide text-codgray-700 transition-colors dark:text-codgray-200">{project.description}</p>
+                    {project.tags.map((tag) => (
+                        <span class="mr-2 inline-block rounded border border-codgray-100 bg-white px-2 py-1 text-sm text-codgray-900 transition-colors last:mr-0 dark:border-codgray-950  dark:bg-codgray-900 dark:text-codgray-50">
+                            {tag}
+                        </span>
+                    ))}
+                </li>
+            ))}
+        </ul>
+    </div>
+</section>

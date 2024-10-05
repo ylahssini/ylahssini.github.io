@@ -1,0 +1,54 @@
+---
+import PhTranslateBold from '@components/icons/phTranslateBold.astro';
+import '@assets/styles/side.css';
+---
+
+<aside class="flex items-center justify-between gap-6">
+    <div id="switch-mode-container" title="Light mode" class="flex items-center justify-between gap-2">
+        <input type="checkbox" class="hidden" id="mode" name="mode" />
+        <label for="mode" class="group block cursor-pointer" role="checkbox">
+            <span class="sky">
+                <span class="sphere group-active:w-6" />
+
+                <span class="cloud translate-x-2.5 translate-y-0.5 scale-[0.35]" />
+                <span class="cloud translate-x-3.5 translate-y-2 scale-[0.35]" />
+                <span class="cloud translate-x-[1.15rem] translate-y-1 scale-[0.3]" />
+
+                <span class="star dark:translate-x-2.5 dark:translate-y-2.5" />
+                <span class="star dark:translate-x-4 dark:translate-y-1" />
+                <span class="star dark:translate-x-1.5 dark:translate-y-1.5" />
+                <span class="star dark:translate-x-3.5 dark:translate-y-2" />
+            </span>
+        </label>
+    </div>
+
+    <div class="flex items-center gap-2">
+        <PhTranslateBold class:list="w-5 h-5 transition-colors text-codgray-950 dark:text-white" role="img" />
+
+        <nav class="locale__list">
+            <a href="/en" class="locale__active text-[clamp(0.7rem,0.2898rem+0.7292vw,0.875rem)] font-light uppercase text-codgray-300 transition-colors hover:text-codgray-950 dark:text-codgray-400 dark:hover:text-white">en</a>
+            <span role="separator" class="mx-1.5 text-codgray-950 transition-colors dark:text-white">//</span>
+            <a href="/fr" class="text-[clamp(0.7rem,0.2898rem+0.7292vw,0.875rem)] font-light uppercase text-codgray-300 transition-colors hover:text-codgray-950 dark:text-codgray-400 dark:hover:text-white">fr</a>
+        </nav>
+    </div>
+</aside>
+
+<script>
+    const switchModeContainer = document.querySelector('#switch-mode-container');
+    const modeInput = document.querySelector('#mode');
+
+    modeInput?.addEventListener('change', async (event) => {
+        const target = event.currentTarget as HTMLInputElement;
+        if (target && switchModeContainer) {
+            if (target.checked) {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+                switchModeContainer.setAttribute('title', 'Dark mode');
+            } else {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+                switchModeContainer.setAttribute('title', 'Light mode');
+            }
+        }
+    });
+</script>

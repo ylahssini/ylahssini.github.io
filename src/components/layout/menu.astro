@@ -1,0 +1,69 @@
+---
+const menu = [
+    { text: 'Home', slide: 'intro' },
+    { text: 'About me', slide: 'about' },
+    { text: 'Experiences', slide: 'experiences' },
+    { text: 'Projects', slide: 'projects' },
+    { text: 'Contact', slide: 'contact' },
+];
+---
+
+<div id="menu" data-menu class="flex items-center justify-between gap-8">
+    {menu.map((item) => (
+        <button
+            type="button"
+            data-slide={item.slide}
+            class="text-[clamp(0.8125rem,-0.9375rem+2.7344vw,1.25rem)] font-extralight uppercase text-codgray-200 transition-colors hover:text-codgray-950 dark:text-codgray-700 dark:hover:text-white"
+        >
+            {item.text}
+        </button>
+        <b class="text-codgray-950 transition-colors last:hidden dark:text-white">//</b>
+    ))}
+</div>
+
+<script>
+    const menuButtons = document.querySelectorAll('#menu > button');
+    const slides = Array.from(menuButtons)
+        .map((menuButton) => document.getElementById(menuButton.getAttribute('data-slide') as string))
+        .filter((menuButton) => !!menuButton);
+
+    menuButtons.forEach((menuButton) => {
+        menuButton.addEventListener('click', (event) => {
+            menuButtons.forEach((item) => item.classList.remove('menu__active'));
+
+            const element = event.target as HTMLButtonElement;
+            const activeMenu = element?.getAttribute('data-slide') as string;
+
+            const slide = document.getElementById(activeMenu);
+
+            if (slide) {
+                slide?.scrollIntoView({ behavior: 'smooth' });
+                menuButton.classList.add('menu__active');
+            }
+        });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            const id = entry.target.getAttribute('id');
+
+            if (entry.isIntersecting) {
+                const slideIntersectingIndex = slides.findIndex((slide) => slide.getAttribute('id') === id);
+                
+                if (slideIntersectingIndex % 2 === 1) {
+                    document.querySelector('#header')?.classList.add('header__odd');
+                } else {
+                    document.querySelector('#header')?.classList.remove('header__odd');
+                }
+
+                document.querySelector(`[data-slide="${id}"`)?.classList.add('menu__active');
+            } else {
+                document.querySelector(`[data-slide="${id}"`)?.classList.remove('menu__active');
+            }
+        });
+    }, { threshold: 0.5 });
+
+    slides.forEach((slide) => {
+        observer.observe(slide as HTMLElement);
+    });
+</script>

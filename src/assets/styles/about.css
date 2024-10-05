@@ -1,0 +1,43 @@
+.about__container {
+    grid-template-columns: 1fr minmax(200px, 493px);
+    grid-template-rows: 1fr;
+    grid-template-areas: "text image";
+}
+
+.about__text { grid-area: text; }
+
+.about__image {
+    grid-area: image;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .about__image > img {
+        animation: parrallax linear forwards;
+        animation-timeline: scroll(root);
+        transform: translateY(-50%);
+    }
+
+    @keyframes parrallax {
+        to {
+            transform: translateY(calc(75% + 0.5rem));
+        }
+    }
+}
+
+a.external__link {
+    &.__github:hover, &.__github:hover > svg {
+        color: #7e22ce;
+    }
+
+    &.__codepen:hover, &.__codepen:hover > svg {
+        color: #ea580c;
+    }
+
+    &.__twitter:hover, &.__twitter:hover > svg {
+        color: #2563eb;
+    }
+
+    &.__linkedin:hover, &.__linkedin:hover > svg {
+        color: #06b6d4;
+    }
+}
