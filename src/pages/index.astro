@@ -8,7 +8,7 @@ import Experiences from '@components/experiences/index.astro';
 import Projects from '@components/projects/index.astro';
 ---
 
-<html lang="en">
+<html lang="en" class="w-full scroll-smooth font-body antialiased">
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -16,10 +16,8 @@ import Projects from '@components/projects/index.astro';
         <meta name="generator" content={Astro.generator} />
         <title>Youssef Lahssini Portfolio</title>
     </head>
-    <body>
-        <main
-            class="relative h-screen scroll-pt-52 scroll-smooth sm:scroll-pt-0"
-        >
+    <body class="w-full min-w-80 scroll-smooth font-body text-base antialiased">
+        <main class="relative h-screen scroll-pt-52 scroll-smooth sm:scroll-pt-0">
             <Header />
             <Intro />
             <About />

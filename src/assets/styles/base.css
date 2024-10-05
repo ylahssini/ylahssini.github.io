@@ -10,14 +10,6 @@
     box-sizing: border-box;
 }
 
-html, body {
-    @apply w-full font-body;
-}
-
-body {
-    @apply min-w-80 text-base;
-}
-
 .wrapper {
     @apply w-10/12 max-w-5xl;
 }
