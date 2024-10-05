@@ -8,7 +8,7 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				body: ['"Public Sans Variable"'] 
+				body: ['"Public Sans Variable", sans-serif'] 
 			},
 
 			colors: {
