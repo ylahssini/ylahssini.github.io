@@ -6,7 +6,23 @@
 
 .about__text { grid-area: text; }
 
-.about__image { grid-area: image; }
+.about__image {
+    grid-area: image;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .about__image > img {
+        animation: parrallax linear forwards;
+        animation-timeline: scroll(root);
+        transform: translateY(-50%);
+    }
+
+    @keyframes parrallax {
+        to {
+            transform: translateY(calc(75% + 0.5rem));
+        }
+    }
+}
 
 a.external__link {
     &.__github:hover, &.__github:hover > svg {
