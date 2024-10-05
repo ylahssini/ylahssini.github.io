@@ -1,0 +1,85 @@
+---
+import PhPaperPlaneBold from '@components/icons/phPaperPlaneBold.astro';
+import '@assets/styles/contact.css';
+---
+
+<section id="contact" class="bg-codgray-50 py-20 transition-colors dark:bg-codgray-900">
+    <form id="contact__form" class="contact__form mx-auto max-w-7xl gap-24 px-12 py-20">
+        <h2 class="title">Contact</h2>
+        <p class="py-3 pb-6 text-left text-base tracking-wide text-codgray-950 transition-colors dark:text-white">Although I’m not currently looking for any new opportunities, my inbox is always open.</p>
+    
+        <fieldset class="group grid grid-cols-2 gap-x-10 gap-y-4">
+            <label for="email" class="relative z-10 block w-full">
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Email address *"
+                    required
+                    pattern="[^@]+@[^@]+\.[a-zA-Z]{2,10}"
+                    autocomplete="off"
+                    class="input__field w-full rounded border border-codgray-100 bg-white p-4 text-codgray-950 caret-gray-500 outline-none transition-all duration-300 ease-in-out focus:border-codgray-300"
+                />
+
+                <span class="text-xs leading-none text-red-500 opacity-0 transition-opacity">The email address is required and must be valid</span>
+            </label>
+
+            <label for="name" class="relative z-20 block w-full">
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Full name or Company *"
+                    required
+                    autocomplete="off"
+                    class="input__field w-full rounded border border-codgray-100 bg-white p-4 text-codgray-950 caret-gray-500 outline-none transition-all duration-300 ease-in-out focus:border-codgray-300"
+                />
+
+                <span class="text-xs leading-none text-red-500 opacity-0 transition-opacity">Please insert your full name or company</span>
+            </label>
+
+            <label for="message" class="relative col-span-2 block">
+                <textarea
+                    name="message"
+                    placeholder="Your message *"
+                    required
+                    autocomplete="off"
+                    class="input__field h-48 max-h-56 w-full resize-y rounded border border-codgray-100 bg-white p-4 text-codgray-950 caret-gray-500 outline-none transition-all duration-300 ease-in-out focus:border-codgray-300"
+                />
+
+                <span class="text-xs leading-none text-red-500 opacity-0 transition-opacity">Please insert your message</span>
+            </label>
+        </fieldset>
+
+        <button
+            id="contact__form__button"
+            type="submit"
+            class="flex w-full max-w-96 items-center justify-center gap-3 rounded bg-trinidad-600 py-4 text-base font-medium text-white transition-colors"
+        >
+            <span>Send message</span>
+            <PhPaperPlaneBold class:list="size-4 text-white" />
+        </button>
+    </form>
+</section>
+
+<script>
+    const contactForm = document.querySelector('#contact__form') as HTMLFormElement;
+    const basinUrl = 'https://usebasin.com/f/39da2d81e0d2';
+
+    contactForm?.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.target as HTMLFormElement);
+        const values = Object.fromEntries(formData);
+
+        const result = await fetch(basinUrl, {
+            method: 'POST',
+            headers: { 'Content-type': 'application/json' },
+            body: JSON.stringify(values),
+        });
+
+        if (result.status === 200) {
+            console.log('Success');
+            contactForm.reset();
+        }
+    });
+</script>

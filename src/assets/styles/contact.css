@@ -1,0 +1,25 @@
+.contact__form:invalid button {
+    background-color: black;
+    pointer-events: none;
+}
+
+.contact__form:valid button {
+    pointer-events: all;
+}
+
+.input__field:invalid:not(:placeholder-shown) {
+    border-color: red;
+
+    & + span {
+        opacity: 100;
+    }
+}
+
+.input__field:valid:not(:placeholder-shown) {
+    border-color: green;
+
+    & + span {
+        opacity: 0;
+    }
+}
+

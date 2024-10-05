@@ -1,5 +1,3 @@
-import plugin from 'tailwindcss/plugin';
-
 export const darkMode = 'class';
 
 /** @type {import('tailwindcss').Config} */
