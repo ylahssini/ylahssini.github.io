@@ -1,6 +1,5 @@
 ---
 import fs from 'fs';
-import PhPdfFile from '@components/icons/phPdfFile.astro';
 
 const fileResume = fs.readFileSync(process.cwd() + '/public/resumes/youssef-lahssini-cv-en.pdf');
 const fileResumeBuffer = await fileResume.buffer;
@@ -47,21 +46,17 @@ const experiences = [
                 <h2 class="title">Experiences</h2>
 
                 <p class="text-pretty pb-5 text-justify">Here my experiences in 15 years with +40 projects that made in my career of development and design.</p>
-                <p class="text-pretty pb-5 text-justify">For more details, you can download my CV by clicking the button in below:</p>
-
-                <a
-                    href="/public/resumes/youssef-lahssini-cv-en.pdf"
-                    download
-                    class="group mx-auto mb-1 flex w-fit translate-y-0 items-center justify-center gap-2 rounded border-2 border-codgray-950 bg-transparent px-10 py-3 text-xl font-thin leading-none text-codgray-950 transition-all duration-500 ease-in-out hover:-translate-y-px hover:border-trinidad-600 hover:text-trinidad-600 active:border-trinidad-700 active:text-trinidad-700 dark:border-white dark:text-white dark:hover:border-trinidad-600 dark:hover:text-trinidad-600"
-                >
-                    <PhPdfFile class:list="size-10" />
-                    <span>
-                        <span>Download my resume</span>
-                        <small class="block text-xs leading-none text-codgray-500 transition-colors duration-500 group-hover:text-trinidad-400 dark:text-codgray-200">
-                            file size {resumeSize}KB
-                        </small>
-                    </span>
-                </a>
+                <p class="text-pretty pb-5 text-justify">
+                    You can find more details by downloading
+                    <a
+                        href="/public/resumes/youssef-lahssini-cv-en.pdf"
+                        download
+                        class="font-bold text-trinidad-600 underline-offset-4 transition-colors hover:text-trinidad-700 hover:underline"
+                    >
+                        my resume
+                    </a>
+                    <small class="text-codgray-700 dark:text-codgray-500">(file size {resumeSize}KB)</small>
+                </p>
             </div>
         </aside>
 
