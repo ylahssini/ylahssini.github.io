@@ -11,15 +11,25 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    .about__image > img {
-        animation: parrallax linear forwards;
-        animation-timeline: scroll(root);
-        transform: translateY(-50%);
+    .about__image {
+        align-items: center;
     }
 
-    @keyframes parrallax {
-        to {
-            transform: translateY(calc(75% + 0.5rem));
+    @supports (animation-timeline: scroll()) {
+        .about__image {
+            align-items: start;
+
+            > img {
+                animation: parrallax linear forwards;
+                animation-timeline: scroll(root);
+                transform: translateY(-40%);
+            }
+        }
+    
+        @keyframes parrallax {
+            to {
+                transform: translateY(calc(75% + 0.5rem));
+            }
         }
     }
 }
