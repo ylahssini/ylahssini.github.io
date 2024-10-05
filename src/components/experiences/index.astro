@@ -1,10 +1,4 @@
 ---
-import fs from 'fs';
-
-const fileResume = fs.readFileSync(process.cwd() + '/public/resumes/youssef-lahssini-cv-en.pdf');
-const fileResumeBuffer = await fileResume.buffer;
-const resumeSize = Math.round(fileResumeBuffer.byteLength / 1000);
-
 const experiences = [
     {
         time: 'Aug 2007 - Apr 2014',
@@ -55,7 +49,7 @@ const experiences = [
                     >
                         my resume
                     </a>
-                    <small class="text-codgray-700 dark:text-codgray-500">(file size {resumeSize}KB)</small>
+                    <small class="text-codgray-700 dark:text-codgray-500">(file size 1MB)</small>
                 </p>
             </div>
         </aside>

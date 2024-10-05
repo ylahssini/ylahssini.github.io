@@ -40,7 +40,7 @@ import PhCaretDownBold from '@components/icons/phArrowDownBold.astro';
         }
     });
 
-    me?.addEventListener('mouseleave', (event) => {
+    me?.addEventListener('mouseleave', () => {
         if (bubble) {
             bubble.classList.add('__hide');
         }
