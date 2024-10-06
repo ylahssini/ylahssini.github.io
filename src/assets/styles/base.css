@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    :root {
+        --success: theme(colors.green.600);
+        --error: theme(colors.red.600)
+    }
+}
+
 * {
     box-sizing: border-box;
 }
