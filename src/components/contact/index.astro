@@ -9,10 +9,7 @@ import PhXBold from '@components/icons/phXBold.astro';
 import '@assets/styles/contact.css';
 ---
 
-<section
-    id="contact"
-    class="bg-codgray-50 py-20 transition-colors dark:bg-codgray-900"
->
+<section id="contact" class="bg-codgray-50 py-20 transition-colors dark:bg-codgray-900">
     <div
         data-notification
         class="fixed -right-20 top-6 z-10 w-64 rounded border-b-2 bg-white p-4 pl-12 opacity-0 shadow-lg transition-all duration-300"
@@ -29,8 +26,9 @@ import '@assets/styles/contact.css';
             id="close__notification"
             type="button"
             class="absolute right-4 top-4 size-6 cursor-pointer text-codgray-600 transition-colors hover:text-codgray-950"
-            ><PhXBold /></button
         >
+            <PhXBold />
+        </button>
     </div>
 
     <form
