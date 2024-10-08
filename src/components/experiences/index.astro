@@ -34,9 +34,9 @@ const experiences = [
 ---
 
 <section id="experiences" class="bg-codgray-50 py-20 transition-colors dark:bg-codgray-900">
-    <div class="mx-auto grid max-w-7xl grid-cols-2 gap-24 px-12 py-20">
+    <div class="mx-auto grid w-full max-w-none grid-cols-1 gap-6 p-12 lg:max-w-7xl lg:grid-cols-2 lg:gap-24 lg:py-20">
         <aside>
-            <div class="sticky top-40 transition-colors dark:text-codgray-50">
+            <div class="static top-40 transition-colors dark:text-codgray-50 lg:sticky">
                 <h2 class="title">Experiences</h2>
 
                 <p class="text-pretty pb-5 text-justify">Here my experiences in 15 years with +40 projects that made in my career of development and design.</p>
@@ -56,7 +56,7 @@ const experiences = [
 
         <ol>
             {experiences.map((experience) => (
-                <li class="sticky top-40 mb-11 rounded border border-codgray-100 bg-white p-8 last-of-type:mb-0 dark:border-codgray-800 dark:bg-codgray-950">
+                <li class="static top-40 mb-11 rounded border border-codgray-100 bg-white p-8 last-of-type:mb-0 dark:border-codgray-800 dark:bg-codgray-950 lg:sticky">
                     <header class="mb-6">
                         <small class="text-sm font-light text-codgray-300 dark:text-codgray-600">{experience.time}</small>
                         <h3 class="text-2xl font-bold uppercase text-trinidad-600">{experience.title}</h3>

@@ -4,10 +4,20 @@
     grid-template-areas: "text image";
 }
 
-.about__text { grid-area: text; }
+.about__text {
+    grid-area: text;
+}
 
 .about__image {
     grid-area: image;
+}
+
+@media (max-width: 1024px) {
+    .about__container {
+        grid-template-columns: 1fr;
+        grid-template-areas: "text"
+        "image";
+    }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -29,6 +39,12 @@
         @keyframes parrallax {
             to {
                 transform: translateY(calc(75% + 0.5rem));
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .about__image > img {
+                transform: translateY(-55%);
             }
         }
     }

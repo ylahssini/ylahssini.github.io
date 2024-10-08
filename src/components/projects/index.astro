@@ -71,21 +71,24 @@ for (let j = 0; j < left.length; j++) {
         <h2 class="title">Latest projects</h2>
 
         <ul
-            class="grid grid-cols-2 gap-20"
+            class="block lg:grid lg:grid-cols-2 lg:gap-20"
             style={`grid-template-rows: repeat(${projects.length + 1}, minmax(0, max-content)); grid-template-areas: ${template}`}
         >
             {projects.map((project) => (
-                <li class="project__cell h-max rounded bg-codgray-50 p-6 dark:bg-codgray-900" style={`grid-area: ${project.id}`}>
+                <li class="project__cell mx-auto mb-12 h-max max-w-[600px] rounded bg-codgray-50 p-6 dark:bg-codgray-900 lg:mb-0 lg:max-w-none" style={`grid-area: ${project.id}`}>
                     <figure class="mb-4 block overflow-hidden rounded bg-white dark:bg-codgray-950">
                         <Image src={project.image} width={559} height={387} alt={project.title} />
                     </figure>
                     <h4 class="text-2xl font-bold text-trinidad-600">{project.title}</h4>
                     <p class="pb-4 text-lg font-light tracking-wide text-codgray-700 transition-colors dark:text-codgray-200">{project.description}</p>
-                    {project.tags.map((tag) => (
-                        <span class="mr-2 inline-block rounded border border-codgray-100 bg-white px-2 py-1 text-sm text-codgray-900 transition-colors last:mr-0 dark:border-codgray-950  dark:bg-codgray-900 dark:text-codgray-50">
-                            {tag}
-                        </span>
-                    ))}
+                    
+                    <footer class="flex flex-wrap gap-2">
+                        {project.tags.map((tag) => (
+                            <span class="rounded border border-codgray-100 bg-white px-2 py-1 text-sm text-codgray-900 transition-colors last:mr-0 dark:border-codgray-950  dark:bg-codgray-900 dark:text-codgray-50">
+                                {tag}
+                            </span>
+                        ))}
+                    </footer>
                 </li>
             ))}
         </ul>

@@ -40,7 +40,7 @@ import '@assets/styles/contact.css';
             Although I’m not currently looking for any new opportunities, my inbox is always open.
         </p>
 
-        <fieldset class="group grid grid-cols-2 gap-x-10 gap-y-4">
+        <fieldset class="group grid grid-cols-1 gap-x-10 gap-y-4 md:grid-cols-2">
             <label for="email" class="relative z-10 block w-full">
                 <PhAt class:list="text-codgray-950 absolute inset-4 size-6 dark:text-codgray-50" />
                 <input
@@ -74,7 +74,7 @@ import '@assets/styles/contact.css';
                 <span class="text-xs leading-none text-red-600 opacity-0 transition-opacity">Please insert your full name or company</span>
             </label>
 
-            <label for="message" class="relative col-span-2 block">
+            <label for="message" class="relative block md:col-span-2">
                 <PhChatCenteredDotsLight
                     class:list="text-codgray-950 absolute inset-4 size-6 dark:text-codgray-50"
                 />
@@ -93,7 +93,7 @@ import '@assets/styles/contact.css';
         <button
             id="contact__form__button"
             type="submit"
-            class="group h-14 w-full max-w-96 gap-3 overflow-hidden rounded bg-trinidad-600 py-4 text-base font-medium text-white transition-colors hover:bg-trinidad-700 disabled:bg-trinidad-300"
+            class="group h-14 w-full max-w-full gap-3 overflow-hidden rounded bg-trinidad-600 py-4 text-base font-medium text-white transition-colors hover:bg-trinidad-700 disabled:bg-trinidad-300 md:max-w-96"
         >
             <div data-loading class="hidden flex-row justify-center gap-2">
                 <div class="size-2 animate-bounce rounded bg-codgray-50"></div>
