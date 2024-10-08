@@ -62,37 +62,6 @@
     dark:after:bg-white
 }
 
-/* T R A N S I T I O N   T O   D A R K */
-.config-transition {
-    @apply transition-colors duration-300 ease-in-out
-}
-
-.bg-transition-dark {
-    @apply config-transition dark:bg-codgray-900 bg-codgray-50
-}
-
-.bg-transition-dark2 {
-    @apply config-transition dark:bg-codgray-950 bg-white
-}
-
-.before-bg-transition-dark {
-    @apply before:transition-colors before:duration-300 before:ease-in-out before:dark:bg-codgray-900 before:bg-codgray-50
-}
-
-.after-bg-transition-dark {
-    @apply after:transition-colors after:duration-300 after:ease-in-out after:dark:bg-codgray-900 after:bg-codgray-50
-}
-
-
-.border-transition-dark {
-    @apply config-transition ease-in-out dark:border-codgray-900 border-slate-50
-}
-
-.text-transition-dark {
-    @apply config-transition dark:text-gray-700 text-slate-50
-}
-/* T R A N S I T I O N   T O   D A R K */
-
 .svg-icon {
     @apply inline-block align-middle transition-all duration-200 ease-in-out stroke-black dark:stroke-slate-50 hover:-translate-y-1;
 }
