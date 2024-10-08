@@ -1,4 +1,6 @@
 .project__cell {
+    transform: translateX(0);
+
     > figure {
         &:before {
             --size: 30px;
@@ -14,6 +16,32 @@
             background-size: var(--size) var(--size), var(--size) var(--size), var(--size) var(--size);
             background-position: calc(100% - var(--size) * 0) 0, calc(100% - var(--size) * 0.6) 0, calc(100% - var(--size) * 1.2) 0;
             @apply transition-colors bg-white dark:bg-codgray-950
+        }
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+        .project__cell {
+            opacity: 0;
+            animation: show linear forwards;
+            animation-timeline: view();
+            animation-range: entry 0% cover 37%;
+        }
+
+        .project__cell:nth-child(odd) {
+            transform: translateX(-20rem);
+        }
+
+        .project__cell:nth-child(even) {
+            transform: translateX(20rem);
+        }
+
+        @keyframes show {
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
         }
     }
 }
