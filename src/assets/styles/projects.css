@@ -27,19 +27,12 @@
             animation: show linear forwards;
             animation-timeline: view();
             animation-range: entry 0% cover 37%;
-        }
-
-        .project__cell:nth-child(odd) {
-            transform: translateX(-20rem);
-        }
-
-        .project__cell:nth-child(even) {
-            transform: translateX(20rem);
+            transform: translateY(5rem);
         }
 
         @keyframes show {
             to {
-                transform: translateX(0);
+                transform: translateY(0);
                 opacity: 1;
             }
         }
