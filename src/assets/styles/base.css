@@ -17,10 +17,6 @@
     box-sizing: border-box;
 }
 
-.wrapper {
-    @apply w-10/12 max-w-5xl;
-}
-
 .header__odd {
     @apply !bg-codgray-50/75 dark:!bg-codgray-900/75;
 
@@ -51,15 +47,18 @@
     flex
     items-center
     text-codgray-950
+    leading-none
     gap-4
     w-full
     before:content-['//']
-    after:block
+    after:hidden
     after:h-px
     after:w-1/3
     after:bg-codgray-950
     dark:text-white
     dark:after:bg-white
+    md:after:block;
+    font-size: clamp(1.85rem, 1.062rem + 0.99vw, 2.25rem);
 }
 
 .svg-icon {

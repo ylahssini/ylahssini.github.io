@@ -33,8 +33,8 @@ const experiences = [
 ];
 ---
 
-<section id="experiences" class="bg-codgray-50 py-20 transition-colors dark:bg-codgray-900">
-    <div class="mx-auto grid w-full max-w-none grid-cols-1 gap-6 p-12 lg:max-w-7xl lg:grid-cols-2 lg:gap-24 lg:py-20">
+<section id="experiences" class="bg-codgray-50 px-6 py-20 transition-colors dark:bg-codgray-900 md:px-12">
+    <div class="mx-auto grid w-full max-w-none grid-cols-1 gap-6 py-12 lg:max-w-7xl lg:grid-cols-2 lg:gap-24 lg:py-20">
         <aside>
             <div class="static top-40 transition-colors dark:text-codgray-50 lg:sticky">
                 <h2 class="title">Experiences</h2>
@@ -63,7 +63,7 @@ const experiences = [
                         <b class="text-lg font-light text-codgray-950 dark:text-white">{experience.job}</b>
                     </header>
 
-                    <ul class="flex list-outside list-disc flex-col gap-3 pl-6 text-base tracking-wide text-codgray-500 transition-colors dark:text-codgray-50">
+                    <ul class="flex list-outside list-disc flex-col gap-3 pl-6 text-[clamp(0.85rem,0.82rem+0.15vw,1rem)] tracking-wide text-codgray-500 transition-colors dark:text-codgray-50">
                         {experience.points.map((point) => (
                             <li>{point}</li>
                         ))}

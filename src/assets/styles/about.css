@@ -44,7 +44,7 @@
 
         @media (max-width: 1024px) {
             .about__image > img {
-                transform: translateY(-55%);
+                transform: translateY(-60%);
             }
         }
     }

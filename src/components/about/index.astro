@@ -8,15 +8,15 @@ import PhXLogoBold from '@components/icons/phXLogoBold.astro';
 import '@assets/styles/about.css';
 ---
 
-<section id="about" class="grid min-h-screen place-items-center bg-white px-12 py-20 transition-colors dark:bg-codgray-950">
+<section id="about" class="grid min-h-screen place-items-center bg-white px-6 py-20 transition-colors dark:bg-codgray-950 md:px-12">
     <div class="about__container grid max-w-none grid-flow-row gap-20 lg:max-w-7xl lg:items-end">
         <div class="about__text">
             <h2 class="title">About me</h2>
 
             <article class="pb-16">
-                <p class="text-pretty pb-7 leading-relaxed tracking-widest text-codgray-500 dark:text-codgray-300">Hi! my name is Youssef Lahssini. I am a passionate Front-end developer who loves to  discover new technologies by creating demos to learn. My career starts back in 2007 when i was a web designer to become today a front-end developer.</p>
-                <p class="text-pretty pb-7 leading-relaxed tracking-widest text-codgray-500 dark:text-codgray-300">Despite the years i have spent as a developer, i consider myself to be a beginner learning new technologies. But with experience, i acquired certain skills that i appreciated during my career.</p>
-                <p class="text-pretty pb-7 leading-relaxed tracking-widest text-codgray-500 dark:text-codgray-300">I'm currently working at Elavi (Flyer.ma). My role is to lead my team and also architect and build client side projects.</p>
+                <p class="text-pretty pb-7 text-[clamp(0.85rem,0.82rem+0.15vw,1rem)] leading-relaxed tracking-widest text-codgray-500 dark:text-codgray-300">Hi! my name is Youssef Lahssini. I am a passionate Front-end developer who loves to  discover new technologies by creating demos to learn. My career starts back in 2007 when i was a web designer to become today a front-end developer.</p>
+                <p class="text-pretty pb-7 text-[clamp(0.85rem,0.82rem+0.15vw,1rem)] leading-relaxed tracking-widest text-codgray-500 dark:text-codgray-300">Despite the years i have spent as a developer, i consider myself to be a beginner learning new technologies. But with experience, i acquired certain skills that i appreciated during my career.</p>
+                <p class="text-pretty pb-7 text-[clamp(0.85rem,0.82rem+0.15vw,1rem)] leading-relaxed tracking-widest text-codgray-500 dark:text-codgray-300">I'm currently working at Elavi (Flyer.ma). My role is to lead my team and also architect and build client side projects.</p>
             </article>
 
             <nav class="grid grid-cols-2 gap-4 md:grid-cols-4">
@@ -46,7 +46,7 @@ import '@assets/styles/about.css';
             </nav>
         </div>
 
-        <figure class="about__image relative flex h-[400px] max-h-[600px] justify-center overflow-hidden rounded lg:h-full">
+        <figure class="about__image relative flex h-full max-h-[600px] min-h-[400px] justify-center overflow-hidden rounded">
             <Image src={ME} alt="Youssef Lahssini" class="absolute w-[890px] max-w-none transition-transform duration-300" />
         </figure>
     </div>
