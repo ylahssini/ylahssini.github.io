@@ -3,8 +3,8 @@ import PhTranslateBold from '@components/icons/phTranslateBold.astro';
 import '@assets/styles/side.css';
 ---
 
-<aside class="flex items-center justify-between gap-6">
-    <div id="switch-mode-container" title="Light mode" class="flex scale-75 items-center justify-between gap-2 lg:scale-100">
+<aside class="flex items-center justify-between gap-4 lg:gap-6">
+    <div id="switch__mode__container" title="Light mode" class="flex items-center justify-between gap-2 lg:scale-100">
         <input type="checkbox" class="hidden" id="mode" name="mode" />
         <label for="mode" class="group block cursor-pointer" role="checkbox">
             <span class="sky">
@@ -23,19 +23,29 @@ import '@assets/styles/side.css';
     </div>
 
     <div class="flex items-center gap-2">
-        <PhTranslateBold class:list="size-4 lg:size-5 transition-colors text-codgray-950 dark:text-white" role="img" />
+        <PhTranslateBold class:list="size-5 transition-colors text-codgray-950 dark:text-white" role="img" />
 
         <nav class="locale__list">
-            <a href="/en" class="locale__active text-[clamp(0.7rem,0.2898rem+0.7292vw,0.875rem)] font-light uppercase text-codgray-300 transition-colors hover:text-codgray-950 dark:text-codgray-400 dark:hover:text-white">en</a>
+            <a href="/en" class="locale__active text-sm font-light uppercase text-codgray-300 transition-colors hover:text-codgray-950 dark:text-codgray-400 dark:hover:text-white">en</a>
             <span role="separator" class="mx-1.5 text-codgray-950 transition-colors dark:text-white">//</span>
-            <a href="/fr" class="text-[clamp(0.7rem,0.2898rem+0.7292vw,0.875rem)] font-light uppercase text-codgray-300 transition-colors hover:text-codgray-950 dark:text-codgray-400 dark:hover:text-white">fr</a>
+            <a href="/fr" class="text-sm font-light uppercase text-codgray-300 transition-colors hover:text-codgray-950 dark:text-codgray-400 dark:hover:text-white">fr</a>
         </nav>
     </div>
+
+    <button
+        id="menu__mobile__button"
+        type="button"
+        class="group flex size-6 items-center lg:hidden"
+        aria-label="Open menu"
+    >
+        <span class={`block h-1 w-full bg-black transition-all duration-500 ease-in-out before:mx-auto before:block before:h-1 before:w-1/2 before:-translate-y-2 before:bg-black before:transition-all before:duration-500 before:ease-in-out after:mx-auto after:block after:h-1 after:w-1/2 after:translate-y-1 after:bg-black after:transition-all after:duration-500 after:ease-in-out group-hover:bg-trinidad-600 group-hover:before:bg-trinidad-600 group-hover:after:bg-trinidad-600 dark:bg-slate-50 dark:before:bg-slate-50 dark:after:bg-slate-50`} />
+    </button>
 </aside>
 
 <script>
-    const switchModeContainer = document.querySelector('#switch-mode-container');
+    const switchModeContainer = document.querySelector('#switch__mode__container');
     const modeInput = document.querySelector('#mode');
+    const menuMobileButton = document.querySelector('#menu__mobile__button');
 
     modeInput?.addEventListener('change', async (event) => {
         const target = event.currentTarget as HTMLInputElement;
@@ -49,6 +59,20 @@ import '@assets/styles/side.css';
                 localStorage.theme = 'light';
                 switchModeContainer.setAttribute('title', 'Light mode');
             }
+        }
+    });
+
+    menuMobileButton?.addEventListener('click', () => {
+        menuMobileButton.querySelector('span')?.classList.toggle('__clicked');
+
+        const menuButton = document.querySelector('#menu__mobile');
+
+        if (menuButton && menuButton?.classList.contains('left-full')) {
+            menuButton.classList.remove('left-full');
+            menuButton.classList.add('left-0');
+        } else if (menuButton) {
+            menuButton.classList.add('left-full');
+            menuButton.classList.remove('left-0');
         }
     });
 </script>

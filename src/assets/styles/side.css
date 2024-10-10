@@ -124,3 +124,24 @@
         }
     }
 }
+
+span.__clicked {
+    @apply bg-red-500
+    dark:bg-slate-50
+    dark:before:bg-slate-50
+    dark:after:bg-slate-50
+    group-hover:dark:bg-gray-500
+    dark:group-hover:before:bg-gray-500
+    dark:group-hover:after:bg-gray-500
+    bg-opacity-0
+    dark:bg-opacity-0
+    group-hover:bg-opacity-0
+    group-hover:dark:bg-opacity-0
+    before:rotate-45 before:w-full
+    before:-translate-x-0
+    before:translate-y-0
+    after:-rotate-45
+    after:w-full
+    after:-translate-x-0
+    after:-translate-y-1
+}

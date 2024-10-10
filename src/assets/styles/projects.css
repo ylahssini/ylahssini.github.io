@@ -1,3 +1,14 @@
+@media (max-width: 1024px) {
+    .projects__list {
+        grid-template-areas: unset !important;
+    }
+
+    .project__cell {
+        grid-area: unset !important;
+    }
+}
+
+
 .project__cell {
     transform: translateX(0);
 

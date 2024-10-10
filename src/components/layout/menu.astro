@@ -1,5 +1,5 @@
 ---
-const menu = [
+export const menu = [
     { text: 'Home', slide: 'intro' },
     { text: 'About me', slide: 'about' },
     { text: 'Experiences', slide: 'experiences' },
@@ -22,10 +22,17 @@ const menu = [
 </div>
 
 <script>
-    const menuButtons = document.querySelectorAll('#menu > button');
-    const slides = Array.from(menuButtons)
-        .map((menuButton) => document.getElementById(menuButton.getAttribute('data-slide') as string))
-        .filter((menuButton) => !!menuButton);
+    const menuButtons = document.querySelectorAll('[data-slide]');
+    const mobileMenu = document.querySelector('#menu__mobile');
+    const menuMobileButton = document.querySelector('#menu__mobile__button');
+    const slides = Array.from(
+        new Set(
+            Array.from(menuButtons)
+                .map((menuButton) => document.getElementById(menuButton.getAttribute('data-slide') as string))
+                .filter((menuButton) => !!menuButton)
+            )
+        );
+    const slideIDS = slides.map((slide) => slide.getAttribute('id'));
 
     menuButtons.forEach((menuButton) => {
         menuButton.addEventListener('click', (event) => {
@@ -33,6 +40,14 @@ const menu = [
 
             const element = event.target as HTMLButtonElement;
             const activeMenu = element?.getAttribute('data-slide') as string;
+            const isMobile = element?.getAttribute('data-mobile') as string;
+
+            if (isMobile && mobileMenu) {
+                mobileMenu.classList.add('left-full');
+                mobileMenu.classList.remove('left-0');
+
+                menuMobileButton?.querySelector('span')?.classList.toggle('__clicked');
+            }
 
             const slide = document.getElementById(activeMenu);
 
@@ -44,24 +59,40 @@ const menu = [
     });
 
     const observer = new IntersectionObserver((entries) => {
+        console.log('entries', entries);
+
         entries.forEach((entry) => {
             const id = entry.target.getAttribute('id');
+            const targetedMenuItems = document.querySelectorAll(`[data-slide="${id}"]`);
 
             if (entry.isIntersecting) {
                 const slideIntersectingIndex = slides.findIndex((slide) => slide.getAttribute('id') === id);
-                
-                if (slideIntersectingIndex % 2 === 1) {
-                    document.querySelector('#header')?.classList.add('header__odd');
-                } else {
-                    document.querySelector('#header')?.classList.remove('header__odd');
-                }
+                const headerElement = document.querySelector('#header');
 
-                document.querySelector(`[data-slide="${id}"`)?.classList.add('menu__active');
+                if (slideIntersectingIndex % 2 === 1) {
+                    headerElement?.classList.add('header__odd');
+                } else {
+                    headerElement?.classList.remove('header__odd');
+                }
+                
+                slideIDS.forEach((slideID) => {
+                    document.querySelectorAll(`[data-slide="${slideID}"]`).forEach((targetedMenuItem) => {
+                        targetedMenuItem.classList.remove('menu__active');
+                    });
+                });
+
+                targetedMenuItems.forEach((targetedMenuItem) => {
+                    targetedMenuItem.classList.add('menu__active');
+                });
             } else {
-                document.querySelector(`[data-slide="${id}"`)?.classList.remove('menu__active');
+                targetedMenuItems.forEach((targetedMenuItem) => {
+                    targetedMenuItem.classList.remove('menu__active');
+                });
             }
         });
-    }, { threshold: 0.5 });
+    }, {
+        threshold: 0.5,
+    });
 
     slides.forEach((slide) => {
         observer.observe(slide as HTMLElement);

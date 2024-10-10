@@ -1,6 +1,6 @@
 ---
 import Logo from './logo.astro';
-import Menu from './menu.astro';
+import Menu, { menu } from './menu.astro';
 import Side from './side.astro';
 ---
 
@@ -12,3 +12,16 @@ import Side from './side.astro';
     <Menu />
     <Side />
 </header>
+
+<div id="menu__mobile" class="fixed left-full top-0 z-40 flex size-full flex-col items-center justify-center bg-white/55 drop-shadow-[-10px_0_10px_rgba(0,0,0,0.25)] backdrop-blur-xl transition-all duration-300 ease-in-out dark:bg-codgray-950/50 dark:backdrop-blur-2xl lg:left-full" aria-hidden="true">
+    {menu.map((item) => (
+        <button
+            type="button"
+            data-slide={item.slide}
+            data-mobile={item.slide}
+            class="pb-6 text-4xl font-extralight uppercase text-codgray-950 transition-colors last-of-type:pb-0 hover:text-codgray-950 dark:text-codgray-200 dark:hover:text-white"
+        >
+            // {item.text}
+        </button>
+    ))}
+</div>
