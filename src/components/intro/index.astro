@@ -1,28 +1,32 @@
 ---
 import PhCaretDownBold from '@components/icons/phArrowDownBold.astro';
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<section id="intro" class="grid min-h-0 place-items-center bg-codgray-50 px-6 pt-32 transition-colors duration-300 ease-out dark:bg-codgray-900 lg:px-12 xl:min-h-screen">
-    <h1 class="w-full pb-12 text-[clamp(3rem,0.3143rem+7.6786vw,4rem)] font-black uppercase leading-none tracking-tighter text-codgray-700 transition-colors dark:text-codgray-200 md:text-[clamp(4rem,-2rem+12.5vw,6rem)] lg:pb-0 lg:text-[clamp(6.5rem,3.5rem+3.125vw,7rem)] 2xl:text-[clamp(7rem,0.5rem+6.25vw,8rem)]" role="heading">
-        <span class="block">Hello!</span>
-        <span class="block">My name is</span>
+<section id="home" class="grid min-h-0 place-items-center bg-codgray-50 px-6 pt-32 transition-colors duration-300 ease-out dark:bg-codgray-900 lg:px-12 xl:min-h-screen">
+    <h1 class="w-full pb-12 text-[clamp(3rem,0.3143rem+7.6786vw,4rem)] font-black uppercase leading-none tracking-tighter text-codgray-700 transition-colors dark:text-codgray-200 md:text-[clamp(4rem,-2rem+12.5vw,6rem)] lg:pb-0 lg:text-[clamp(6.5rem,3.5rem+3.125vw,7rem)] 2xl:text-[clamp(7rem,0.5rem+6.25vw,8.5rem)]" role="heading">
+        <span class="block">{t('home.hello')}</span>
+        <span class="block">{t('home.my_name')}</span>
         <button id="me" class="group block border-0 bg-transparent text-left uppercase text-codgray-950 hover:cursor-none dark:text-white" type="button">
             Youssef Lahssini<b class="text-trinidad-600">.</b>
             <strong id="bubble" class="pointer-events-none fixed size-32" aria-hidden>
                 <span class="flex size-full scale-0 flex-col items-center justify-center rounded-full bg-trinidad-50/75 px-4 text-center text-sm font-light normal-case tracking-normal text-codgray-950 opacity-0 shadow-xl shadow-codgray-950/10 backdrop-blur-md transition-all duration-300 ease-in group-hover:scale-100 group-hover:opacity-100 dark:bg-codgray-950/75 dark:text-white dark:shadow-white/5">
-                    See more about me
+                    {t('home.see_about')}
                     <PhCaretDownBold class="size-4" />
                 </span>
             </strong>
         </button>
-        <span class="block">A passionate front-end</span>
-        <span class="block">developer</span>
+        <span class="block">{t('home.passionate')}</span>
+        <span class="block">{t('home.developer')}</span>
     </h1>
     <footer class="flex w-full animate-scroll-wheel flex-col items-center justify-center py-2">
         <div class="mb-2 flex h-6 w-4 justify-center rounded border-2 border-codgray-950 pt-1 transition-colors duration-300 ease-in-out dark:border-white lg:h-7 lg:w-5">
             <div class="h-2 w-[6px] animate-bounce rounded border-2 border-codgray-950 transition-colors duration-300 ease-in-out dark:border-white"></div>
         </div>
-        <small class="text-xs text-codgray-950 transition-colors duration-300 ease-in-out dark:text-white lg:text-sm">Scroll down</small>
+        <small class="text-xs text-codgray-950 transition-colors duration-300 ease-in-out dark:text-white lg:text-sm">{t('home.scroll_down')}</small>
     </footer>
 </section>
 

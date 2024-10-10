@@ -1,11 +1,16 @@
 ---
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+
 export const menu = [
-    { text: 'Home', slide: 'intro' },
+    { text: 'Home', slide: 'home' },
     { text: 'About me', slide: 'about' },
     { text: 'Experiences', slide: 'experiences' },
     { text: 'Projects', slide: 'projects' },
     { text: 'Contact', slide: 'contact' },
 ];
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <div id="menu" data-menu class="hidden gap-8 lg:flex lg:items-center lg:justify-between">
@@ -15,7 +20,7 @@ export const menu = [
             data-slide={item.slide}
             class="text-[clamp(0.8125rem,-0.9375rem+2.7344vw,1.25rem)] font-extralight uppercase text-codgray-200 transition-colors hover:text-codgray-950 dark:text-codgray-700 dark:hover:text-white"
         >
-            {item.text}
+            {t(`menu.${item.slide}`)}
         </button>
         <b class="text-codgray-950 transition-colors last:hidden dark:text-white">//</b>
     ))}
@@ -59,8 +64,6 @@ export const menu = [
     });
 
     const observer = new IntersectionObserver((entries) => {
-        console.log('entries', entries);
-
         entries.forEach((entry) => {
             const id = entry.target.getAttribute('id');
             const targetedMenuItems = document.querySelectorAll(`[data-slide="${id}"]`);

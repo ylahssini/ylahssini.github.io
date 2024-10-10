@@ -1,7 +1,11 @@
 ---
+import { getLangFromUrl, useTranslations } from '@i18n/utils.ts';
 import Logo from './logo.astro';
 import Menu, { menu } from './menu.astro';
 import Side from './side.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <header
@@ -21,7 +25,7 @@ import Side from './side.astro';
             data-mobile={item.slide}
             class="pb-6 text-4xl font-extralight uppercase text-codgray-950 transition-colors last-of-type:pb-0 hover:text-codgray-950 dark:text-codgray-200 dark:hover:text-white"
         >
-            // {item.text}
+            // {t(`menu.${item.slide}`)}
         </button>
     ))}
 </div>

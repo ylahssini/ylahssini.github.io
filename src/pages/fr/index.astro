@@ -1,0 +1,32 @@
+---
+import '@fontsource-variable/public-sans';
+import '@assets/styles/base.css';
+import Header from '@components/layout/header.astro';
+import Intro from '@components/intro/index.astro';
+import About from '@components/about/index.astro';
+import Experiences from '@components/experiences/index.astro';
+import Projects from '@components/projects/index.astro';
+import Contact from '@components/contact/index.astro';
+import Footer from '@components/layout/footer.astro';
+---
+
+<html lang="fr" class="w-full scroll-smooth font-body antialiased">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="generator" content={Astro.generator} />
+        <title>Youssef Lahssini - Dévelopeur Front-end</title>
+    </head>
+    <body class="w-full min-w-80 scroll-smooth font-body text-base antialiased">
+        <main class="relative scroll-pt-52 scroll-smooth sm:scroll-pt-0">
+            <Header />
+            <Intro />
+            <About />
+            <Experiences />
+            <Projects />
+            <Contact />
+            <Footer />
+        </main>
+    </body>
+</html>
