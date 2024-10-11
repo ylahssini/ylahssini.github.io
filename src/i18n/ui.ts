@@ -48,9 +48,9 @@ export const ui: Record<string, any> = {
 
         'projects.flyer_france.title': 'Flyer.fr',
         'projects.flyer_france.description': 'An online print shop (e-Commerce)',
-        'projects.my_local_blog.title': 'Flyer.fr',
+        'projects.my_local_blog.title': 'My local blog',
         'projects.my_local_blog.description': 'A personal tech blog in darija (moroccan dialect)',
-        'projects.red_audit.title': 'Flyer.fr',
+        'projects.red_audit.title': 'RED audit',
         'projects.red_audit.description': 'A application of audit the stores (Android only and not published in Google Play)',
 
         'contact.p': 'Although I’m not currently looking for any new opportunities, my inbox is always open.',
@@ -119,7 +119,7 @@ export const ui: Record<string, any> = {
         'projects.flyer_france.description': 'Une imprimerie en ligne (e-Commerce)',
         'projects.my_local_blog.title': 'My local blog',
         'projects.my_local_blog.description': 'Un blog technologique personnel en darija (dialecte marocain)',
-        'projects.red_audit.title': 'Red audit',
+        'projects.red_audit.title': 'RED audit',
         'projects.red_audit.description': 'Une application d\'audit des magasins (Android uniquement et non publié dans Google Play)',
 
         'contact.p': 'Bien que je ne sois pas actuellement à la recherche de nouvelles opportunités, ma boîte de réception est toujours ouverte.',
