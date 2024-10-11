@@ -6,13 +6,22 @@ import PhChatCenteredDotsLight from '@components/icons/phChatCenteredDotsLight.a
 import PhCheckCircle from '@components/icons/phCheckCircle.astro';
 import PhXCircle from '@components/icons/phXCircle.astro';
 import PhXBold from '@components/icons/phXBold.astro';
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
 import '@assets/styles/contact.css';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section id="contact" class="bg-codgray-50 px-6 py-20 transition-colors dark:bg-codgray-900 md:px-12">
     <div
         data-notification
         class="fixed -right-52 top-6 z-10 w-64 rounded border-b-2 bg-white p-4 pl-12 opacity-0 shadow-lg transition-all duration-300"
+        data-success-title={t('contact.success.title')}
+        data-success-desc={t('contact.success.desc')}
+        data-error-title={t('contact.error.title')}
+        data-error-title={t('contact.success.desc')}
+
     >
         <PhXCircle
             class:list="notification__icon__error size-6 hidden text-red-600 absolute inset-4"
@@ -35,9 +44,9 @@ import '@assets/styles/contact.css';
         id="contact__form"
         class="contact__form mx-auto max-w-7xl gap-24 py-20"
     >
-        <h2 class="title">Contact</h2>
+        <h2 class="title">{t('menu.contact')}</h2>
         <p class="py-3 pb-10 text-left text-base tracking-wide text-codgray-950 transition-colors dark:text-white">
-            Although I’m not currently looking for any new opportunities, my inbox is always open.
+            {t('contact.p')}
         </p>
 
         <fieldset class="group grid grid-cols-1 gap-x-10 gap-y-4 md:grid-cols-2">
@@ -47,14 +56,14 @@ import '@assets/styles/contact.css';
                     type="email"
                     id="email"
                     name="email"
-                    placeholder="Email address *"
+                    placeholder={`${t('contact.email')} *`}
                     required
                     pattern="[^@]+@[^@]+\\.[a-zA-Z]{2,10}"
                     autocomplete="off"
                     class="input__field w-full rounded border border-codgray-100 bg-white p-4 pl-12 text-codgray-950 caret-gray-500 outline-none transition-all duration-300 ease-in-out focus:border-codgray-300 dark:border-codgray-900 dark:bg-codgray-950 dark:text-codgray-50"
                 />
 
-                <span class="text-xs leading-none text-red-600 opacity-0 transition-opacity">The email address is required and must be valid</span>
+                <span class="text-xs leading-none text-red-600 opacity-0 transition-opacity">{t('contact.error.email')}</span>
             </label>
 
             <label for="name" class="relative z-20 block w-full">
@@ -65,13 +74,13 @@ import '@assets/styles/contact.css';
                     type="text"
                     id="name"
                     name="name"
-                    placeholder="Full name or Company *"
+                    placeholder={`${t('contact.fullname')} *`}
                     required
                     autocomplete="off"
                     class="input__field w-full rounded border border-codgray-100 bg-white p-4 pl-12 text-codgray-950 caret-gray-500 outline-none transition-all duration-300 ease-in-out focus:border-codgray-300 dark:border-codgray-900 dark:bg-codgray-950 dark:text-codgray-50"
                 />
 
-                <span class="text-xs leading-none text-red-600 opacity-0 transition-opacity">Please insert your full name or company</span>
+                <span class="text-xs leading-none text-red-600 opacity-0 transition-opacity">{t('contact.error.fullname')}</span>
             </label>
 
             <label for="message" class="relative block md:col-span-2">
@@ -80,13 +89,13 @@ import '@assets/styles/contact.css';
                 />
                 <textarea
                     name="message"
-                    placeholder="Your message *"
+                    placeholder={`${t('contact.message')} *`}
                     required
                     autocomplete="off"
                     class="input__field h-48 max-h-56 w-full resize-y rounded border border-codgray-100 bg-white p-4 pl-12 text-codgray-950 caret-gray-500 outline-none transition-all duration-300 ease-in-out focus:border-codgray-300 dark:border-codgray-900 dark:bg-codgray-950 dark:text-codgray-50"
                 ></textarea>
 
-                <span class="text-xs leading-none text-red-600 opacity-0 transition-opacity">Please insert your message</span>
+                <span class="text-xs leading-none text-red-600 opacity-0 transition-opacity">{t('contact.error.message')}</span>
             </label>
         </fieldset>
 
@@ -102,7 +111,7 @@ import '@assets/styles/contact.css';
             </div>
 
             <div data-content>
-                <span class="relative block transition-transform duration-500 group-hover:-translate-y-24">Send message</span>
+                <span class="relative block transition-transform duration-500 group-hover:-translate-y-24">{t('contact.send_message')}</span>
                 <PhPaperPlaneBold
                     class:list="size-6 text-white relative translate-y-24 mx-auto transition-all duration-500 group-hover:-translate-y-6"
                 />
@@ -144,11 +153,11 @@ import '@assets/styles/contact.css';
             notificationElement?.classList.add('notification__show__success');
 
             if (notificationTitle) {
-                notificationTitle.textContent = 'Success';
+                notificationTitle.textContent = notificationElement?.getAttribute('data-success-title') || '';
             }
 
             if (notificationDesc) {
-                notificationDesc.textContent = 'The message was sent succefully';
+                notificationDesc.textContent = notificationElement?.getAttribute('data-success-desc') || '';
             }
 
             contactForm.reset();
@@ -156,11 +165,11 @@ import '@assets/styles/contact.css';
             notificationElement?.classList.add('notification__show__error');
 
             if (notificationTitle) {
-                notificationTitle.textContent = 'Error';
+                notificationTitle.textContent = notificationElement?.getAttribute('data-error-title') || '';
             }
 
             if (notificationDesc) {
-                notificationDesc.textContent = 'Something goes wrong, try again!';
+                notificationDesc.textContent = notificationElement?.getAttribute('data-error-desc') || '';
             }
         }
 

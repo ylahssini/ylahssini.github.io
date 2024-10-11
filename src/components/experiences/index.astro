@@ -1,55 +1,36 @@
 ---
-const experiences = [
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const experiences = ['bnet', 'kenzamall', 'elavi'].map((job) => (
     {
-        time: 'Aug 2007 - Apr 2014',
-        title: 'Bnet Technologies',
-        job: 'Web designer',
-        points: [
-            'Make multiple e-commerce websites design and development them in front-end.',
-            'Management of the fluidity and speed of the sites.',
-            'Creation of business cards, Brochure & Roll-up.'
-        ]
-    },
-    {
-        time: 'May 2014 - Nov 2017',
-        title: 'Kenzamall',
-        job: 'UI developer',
-        points: [
-            'Interfaced with different departments (Marketing, Logistics...) to ensure thoughtful and coherent user experiences.',
-            'Creation design of logos and e-commerce websites.',
-            'Developed and maintained code for in-house and client websites.'
-        ]
-    },
-    {
-        time: 'Nov 2017 - Present',
-        title: 'Elavi (Flyer.ma)',
-        job: 'Front-end developer',
-        points: [
-            'Creation a multiple websites for a diverse clients and internal projects.',
-            'Establishment of the front-end technical structure of the projects & ensure cross-browser compatibility and responsiveness.',
-            'Communicate with back-end developers and clients on a daily basis.'
-        ]
+        time: t(`experiences.${job}.time`),
+        title: t(`experiences.${job}.title`),
+        job: t(`experiences.${job}.job`),
+        points: [1, 2, 3].map((index) => t(`experiences.${job}.point${index}`)),
     }
-];
+));
 ---
 
 <section id="experiences" class="bg-codgray-50 px-6 py-20 transition-colors dark:bg-codgray-900 md:px-12">
     <div class="mx-auto grid w-full max-w-none grid-cols-1 gap-6 py-12 lg:max-w-7xl lg:grid-cols-2 lg:gap-24 lg:py-20">
         <aside>
             <div class="static top-40 transition-colors dark:text-codgray-50 lg:sticky">
-                <h2 class="title">Experiences</h2>
+                <h2 class="title">{t('menu.experiences')}</h2>
 
-                <p class="text-pretty pb-5 text-justify">Here my experiences in 15 years with +40 projects that made in my career of development and design.</p>
+                <p class="text-pretty pb-5 text-justify">{t('experiences.p')}</p>
                 <p class="text-pretty pb-5 text-justify">
-                    You can find more details by downloading
+                    {t('experiences.download')}
                     <a
-                        href="/public/resumes/youssef-lahssini-cv-en.pdf"
+                        href={`/public/resumes/youssef-lahssini-cv-${lang}.pdf`}
                         download
                         class="font-bold text-trinidad-600 underline-offset-4 transition-colors hover:text-trinidad-700 hover:underline"
                     >
-                        my resume
+                        {t('experiences.my_resume')}
                     </a>
-                    <small class="text-codgray-700 dark:text-codgray-500">(file size 1MB)</small>
+                    <small class="text-codgray-700 dark:text-codgray-500">({t('experiences.file_size')})</small>
                 </p>
             </div>
         </aside>

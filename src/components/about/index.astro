@@ -5,43 +5,53 @@ import PhGithubLogoBold from '@components/icons/phGithubLogoBold.astro';
 import PhCodepenLogo from '@components/icons/phCodepenLogo.astro';
 import PhLinkedinLogoBold from '@components/icons/phLinkedinLogoBold.astro';
 import PhXLogoBold from '@components/icons/phXLogoBold.astro';
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
 import '@assets/styles/about.css';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section id="about" class="grid min-h-screen place-items-center bg-white px-6 py-20 transition-colors dark:bg-codgray-950 md:px-12">
     <div class="about__container grid max-w-none grid-flow-row gap-20 lg:max-w-7xl lg:items-end">
         <div class="about__text">
-            <h2 class="title">About me</h2>
+            <h2 class="title">{t('menu.about')}</h2>
 
             <article class="pb-16">
-                <p class="text-pretty pb-7 text-[clamp(0.85rem,0.82rem+0.15vw,1rem)] leading-relaxed tracking-widest text-codgray-500 dark:text-codgray-300">Hi! my name is Youssef Lahssini. I am a passionate Front-end developer who loves to  discover new technologies by creating demos to learn. My career starts back in 2007 when i was a web designer to become today a front-end developer.</p>
-                <p class="text-pretty pb-7 text-[clamp(0.85rem,0.82rem+0.15vw,1rem)] leading-relaxed tracking-widest text-codgray-500 dark:text-codgray-300">Despite the years i have spent as a developer, i consider myself to be a beginner learning new technologies. But with experience, i acquired certain skills that i appreciated during my career.</p>
-                <p class="text-pretty pb-7 text-[clamp(0.85rem,0.82rem+0.15vw,1rem)] leading-relaxed tracking-widest text-codgray-500 dark:text-codgray-300">I'm currently working at Elavi (Flyer.ma). My role is to lead my team and also architect and build client side projects.</p>
+                <p class="text-pretty pb-7 text-[clamp(0.85rem,0.82rem+0.15vw,1rem)] leading-relaxed tracking-widest text-codgray-500 dark:text-codgray-300">
+                    {t('about.p1')}
+                </p>
+                <p class="text-pretty pb-7 text-[clamp(0.85rem,0.82rem+0.15vw,1rem)] leading-relaxed tracking-widest text-codgray-500 dark:text-codgray-300">
+                    {t('about.p2')}
+                </p>
+                <p class="text-pretty pb-7 text-[clamp(0.85rem,0.82rem+0.15vw,1rem)] leading-relaxed tracking-widest text-codgray-500 dark:text-codgray-300">
+                    {t('about.p3')}
+                </p>
             </article>
 
             <nav class="grid grid-cols-2 gap-4 md:grid-cols-4">
                 <a href="https://github.com/ylahssini" target="_blank" class="external__link __github block text-center leading-none text-codgray-950 dark:text-white">
                     <PhGithubLogoBold role="img" class:list="transition-colors size-14 mx-auto mb-5" />
                     <strong class="block">Github</strong>
-                    <small class="text-codgray-500">See my repositories</small>
+                    <small class="text-codgray-500">{t('about.github.sub')}</small>
                 </a>
 
                 <a href="https://codepen.io/collection/VYJOdz" target="_blank" class="external__link __codepen block text-center leading-none text-codgray-950 dark:text-white">
                     <PhCodepenLogo role="img" class:list="transition-colors size-14 mx-auto mb-5" />
                     <strong class="block">Codepen</strong>
-                    <small class="text-codgray-500">See my pens</small>
+                    <small class="text-codgray-500">{t('about.codepen.sub')}</small>
                 </a>
 
                 <a href="https://x.com/ysfLahssini" target="_blank" class="external__link __twitter block text-center leading-none text-codgray-950 dark:text-white">
                     <PhXLogoBold role="img" class:list="transition-colors size-14 mx-auto mb-5" />
                     <strong class="block">X (Twitter)</strong>
-                    <small class="text-codgray-500">See my posts</small>
+                    <small class="text-codgray-500">{t('about.x.sub')}</small>
                 </a>
 
                 <a href="https://www.linkedin.com/in/youssef-lahssini-05583a16" target="_blank" class="external__link __linkedin block text-center leading-none text-codgray-950 dark:text-white">
                     <PhLinkedinLogoBold role="img" class:list="transition-colors size-14 mx-auto mb-5" />
                     <strong class="block">Linkedin</strong>
-                    <small class="text-codgray-500">See my profile</small>
+                    <small class="text-codgray-500">{t('about.linkedin.sub')}</small>
                 </a>
             </nav>
         </div>

@@ -3,13 +3,17 @@ import { Image } from 'astro:assets';
 import FlyerFrImg from '@assets/images/flyer-fr.png';
 import MyLocalBlogImg from '@assets/images/my-local-blog.png';
 import RedAuditImg from '@assets/images/red-audit.png';
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
 import '@assets/styles/projects.css';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const projects = [
     {
         id: 'p1',
-        title: 'Flyer.fr',
-        description: 'An online print shop (e-Commerce)',
+        title: t('projects.flyer_france.title'),
+        description: t('projects.flyer_france.description'),
         tags: ['Next.js', 'React', 'Typescript', 'TailwindCSS'],
         link: 'https://flyer.fr/frfr',
         image: FlyerFrImg,
@@ -17,8 +21,8 @@ const projects = [
 
     {
         id: 'p2',
-        title: 'My local blog',
-        description: 'A personal tech blog in darija (moroccan dialect)',
+        title: t('projects.my_local_blog.title'),
+        description: t('projects.my_local_blog.description'),
         tags: ['Astro', 'SCSS', 'Typescript', 'MDX'],
         link: 'https://my-local-blog.vercel.app',
         image: MyLocalBlogImg,
@@ -26,8 +30,8 @@ const projects = [
 
     {
         id: 'p3',
-        title: 'RED Audit',
-        description: 'A application of audit the stores (Android only not published in Google Play)',
+        title: t('projects.red_audit.title'),
+        description: t('projects.red_audit.description'),
         tags: ['React native', 'Typescript'],
         link: null,
         image: RedAuditImg,
@@ -67,20 +71,25 @@ for (let j = 0; j < left.length; j++) {
 ---
 
 <section id="projects" class="h-full bg-white px-6 py-20 transition-colors dark:bg-codgray-950 md:px-12">
-    <div class="mx-auto grid max-w-7xl grid-flow-row gap-20 pt-12">
-        <h2 class="title">Latest projects</h2>
+    <div class="mx-auto max-w-7xl pt-12">
+        <h2 class="title">{t('menu.projects')}</h2>
 
         <ul
-            class={`projects__list grid grid-cols-1 gap-20 lg:grid-cols-2`}
+            class={`projects__list grid grid-cols-1 gap-4 pt-20 lg:grid-cols-2 lg:gap-20`}
             style={`grid-template-areas: ${template}`}
         >
             {projects.map((project) => (
-                <li class="project__cell mx-auto mb-12 h-max max-w-[600px] rounded bg-codgray-50 p-6 dark:bg-codgray-900 lg:mb-0 lg:max-w-none" style={`grid-area: ${project.id}`}>
+                <li
+                    class="project__cell mx-auto mb-12 h-max max-w-[600px] rounded bg-codgray-50 p-6 dark:bg-codgray-900 lg:mb-0 lg:max-w-none"
+                    style={`grid-area: ${project.id}`}
+                >
                     <figure class="mb-4 block overflow-hidden rounded bg-white dark:bg-codgray-950">
                         <Image src={project.image} width={559} height={387} alt={project.title} />
                     </figure>
                     <h4 class="text-2xl font-bold text-trinidad-600">{project.title}</h4>
-                    <p class="pb-4 text-lg font-light tracking-wide text-codgray-700 transition-colors dark:text-codgray-200">{project.description}</p>
+                    <p class="pb-4 text-base font-light tracking-wide text-codgray-700 transition-colors dark:text-codgray-200">
+                        {project.description}
+                    </p>
                     
                     <footer class="flex flex-wrap gap-2">
                         {project.tags.map((tag) => (
