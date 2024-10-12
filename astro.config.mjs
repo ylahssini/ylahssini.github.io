@@ -3,6 +3,8 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
+    site: import.meta.env.SITE || undefined,
+    base: import.meta.env.REPO || undefined,
     integrations: [
         tailwind({
             applyBaseStyles: false,
