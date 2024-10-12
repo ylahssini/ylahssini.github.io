@@ -38,7 +38,7 @@ jobs:
         REPO: ylahssini.github.io
 
     - name: No jeckyll file 😈
-      run: touch ./out/.nojekyll
+      run: touch ./dist/.nojekyll
     
     - name: Deploy my app 🚀
       uses: actions/deploy-pages@v4
