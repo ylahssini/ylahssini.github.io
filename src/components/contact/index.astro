@@ -16,7 +16,7 @@ const t = useTranslations(lang);
 <section id="contact" class="bg-codgray-50 px-6 py-20 transition-colors dark:bg-codgray-900 md:px-12">
     <div
         data-notification
-        class="fixed -right-52 top-6 z-10 w-64 rounded border-b-2 bg-white p-4 pl-12 opacity-0 shadow-lg transition-all duration-300"
+        class="fixed -right-52 top-6 z-50 w-64 rounded border-b-2 bg-white p-4 pl-12 opacity-0 shadow-lg transition-all duration-300"
         data-success-title={t('contact.success.title')}
         data-success-desc={t('contact.success.desc')}
         data-error-title={t('contact.error.title')}
@@ -133,9 +133,7 @@ const t = useTranslations(lang);
     const basinUrl = 'https://usebasin.com/f/39da2d81e0d2';
 
     document.querySelectorAll('.input__field').forEach((inputField) => {
-        console.log('inputField', inputField);
         inputField.addEventListener('focus', (event) => {
-            console.log('dffdff');
             const element = event.target as HTMLObjectElement;
             if (!element.checkValidity()) {
                 element.setCustomValidity('');
@@ -169,7 +167,7 @@ const t = useTranslations(lang);
             }
         });
 
-        if (!hasError) {
+        if (hasError) {
             return false;
         }
 
@@ -211,7 +209,7 @@ const t = useTranslations(lang);
                 'notification__show__success',
                 'notification__show__error',
             );
-        }, 5000);
+        }, 8500);
 
         loadingElement?.classList.remove('flex');
         loadingElement?.classList.add('hidden');
