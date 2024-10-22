@@ -4,8 +4,8 @@
 
 @layer base {
     :root {
-        --success: theme(colors.green.600);
-        --error: theme(colors.red.600)
+        --success: theme(colors.codgray.950);
+        --error: theme(colors.trinidad.700)
     }
 }
 
