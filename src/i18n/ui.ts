@@ -46,6 +46,8 @@ export const ui: Record<string, any> = {
         'experiences.elavi.point2': 'Establishment of the front-end technical structure of the projects & ensure cross-browser compatibility and responsiveness.',
         'experiences.elavi.point3': 'Communicate with back-end developers and clients on a daily basis.',
 
+        'projects.batteria.title': 'Batteria.be',
+        'projects.batteria.description': 'An online print shop (e-Commerce) for belgium',
         'projects.flyer_france.title': 'Flyer.fr',
         'projects.flyer_france.description': 'An online print shop (e-Commerce)',
         'projects.my_local_blog.title': 'My local blog',
@@ -115,6 +117,8 @@ export const ui: Record<string, any> = {
         'experiences.elavi.point2': 'Établissement de la structure technique front-end des projets & assurer la compatibilité cross-browser et la réactivité.',
         'experiences.elavi.point3': 'Communiquer avec les développeurs back-end et les clients sur une base quotidienne.',
 
+        'projects.batteria.title': 'Batteria.be',
+        'projects.batteria.description': 'Une imprimerie en ligne (e-Commerce) pour belgique',
         'projects.flyer_france.title': 'Flyer.fr',
         'projects.flyer_france.description': 'Une imprimerie en ligne (e-Commerce)',
         'projects.my_local_blog.title': 'My local blog',

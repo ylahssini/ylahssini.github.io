@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import BatteriaImg from '@assets/images/batteria.png';
 import FlyerFrImg from '@assets/images/flyer-fr.png';
 import MyLocalBlogImg from '@assets/images/my-local-blog.png';
 import RedAuditImg from '@assets/images/red-audit.png';
@@ -10,6 +11,15 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const projects = [
+    {
+        id: 'p4',
+        title: t('projects.batteria.title'),
+        description: t('projects.batteria.description'),
+        tags: ['Next.js', 'React', 'Typescript', 'TailwindCSS'],
+        link: 'https://batteria.be/befr',
+        image: BatteriaImg,
+    },
+
     {
         id: 'p1',
         title: t('projects.flyer_france.title'),
